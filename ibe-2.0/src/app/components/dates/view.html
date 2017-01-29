@@ -1,0 +1,22 @@
+<div id="teromac-dates-view">
+    <div class="date-range-picker" date-range-picker start-date="vm.plan.data.check_in" end-date="vm.plan.data.check_out"></div>
+    <div class="teromac-dates-controls">
+        <ul class="teromac-dates-legend">
+            <li class="teromac-dates-legend-reset-container" ng-click="vm.plan.resetDates()">
+                <span class="teromac-dates-legend-icon teromac-dates-legend-reset"></span>
+                <span class="teromac-dates-legend-label" translate="Reset Dates"></span>
+            </li>
+            <li>
+                <span class="teromac-dates-legend-icon teromac-dates-legend-icon-sold-out"></span>
+                <span class="teromac-dates-legend-label" translate="Sold Out"></span>
+            </li>
+            <li>
+                <span class="teromac-dates-legend-icon teromac-dates-legend-icon-min-stay"></span>
+                <span class="teromac-dates-legend-label" translate="Min Night Stay"></span>
+            </li>
+        </ul>
+        <div class="teromac-btn-fixed-container-bottom">
+            <a ui-sref="plan" class="teromac-btn teromac-btn-fixed-bottom" translate="Done"></a>
+        </div>
+    </div>
+</div>

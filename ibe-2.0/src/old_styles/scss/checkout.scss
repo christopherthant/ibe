@@ -1,0 +1,31 @@
+@import "mixins.scss";
+
+#teromac-checkout-view {
+    max-width: 1024px;
+    
+    h2 {
+        font-weight: normal;
+    }
+    > div {
+        clear: both;
+    }
+}
+.teromac-checkout-header {
+    ul {
+        float: left;
+    }
+    .teromac-btn {
+        float: right;
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-checkout-header {
+        ul {
+            float: none;
+        }
+        .teromac-btn {
+            width: 100%;
+        }
+    }
+}

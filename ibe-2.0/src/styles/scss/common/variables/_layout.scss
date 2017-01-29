@@ -1,0 +1,423 @@
+$body-margin: 0;
+
+$container-position: relative;
+$container-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$container-bg-color: $default-bg-color;
+$container-font-color: $default-font-color;
+$container-height: 100%;
+
+$layout-font-size: $default-font-size * 1px;
+$layout-box-sizing: box-border;
+$layout-elements-box-sizing: inherit;
+
+$layout-clearfix-after-content: "";
+$layout-clearfix-after-display: table;
+$layout-clearfix-after-clear: both;
+
+$layout-hr-border: none;
+$layout-hr-clear: both;
+$layout-hr-height: $default-border-width;
+$layout-hr-margin: $default-spacing-unit 0;
+$layout-hr-color: $default-hr-color;
+$layout-hr-bg-color: $default-hr-color;
+
+$layout-label-base-font-size: $default-font-size;
+$layout-label-final-font-size: 13;
+$layout-a-text-decoration: none;
+
+$layout-elements-display: block;
+$layout-elements-width: 100%;
+
+$layout-select-action-outline: none;
+
+$layout-inputs-display: block;
+$layout-inputs-width: 100%;
+$layout-inputs-border: $default-border-width;
+$layouts-inputs-solid: $default-input-border-color;
+$layouts-inputs-margin-bottom: $default-spacing-unit;
+
+$layout-input-text-select-base-font-size: $default-font-size;
+$layout-input-text-select-final-font-size: 16;
+$layout-input-text-select-border-radius: $default-border-radius;
+
+$layout-textarea-resize: none;
+$layout-textarea-padding: $default-spacing-unit;
+
+$layout-input-text-email-password-height: $default-min-tap-area-size;
+$layout-input-text-email-password-padding: 0 $default-spacing-unit;
+
+$half-width: 50%;
+$half-float: left;
+$half-push-left-padding-right: $default-spacing-unit / 2;
+$half-push-right-padding-left: $default-spacing-unit / 2;
+
+$half-mobile-display: inline-block;
+
+$thirds-child-divs-width: 33.3333%;
+$thirds-child-divs-float: left;
+$thirds-thirds-left-padding-right: $default-spacing-unit * (2 / 3);
+$thirds-thirds-mid-padding: 0 ($default-spacing-unit / 3);
+$thirds-thirds-right-padding-left: $default-spacing-unit * (2 / 3);
+
+$quarters-quarter-float: left;
+$quarters-quarter-width: 25%;
+$quarters-quarter-padding-right: $default-spacing-unit;
+
+$success-check-font-weight: normal;
+$success-check-base-font-size: $default-font-size;
+$success-check-final-font-size: 19;
+
+$success-check-before-display: block;
+$success-check-before-color: $default-input-border-color;
+$success-check-before-border: 3px;
+$success-check-before-solid: $default-input-border-color;
+$success-check-before-width: default-min-tap-area-size;
+$success-check-before-margin: $default-spacing-unit auto;
+$success-check-before-character-set: "7";
+$success-check-before-font-size: 27;
+$success-check-before-border-radius: 50%;
+$success-check-v-align-text-height: $default-min-tap-area-size;
+
+
+$clear-both-clear: both;
+
+$tabbed-header-nav-padding: 0 ($default-spacing-unit * 3);
+
+$tabbed-header-nav-ul-padding: 0;
+$tabbed-header-nav-ul-list-style-type: none;
+$tabbed-header-nav-ul-text-align: center;
+$tabbed-header-nav-ul-margin: 0 0 ($default-spacing-unit * 4) (-$default-spacing-unit);
+$tabbed-header-nav-ul-webkit-scrollbar-display: none;
+
+
+$tabbed-header-nav-li-display: inline-block;
+
+$tabbed-header-nav-li-active-a-color: $default-accent-color;
+$tabbed-header-nav-li-active-a-border-bottom: ($default-border-width * 2);
+$tabbed-header-nav-li-active-a-solid: $default-accent-color;
+
+$tabbed-header-nav-a-color: $default-accent-color;
+$tabbed-header-nav-a-padding: 0 $default-spacing-unit ($default-spacing-unit / 2);
+$tabbed-header-nav-a-v-align-text-height: $default-min-tap-area-size;
+
+$table-width: 100%;
+$table-height: 100%;
+
+$table-display: table;
+
+$table-cell-display: table-cell;
+$table-cell-vertical-align: middle;
+
+$mobile-only-display: none;
+
+$top-menu-position: fixed;
+$top-menu-top: 0;
+$top-menu-left: 0;
+$top-menu-width: 100%;
+$top-menu-color: $default-accent-color-inverse;
+$top-menu-v-align-text-height: $default-header-height;
+
+$top-menu-btn-float: right;
+$top-menu-btn-cursor: pointer;
+$top-menu-btn-padding: 0 $default-layout-margin;
+
+$top-menu-toggle-before-character-set: "z";
+$top-menu-toggle-before-font-size: 25;
+$top-menu-toggle-before-vertical-align: middle;
+$top-menu-toggle-before-float: right;
+$top-menu-toggle-before-margin-left: $default-spacing-unit;
+
+$header-bg-image-position: fixed;
+$header-bg-image-top: 0;
+$header-bg-image-left: 0;
+$header-bg-image-width: 100%;
+
+$header-bg-image-bg-color: $default-bg-image-overlay-color;
+$header-bg-image-bg-position: center top;
+$header-bg-image-bg-repeat: no-repeat;
+$header-bg-image-bg-size: cover;
+$header-bg-image-after-content: "";
+$header-bg-image-after-opacity: 0;
+$header-bg-image-after-bg-color: $default-bg-image-overlay-color;
+$header-bg-image-transition:opacity $default-sticky-header-transition-time $default-sticky-header-transition-easing;
+
+$header-after-position: absolute;
+$header-after-height: 100%;
+
+$bg-image-sticky-header-scrolled-header-bg-image: url($default-bg-image-url-desktop);
+
+$bg-image-height: 100%;
+
+$hotel-name-position: relative;
+$hotel-name-text-align: center;
+$hotel-name-top: -$default-header-height;
+$hotel-name-letter-spacing: $default-hotel-name-kerning;
+$hotel-name-color: $default-font-color-inverse;
+$hotel-name-v-align-text: $default-header-height;
+$hotel-name-base-font-size: $default-font-size;
+$hotel-name-final-font-size: 20;
+$hotel-name-transition: top $default-sticky-header-transition-time $default-sticky-header-transition-easing;
+
+$hotel-logo-position: relative;
+$hotel-logo-display: block;
+$hotel-logo-margin: 0 auto;
+$hotel-logo-width: auto;
+$hotel-logo-top: 0;
+$hotel-logo-padding: ($default-logo-spacing-vertical-desktop + $default-header-height) 0 $default-logo-spacing-vertical-desktop;
+$hotel-logo-transition: top $default-sticky-header-transition-time $default-sticky-header-transition-easing;
+
+$hotel-logo-after-display: block;
+$hotel-logo-after-content: "";
+$hotel-logo-after-bg-repeat: no-repeat;
+$hotel-logo-after-bg-position: center;
+$hotel-logo-after-bg-image: url($default-logo-image-url);
+$hotel-logo-after-height:  $default-logo-height;
+
+$sticky-header-scrolled-hotel-logo-top: -$default-logo-height - $default-layout-padding;
+
+$content-mask-outer-position: fixed;
+$content-mask-outer-width: 100%;
+$content-mask-outer-display: none;
+$content-mask-outer-top: $default-header-height;
+
+$content-mask-mid-display: table;
+$content-mask-mid-margin: 0 auto;
+
+$content-mask-inner-bg-color: $default-content-bg-color;
+$content-mask-inner-border-radius: $default-border-radius 0	0;
+
+$scrolled-hotel-name-top: 0;
+$scrolled-header-bg-image-opacity: 1;
+
+$scrolled-deeper-content-mask-outer-display: block;
+
+$content-display: table;
+$content-position: relative;
+$content-width: 100%;
+
+$content-child-divs-bg-color: $default-bg-color;
+$content-child-divs-padding: $default-layout-padding 0;
+$content-child-divs-margin: 0 auto ($default-spacing-unit * 2);
+$content-child-divs-border-radius: $default-border-radius;
+
+$body-modal-open-overflow: hidden;
+
+$plan-dates-container-display: block;
+$plan-dates-container-position: relative;
+$plan-dates-container-overflow: hidden;
+$plan-dates-container-cursor: pointer;
+$plan-dates-container-color: $default-font-color;
+$plan-dates-container-margin: ($default-spacing-unit * 2) 0;
+$plan-dates-container-padding: 0 $default-spacing-unit;
+
+$plan-dates-divider-position: absolute;
+$plan-dates-divider-top: 50%;
+$plan-dates-divider-left: 50%;
+$plan-dates-divider-width: $default-plan-dates-divider-size;
+$plan-dates-divider-height: $default-plan-dates-divider-size;
+$plan-dates-divider-margin: (-$default-plan-dates-divider-size / 2) 0 0 (-$default-plan-dates-divider-size / 2);
+$plan-dates-divider-color: $default-input-border-color;
+
+$plan-dates-divider-after-character-set: "W";
+$plan-dates-divider-after-font-size: 31;
+
+$item-view-float: left;
+$item-view-margin: ($default-spacing-unit * 2.5) 0 0;
+
+$item-view-left-width: 35%;
+$item-view-left-padding: 0 $default-spacing-unit 0 ($default-spacing-unit * 2);
+
+$item-view-right-width: 65%;
+$item-view-right-padding: 0 ($default-spacing-unit * 2) 0 $default-spacing-unit;
+
+$item-view-right-h3-font-weight: normal;
+$item-view-right-h3-margin-top: 0;
+$item-view-right-h3-margin-bottom: $default-spacing-unit * 1.5;
+$item-view-right-h3-base-font-size: $default-font-size;
+$item-view-right-h3-final-font-size: 18;
+$item-view-right-h3-v-align-text-height: $default-room-sort-height;
+
+$mobile-rooms-view-header-padding: 0 ($default-spacing-unit * 2);
+
+$mobile-rooms-view-header-p-base-font-size: $default-font-size;
+$mobile-rooms-view-header-p-final-font-size: 18;
+$mobile-rooms-view-header-p-v-align-text-height: $default-room-mobile-header-height;
+
+$item-detail-header-left-name-v-align-text-height: $default-rates-room-detail-header-height;
+
+$item-detail-header-name-font-weight: normal;
+$item-detail-header-name-margin: 0;
+$item-detail-header-name-base-font-size: $default-font-size;
+$item-detail-header-name-final-font-size: 22;
+
+$item-detail-header-left-float: right;
+$item-detail-header-left-base-font-size: $default-font-size;
+$item-detail-header-left-final-font-size: 15;
+
+$item-detail-header-margin: ($default-spacing-unit * 3) 0 ($default-spacing-unit * 2);
+
+$item-detail-header-left-label-margin-right: $default-spacing-unit / 2;
+
+$room-details-outer-position: relative;
+$room-details-outer-margin-bottom: $default-rates-room-view-toggle-height;
+
+$room-details-inner-overflow: hidden;
+$room-details-inner-height: $default-rates-room-detail-height-closed;
+
+$room-dscrptn-amenities-base-font-size: $default-font-size;
+$room-dscrptn-amenities-final-font-size: 13;
+$room-dscrptn-amenities-margin-bottom: $default-spacing-unit * 2;
+
+$room-amenities-header-font-weight: normal;
+$room-amenities-header-margin: $default-spacing-unit 0;
+
+$room-amenities-subheader-base-font-size: $default-font-size;
+$room-amenities-subheader-final-font-size: 14;
+$room-amenities-subheader-margin: $default-spacing-unit 0 ($default-spacing-unit * 2);
+
+$room-amenities-overflow: hidden;
+
+$room-amenity-width: 50%;
+$room-amenity-float: left;
+
+$rates-container-position: relative;
+
+$rates-toggle-position: relative;
+$rates-toggle-cursor: pointer;
+$rates-toggle-bg-color: $default-input-border-color;
+$rates-toggle-color: $default-font-color-inverse;
+$rates-toggle-padding: 0 $default-min-tap-area-size 0 $default-spacing-unit;
+$rates-toggle-base-font-size: $default-font-size;
+$rates-toggle-final-font-size: 18;
+$rates-toggle-v-align-txt: $default-min-tap-area-size;
+
+$rates-toggle-after-position: absolute;
+$rates-toggle-after-width: $default-min-tap-area-size;
+$rates-toggle-after-height: $default-min-tap-area-size;
+$rates-toggle-after-top: 0;
+$rates-toggle-after-right: 0;
+$rates-toggle-after-text-align: center;
+$rates-toggle-after-character-code: "B";
+$rates-toggle-after-font-size: 13;
+
+$rate-margin-bottom: $default-border-width;
+
+$rate-rate-details-display: none;
+
+$rate-rate-is-visible-rate-toggle-after-char-code: "C";
+$rate-rate-is-visible-rate-toggle-after-font-size: 13;
+$rate-rate-is-visible-rate-toggle-after-opacity: 0.5;
+$rate-rate-is-visible-rate-toggle-after-bg-color: $default-accent-color;
+
+$rate-rate-is-visible-rate-details-display: block;
+
+$rate-details-padding: $default-spacing-unit * 2;
+
+$rate-details-copy-margin: 0;
+$rate-details-copy-base-font-size: $default-font-size;
+$rate-details-copy-final-font-size: 14;
+
+$rate-controls-width: 100%;
+$rate-controls-margin: ($default-spacing-unit * 3) auto 0;
+$rate-controls-max-width: $default-rate-controls-width;
+$rate-controls-overflow: hidden;
+
+$rate-controls-left-right-float: left;
+
+$rate-controls-left-width: 65%;
+$rate-controls-left-padding-right: $default-spacing-unit / 2;
+
+$rate-controls-right-width: 35%;
+$rate-controls-right-padding-left: $default-spacing-unit / 2;
+
+$rate-controls-btn-width: 100%;
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+$tablet-layout-body-height: auto;
+
+$tablet-desktop-only-display: none;
+
+$tablet-mobile-only-display: none;
+
+$tablet-half-mobile-width: 50%;
+
+$tablet-half-mobile-push-float: left;
+
+$tablet-half-mobile-push-left-padding-right: $default-spacing-unit / 2;
+
+$tablet-half-mobile-push-right-padding-left: $default-spacing-unit / 2;
+
+
+$tablet-btn-fixed-bottom-width: 100%;
+$tablet-btn-fixed-bottom-margin: 0;
+$tablet-btn-fixed-bottom-position: fixed;
+$tablet-btn-fixed-bottom-bottom: 0;
+$tablet-btn-fixed-bottom-left: 0;
+$tablet-btn-fixed-bottom-border-radius: 0;
+
+$tablet-tabbed-header-nav-ul-display: block;
+$tablet-tabbed-header-nav-ul-white-space: nowrap;
+$tablet-tabbed-header-nav-ul-font-size: 0;
+$tablet-tabbed-header-nav-ul-overflow: auto;
+$tablet-tabbed-header-nav-ul-margin-left: 0;
+
+$tablet-tabbed-header-nav-padding: 0 ($default-spacing-unit * 2);
+
+$tablet-tabbed-header-nav-ul-margin-bottom: $default-spacing-unit * 1.5;
+
+$tablet-tabbed-header-nav-li-font-size: 16px;
+
+$tablet-tabbed-header-nav-btn-margin-bottom: $default-spacing-unit * 2;
+
+$tablet-menu-toggle-display: none;
+$tablet-menu-toggle-before-margin-left: 0;
+
+$tablet-sticky-header-height: $default-header-height;
+
+$tablet-sticky-header-mobile-hotle-name-top: -$default-header-height;
+
+$tablet-bg-image-header-bg-image: url($default-bg-image-url-mobile);
+
+$tablet-bg-image-height: 0;
+$tablet-bg-image-padding-top: ($default-bg-height-mobile / $default-bg-width-mobile) * 100%;
+
+$tablet-header-bg-image-after-display: block;
+$tablet-header-bg-image-after-opacity: 1;
+
+$tablet-hotel-name-display: block;
+$tablet-hotel-name-top: 0;
+
+$tablet-hotel-logo-display: none;
+$tablet-hotel-logo-padding: $default-logo-spacing-vertical-mobile;
+
+$tablet-content-mask-outer-display: block;
+
+$tablet-sticky-header-mobile-sticky-header-height: auto;
+
+$tablet-sticky-header-mobile-header-bg-image-after-opacity: 0;
+
+$tablet-sticky-header-mobile-hotel-logo-display: block;
+
+$tablet-sticky-header-mobile-scrolled-hotel-name-top: 0;
+
+$tablet-sticky-header-mobile-scrolled-header-bg-image-after-opacity: 1;
+
+$tablet-sticky-header-mobile-content-mask-outer-display: none;
+
+$tablet-sticky-header-mobile-scrolled-deeper-content-mask-outer-display: block;
+
+$tablet-content-display: block;
+$tablet-content-padding: 0 $default-spacing-unit $default-spacing-unit;
+$tablet-content-child-divs-margin: 0 auto;
+$tablet-content-child-divs-width: 100%;
+$tablet-content-child-divs-min-width: 0;
+$tablet-content-child-divs-max-width: none;
+
+$tablet-item-view-float: none;
+$tablet-item-view-width: 100%;
+$tablet-item-view-padding: 0 ($default-spacing-unit * 2);
+
+$tablet-item-view-right-h3-display: none;

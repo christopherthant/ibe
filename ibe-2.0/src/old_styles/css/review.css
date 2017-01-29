@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+.teromac-line-item-toggle {
+  position: relative;
+  cursor: pointer; }
+  .teromac-line-item-toggle:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    content: "B";
+    font-family: "teromac Icons";
+    font-size: 13px; }
+
+.teromac-line-item-toggle.visible:before {
+  content: "C";
+  font-family: "teromac Icons";
+  font-size: 13px;
+  opacity: 0.5; }

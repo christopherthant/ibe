@@ -1,0 +1,104 @@
+$default-min-tap-area-size: 44px;
+$default-bg-color: #070417;
+$default-content-bg-color: #070417;
+$default-modal-overlay-color: rgba(0, 0, 0, 0.5);
+$default-accent-color: #3D2350;
+$default-accent-color-inverse: #1E222B;
+$default-font-color: #E5E8F1;
+$default-font-color-inverse: #FFF;
+$default-font-size: 16;
+$default-transition-time: 0.3s;
+$default-transition-easing: ease-out;
+$default-spacing-unit: 10px;
+$default-border-width: 2px;
+$default-border-radius: 0;
+$default-input-border-color: #583075;
+$default-input-fill-color-inverse: #B8B8B5;
+$default-input-height: $default-min-tap-area-size;
+$default-hr-color: #1E222B;
+$default-error-color: #FF0000;
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+$default-sticky-header-transition-time: $default-transition-time;
+$default-sticky-header-transition-easing: $default-transition-easing;
+$default-header-height: $default-min-tap-area-size;
+$default-hotel-name-kerning: -0.15px;
+
+$default-layout-margin: $default-spacing-unit;
+$default-layout-padding: $default-spacing-unit * 2;
+
+$default-bg-image-url-desktop: "/assets/images/hotels/gaylord/background-desktop.jpg";
+$default-bg-image-url-mobile: "/assets/images/hotels/gaylord/background-mobile.jpg";
+$default-bg-width-mobile: 680px;
+$default-bg-height-mobile: 700px;
+$default-bg-image-overlay-color: $default-modal-overlay-color;
+
+$default-logo-image-url: "/assets/images/hotels/gaylord/logo.png";
+$default-logo-height: 96px;
+$default-logo-spacing-vertical-desktop: 40px;
+$default-logo-spacing-vertical-mobile: 100px;
+
+$default-checkbox-input-size: 24px;
+$default-checkbox-bg-color: #222031;
+$default-checkbox-border-color: #583075;
+$default-select-carret-width: 35px;
+$default-fixed-bottom-button-width-desktop: 360px;
+$default-fixed-bottom-button-height: 60px;
+
+$default-input-group-number-color: #FFF;
+$default-input-number-btn-color: #583075;
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+$default-menu-transition-time: $default-transition-time;
+$default-menu-transition-easing: $default-transition-easing;
+$default-menu-width-desktop: 400px;
+$default-menu-width-mobile: 100%;
+$default-menu-spacing: 6px;
+$default-menu-bg-color: $default-bg-color;
+$default-menu-font-color: $default-font-color;
+$default-menu-divider-color: rgba(151, 151, 151, .41);
+$default-menu-button-max-width: 160px;
+$default-menu-back-button-size: 19px;
+$default-menu-external-link-icon-size: 30px;
+$default-plan-date-label-color: $default-input-border-color;
+
+/* ==========================================================================
+   Plan View
+   ========================================================================== */
+$default-plan-dates-divider-size: 32px;
+$default-plan-date-date-color: #FFF;
+
+/* ==========================================================================
+   Rooms View
+   ========================================================================== */
+$default-room-mobile-header-height: 22px;
+$default-room-filter-height: 30px;
+$default-room-sort-height: 33px;
+$default-rooms-by-rate-border-color: #E6E6E6;
+$default-rooms-by-rate-border-width-active: 5px;
+$default-room-image-width: 260px;
+$default-room-image-height: 158px;
+$default-room-type-rate-container-width: 90px;
+$default-room-special-color: #6CFFC9;
+
+/* ==========================================================================
+   Rates View
+   ========================================================================== */
+$default-rates-room-image-width: 300px;
+$default-rates-room-image-height: 200px;
+$default-rates-room-detail-header-height: 27px;
+$default-rates-room-detail-height-closed: 75px;
+$default-rates-room-view-toggle-width: 116px;
+$default-rates-room-view-toggle-height: 30px;
+$default-rate-controls-width: 260px;
+
+/* ==========================================================================
+   Summary Bar
+   ========================================================================== */
+$default-summary-bar-height: $default-min-tap-area-size;
+
+@import "../common/imports.scss";

@@ -1,0 +1,144 @@
+@import "mixins.scss";
+
+.teromac-room-image-slider-con-outer,
+.teromac-room-image-slide-inner {
+    position: relative;
+    width: 100%;
+}
+.teromac-room-image-slider-con-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.teromac-room-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.teromac-item-detail-header-name {
+    font-weight: normal;
+    margin: 0;
+}
+.teromac-item-detail-header-left {
+    float: right;
+}
+.teromac-room-details-outer {
+    position: relative;
+}
+.teromac-room-details-inner {
+    overflow: hidden;
+}
+.teromac-room-details-view-toggle-outer,
+.teromac-room-details-view-toggle-inner {
+    pointer-events: none;
+}
+.teromac-room-details-view-toggle-outer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.teromac-room-details-view-toggle-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.teromac-room-details-view-toggle {
+    pointer-events: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+.teromac-room-details-view-toggle-less {
+    display: none;
+}
+.teromac-room-details-outer.teromac-show-full-room-details {
+    .teromac-room-details-inner {
+        height: auto;
+    }
+    .teromac-room-details-view-toggle-outer {
+        background: none;
+    }
+    .teromac-room-details-view-toggle-more {
+        display: none;
+    }
+    .teromac-room-details-view-toggle-less {
+        display: block;
+    }
+}
+.teromac-room-amenities-header {
+    font-weight: normal;
+}
+.teromac-room-amenities {
+    overflow: hidden;
+}
+.teromac-room-amenity {
+    width: 50%;
+    float: left;
+}
+.teromac-rates-container {
+    position: relative;
+}
+.teromac-rates {
+    @include plain-list();
+}
+.teromac-rate-toggle {
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        @include icon("B", 13);
+    }
+}
+.teromac-rate {
+    .teromac-rate-details {
+        display: none;
+    }
+    &.teromac-rate-is-visible {
+        .teromac-rate-toggle:after {
+            @include icon("C", 13);
+            opacity: 0.5;
+        }
+        .teromac-rate-details {
+            display: block;
+        }
+    }
+}
+.teromac-rate-details-copy {
+    margin: 0;
+}
+.teromac-rate-controls {
+    width: 100%;
+}
+.teromac-rate-controls-left,
+.teromac-rate-controls-right {
+    float: left;
+
+    .teromac-btn {
+        width: 100%;
+    }
+}
+.teromac-btn.teromac-btn-add-to-compare,
+.teromac-btn.teromac-btn-remove-from-compare {
+    width: 100%;
+
+    &:before {
+        vertical-align: top;
+        @include icon("7", 18);
+    }
+}

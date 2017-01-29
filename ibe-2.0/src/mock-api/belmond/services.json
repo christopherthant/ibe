@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "services": {
+        "StaticData": "/mock-api/belmond/staticData.json",
+        "StaticLanguageData": "/mock-api/belmond/languages",
+        "Availability": "",
+        "Reservations": "",
+        "Currency": "",
+        "ExchangeRate": "",
+        "MapImage": ""
+    }
+}

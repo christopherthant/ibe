@@ -1,0 +1,2529 @@
+@import "../mixins.scss";
+
+$default-min-tap-area-size: 44px;
+$default-background-color: #EDEDE9;
+$default-content-background-color: #FFF;
+$default-modal-overlay-color: rgba(0, 0, 0, 0.5);
+$default-accent-color: #F05800;
+$default-accent-color-inverse: #F3F3F3;
+$default-font-color: #595356;
+$default-font-color-inverse: #FFF;
+$default-font-size: 16;
+$default-transition-time: 0.3s;
+$default-transition-easing: ease-out;
+$default-spacing-unit: 10px;
+$default-border-width: 1px;
+$default-border-radius: 0;
+$default-input-border-color: #908D91;
+$default-input-fill-color-inverse: #B8B8B5;
+$default-input-height: $default-min-tap-area-size;
+$default-hr-color: $default-background-color;
+$default-error-color: #FF0000;
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+$sticky-header-transition-time: $default-transition-time;
+$sticky-header-transition-easing: $default-transition-easing;
+$header-height: $default-min-tap-area-size;
+$hotel-name-kerning: -0.15px;
+
+$layout-margin: $default-spacing-unit;
+$layout-padding: $default-spacing-unit * 2;
+
+$background-image-url-desktop: "/assets/images/hotels/belmond/background.jpg";
+$background-image-url-mobile: "/assets/images/hotels/belmond/background.jpg";
+$background-width-mobile: 680px;
+$background-height-mobile: 700px;
+$background-image-overlay-color: $default-modal-overlay-color;
+
+$logo-image-url: "/assets/images/hotels/belmond/logo.png";
+$logo-height: 65px;
+$logo-spacing-vertical-desktop: 40px;
+$logo-spacing-vertical-mobile: 100px;
+
+$checkbox-input-size: 24px;
+$checkbox-background-color: $default-content-background-color;
+$checkbox-border-color: $default-input-border-color;
+$select-carret-width: 35px;
+$fixed-bottom-button-width-desktop: 360px;
+$fixed-bottom-button-height: 60px;
+
+$input-number-btn-color: $default-accent-color;
+$input-group-number-color: inherit;
+
+html,
+#teromac-container {
+    background-color: $default-background-color;
+    color: $default-font-color;
+}
+.teromac-layout,
+.teromac-modal-overlay {
+    font-size: $default-font-size * 1px;
+
+    .teromac-clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    hr {
+        height: $default-border-width;
+        margin: $default-spacing-unit 0;
+        color: $default-hr-color;
+        background-color: $default-hr-color;
+    }
+    label {
+        @include font-size($default-font-size, 13);
+    }
+    input,
+    textarea,
+    select {
+        @include font-size($default-font-size, 16);
+        @include border-radius($default-border-radius);
+    }
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .teromac-styled-select {
+        border: $default-border-width solid $default-input-border-color;
+        margin-bottom: $default-spacing-unit;
+    }
+    textarea {
+        resize: none;
+        padding: $default-spacing-unit;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        height: $default-min-tap-area-size;
+        padding: 0 $default-spacing-unit;
+    }
+}
+.teromac-checkbox {
+    input[type="checkbox"]:not(:checked) + label,
+    input[type="checkbox"]:checked + label {
+        padding-left: $default-min-tap-area-size;
+        padding-right: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+        @include vertically-align-text($default-min-tap-area-size);
+
+        &:before,
+        &:after {
+            width: $checkbox-input-size;
+            top: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+            left: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+        }
+        &:before {
+            height: $checkbox-input-size;
+            border: $default-border-width solid $checkbox-border-color;
+            background-color: $checkbox-background-color;
+            @include border-radius($default-border-radius);
+            @include box-shadow(1px 2px 3px 0 rgba(162, 162, 162,  0.5));
+        }
+        &:after {
+            color: $default-accent-color;
+            @include vertically-align-text($checkbox-input-size);
+        }
+    }
+    input[type="checkbox"]:checked + label:before {
+        border-color: $default-accent-color;
+    }
+    label {
+        color: $default-font-color;
+    }
+}
+
+.teromac-styled-select {
+    position: relative;
+    background-color: $default-content-background-color;
+    height: $default-min-tap-area-size;
+    @include border-radius($default-border-radius);
+
+    &:after {
+        color: $default-input-border-color;
+        width: $select-carret-width;
+        @include vertically-align-text($default-min-tap-area-size, $default-border-width, $default-border-width);
+    }
+    &.teromac-error {
+        border-color: $default-error-color;
+    }
+}
+
+.teromac-styled-select select {
+    padding: 0 $select-carret-width 0 $default-spacing-unit;
+    @include vertically-align-text($default-min-tap-area-size, $default-border-width, $default-border-width);
+}
+
+.teromac-btn,
+a.teromac-btn {
+    background-color: $default-accent-color;
+    color: $default-font-color-inverse;
+    border: $default-border-width solid $default-accent-color;
+    @include vertically-align-text($default-input-height, $default-border-width, $default-border-width);
+    padding: 0 $default-spacing-unit;
+    @include font-size($default-font-size, 16);
+    @include border-radius($default-border-radius);
+
+    &.teromac-btn-disabled {
+        background-color: $default-input-border-color;
+    }
+    &.teromac-btn-inverse {
+        background-color: $default-input-fill-color-inverse;
+        border-color: $default-input-fill-color-inverse;
+    }
+    &.teromac-btn-hollow {
+        background-color: $default-content-background-color;
+        color: $default-accent-color;
+    }
+    &.teromac-btn-hollow-inverse {
+        background-color: $default-content-background-color;
+        color: $default-input-border-color;
+        border-color: $default-input-border-color;
+    }
+}
+
+.teromac-input-group {
+    margin-bottom: $default-spacing-unit / 2;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+}
+
+.teromac-input-group-label,
+.teromac-input-group-input {
+    @include vertically-align-text($default-min-tap-area-size);
+    padding: 0 $default-spacing-unit;
+}
+.teromac-input-group-label {
+    @include font-size($default-font-size, 14);
+}
+.teromac-input-group-number {
+    color: $input-group-number-color;
+}
+
+.teromac-input-number-btn-minus,
+.teromac-input-number-btn-plus {
+    width: $default-min-tap-area-size;
+    height: $default-min-tap-area-size;
+    color: $default-accent-color;
+
+    &:before,
+    &:after {
+        width: $checkbox-input-size;
+        top: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+        left: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+    }
+    &:before {
+        height: $checkbox-input-size;
+        border: $default-border-width solid $input-number-btn-color;
+        @include border-radius($default-border-radius);
+    }
+    &:after {
+        @include vertically-align-text($checkbox-input-size);
+    }
+}
+
+.teromac-input-number-value {
+    @include font-size($default-font-size, 24);
+}
+.teromac-price-diff-minus,
+.teromac-price-diff-plus {
+    width: $default-min-tap-area-size;
+    @include font-size($default-font-size, 12);
+}
+
+.teromac-btn-fixed-container-bottom,
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+    @include vertically-align-text($fixed-bottom-button-height);
+    @include font-size($default-font-size, 18);
+}
+
+
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+    margin: ($default-spacing-unit * 2) auto;
+    width: $fixed-bottom-button-width-desktop;
+}
+.teromac-half-container:after {
+    @extend .teromac-clearfix:after;
+}
+.teromac-half {
+    &.teromac-push-left {
+        padding-right: $default-spacing-unit / 2;
+    }
+    &.teromac-push-right {
+        padding-left: $default-spacing-unit / 2;
+    }
+}
+
+.teromac-half-mobile {
+    display: inline-block;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+}
+.teromac-thirds {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    > div {
+        width: 33.3333%;
+        float: left;
+    }
+    .teromac-thirds-left {
+        padding-right: $default-spacing-unit * (2 / 3);
+    }
+    .teromac-thirds-mid {
+        padding: 0 ($default-spacing-unit / 3);
+    }
+    .teromac-thirds-right {
+        padding-left: $default-spacing-unit * (2 / 3);
+    }
+}
+.teromac-quarters {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    .teromac-quarter {
+        float: left;
+        width: 25%;
+        padding-right: $default-spacing-unit;
+    }
+}
+.teromac-success-check {
+    @include font-size($default-font-size, 19);
+
+    &:before {
+        color: $default-input-border-color;
+        border: 3px solid $default-input-border-color;
+        width: $default-min-tap-area-size;
+        @include vertically-align-text($default-min-tap-area-size);
+        margin: $default-spacing-unit auto;
+    }
+}
+
+.teromac-tabbed-header-navigation {
+    padding: 0 ($default-spacing-unit * 3);
+
+    ul {
+        margin: 0 0 ($default-spacing-unit * 4) (-$default-spacing-unit);
+    }
+    li.teromac-active a {
+        color: $default-accent-color;
+        border-bottom: ($default-border-width * 2) solid $default-accent-color;
+    }
+    a {
+        color: $default-font-color;
+        padding: 0 $default-spacing-unit ($default-spacing-unit / 2);
+        @include vertically-align-text($default-min-tap-area-size);
+    }
+}
+.teromac-top-menu {
+    color: $default-font-color-inverse;
+    @include vertically-align-text($header-height);
+}
+.teromac-top-menu-btn {
+    padding: 0 $layout-margin;
+}
+.teromac-menu-toggle:before {
+    margin-left: $default-spacing-unit;
+}
+.teromac-background-image,
+.teromac-header {
+    background-color: $background-image-overlay-color;
+
+    &:after {
+        background-color: $background-image-overlay-color;
+        @include transition(opacity $sticky-header-transition-time $sticky-header-transition-easing);
+    }
+}
+.teromac-background-image,
+.teromac-sticky-header.teromac-scrolled .teromac-header {
+    background-image: url($background-image-url-desktop);
+}
+.teromac-hotel-name {
+    top: -$header-height;
+    letter-spacing: $hotel-name-kerning;
+    color: $default-font-color-inverse;
+    @include vertically-align-text($header-height);
+    @include font-size($default-font-size, 20);
+    @include transition(top $sticky-header-transition-time $sticky-header-transition-easing);
+}
+.teromac-hotel-logo {
+    padding: ($logo-spacing-vertical-desktop + $header-height) 0 $logo-spacing-vertical-desktop;
+    @include transition(top $sticky-header-transition-time $sticky-header-transition-easing);
+    
+    &:after {
+        background-image: url($logo-image-url);
+        height: $logo-height;
+    }
+}
+.teromac-sticky-header.teromac-scrolled .teromac-hotel-logo {
+    top: -$logo-height - $layout-padding;
+}
+.teromac-content-mask-outer {
+    top: $header-height;
+}
+.teromac-content-mask-inner {
+    background-color: $default-content-background-color;
+    @include border-radius($default-border-radius $default-border-radius 0 0);
+}
+.teromac-content > div {
+    background-color: $default-content-background-color;
+    @include border-radius($default-border-radius);
+    padding: $layout-padding 0;
+    margin: 0 auto ($default-spacing-unit * 2);
+}
+
+/* Modal */
+.teromac-modal-overlay {
+    background-color: $default-modal-overlay-color;
+}
+.teromac-modal-content-outer {
+    margin: $default-spacing-unit * 2;
+}
+.teromac-modal-content > div {
+    background-color: $default-content-background-color;
+}
+.teromac-modal-close-btn {
+    top: -$default-min-tap-area-size;
+    width: $default-min-tap-area-size;
+    height: $default-min-tap-area-size;
+    color: $default-font-color-inverse;
+
+    &:after {
+        line-height: $default-min-tap-area-size;
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-half-mobile {
+        width: 50%;
+    }
+    .teromac-half-mobile-push-left,
+    .teromac-half-mobile-push-right {
+        float: left;
+    }
+    .teromac-half-mobile-push-left {
+        padding-right: $default-spacing-unit / 2;
+    }
+    .teromac-half-mobile-push-right {
+        padding-left: $default-spacing-unit / 2;
+    }
+    ///////HERE
+    .teromac-tabbed-header-navigation {
+        padding: 0 ($default-spacing-unit * 2);
+
+        ul {
+            margin-bottom: $default-spacing-unit * 1.5;
+        }
+        li {
+            font-size: 16px;
+        }
+        .teromac-btn {
+            margin-bottom: $default-spacing-unit * 2;
+        }
+    }
+    .teromac-sticky-header {
+        height: $header-height;
+    }
+    .teromac-sticky-header-mobile {
+        .teromac-hotel-name {
+            top: -$header-height;
+        }
+    }
+    .teromac-background-image,
+    .teromac-header {
+        background-image: url($background-image-url-mobile);
+    }
+    .teromac-background-image,
+    .teromac-background-image:after {
+        padding-top: ($background-height-mobile / $background-width-mobile) * 100%;
+    }
+    .teromac-hotel-logo {
+        padding: $logo-spacing-vertical-mobile 0;
+    }
+    .teromac-content {
+        padding: 0 $default-spacing-unit $default-spacing-unit;
+    }
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+$menu-transition-time: $default-transition-time;
+$menu-transition-easing: $default-transition-easing;
+$menu-width-desktop: 400px;
+$menu-width-mobile: 100%;
+$menu-spacing: 6px;
+$menu-background-color: $default-background-color;
+$menu-font-color: $default-font-color;
+$menu-divider-color: rgba(151, 151, 151, .41);
+$menu-button-max-width: 160px;
+$menu-back-button-size: 19px;
+$menu-external-link-icon-size: 30px;
+
+.teromac-menu-overlay {
+    background-color: $default-modal-overlay-color;
+    @include transition(opacity $menu-transition-time $menu-transition-easing);
+}
+////here
+.teromac-menu-container-outer {
+    background-color: $menu-background-color;
+    color: $menu-font-color;
+    @include transition(transform $menu-transition-time $menu-transition-easing);
+    
+    a {
+        color: $menu-font-color;
+    }
+    .teromac-btn,
+    a.teromac-btn {
+        max-width: $menu-button-max-width;
+        color: $default-font-color-inverse;
+    }
+    &.teromac-menu-push-left,
+    &.teromac-menu-push-right,
+    &.teromac-menu-slide-left,
+    &.teromac-menu-slide-right {
+        width: $menu-width-desktop;
+    }
+    &.teromac-menu-push-left,
+    &.teromac-menu-slide-left {
+        @include transform(translateX(-100%));
+    }
+    &.teromac-menu-slide-right,
+    &.teromac-menu-push-right {
+        @include transform(translateX(100%));
+    }
+    .teromac-menu-external-links {
+        padding: 0 ($menu-spacing * 4);
+    }
+}
+.teromac-menu-container-inner {
+    padding: ($menu-spacing * 12) 0;
+}
+.teromac-layout.teromac-menu-open {
+    .teromac-menu-container-outer.teromac-menu-push-left,
+    .teromac-menu-container-outer.teromac-menu-slide-left,
+    .teromac-menu-container-outer.teromac-menu-push-right,
+    .teromac-menu-container-outer.teromac-menu-slide-right {
+        @include transform(translateX(0));
+    }
+    .teromac-menu-push-left + .teromac-body {
+        @include transform(translateX($menu-width-desktop));
+    }
+    .teromac-menu-push-right + .teromac-body {
+        @include transform(translateX(-$menu-width-desktop));
+    }
+}
+.teromac-body {
+    @include transition(transform $menu-transition-time $menu-transition-easing);
+}
+.teromac-menu-close-btn {
+    top: $menu-spacing * 4;
+    right: $menu-spacing * 2;
+    width: $default-min-tap-area-size;
+    @include vertically-align-text($default-min-tap-area-size);
+    color: $default-accent-color;
+}
+.teromac-menu-back-btn,
+.teromac-hotel-website-link {
+    padding: ($menu-spacing * 1.5) ($menu-spacing * 4);
+
+    span {
+        @include vertically-align-text(19px);
+    }
+}
+.teromac-menu-back-btn-icon {
+    display: inline-block;
+    width: $menu-back-button-size;
+    height: $menu-back-button-size;
+    margin-right: $menu-spacing * 3;
+}
+.teromac-submenu li {
+    padding: ($menu-spacing * 3) ($menu-spacing * 4) 0;
+}
+.teromac-submenu-header {
+    color: $default-accent-color;
+    border-bottom: $default-border-width solid $menu-divider-color;
+    margin-top: $menu-spacing * 2;
+    padding: ($menu-spacing * 3) ($menu-spacing * 4);
+    @include font-size($default-font-size, 20);
+}
+.teromac-submenu-form {
+    padding-bottom: $menu-spacing * 2;
+}
+.teromac-submenu-form-is-visible {
+    background-color: $default-content-background-color;
+    margin-top: $menu-spacing * 2;
+
+    .teromac-submenu-form-toggle {
+        padding-bottom: $menu-spacing * 2;
+    }
+}
+.teromac-submenu-authenticated .teromac-half-container {
+    padding: $default-spacing-unit 0 ($default-spacing-unit * 4);
+}
+.teromac-forgot-password-btn {
+    color: $default-accent-color;
+    margin-top: $menu-spacing * 4;
+}
+.teromac-menu-contact {
+    padding: ($menu-spacing * 3) ($menu-spacing * 4);
+}
+.teromac-menu-contact-header {
+    padding: ($menu-spacing * 3) 0;
+    @include font-size($default-font-size, 18);
+}
+.teromac-menu-external-links {
+    padding: ($menu-spacing * 1.5) ($menu-spacing * 4);
+
+    li {
+        margin-right: $menu-spacing * 5;
+
+        a {
+            font-size: $menu-external-link-icon-size;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-menu-container-outer.teromac-menu-push-left,
+    .teromac-menu-container-outer.teromac-menu-push-right,
+    .teromac-menu-container-outer.teromac-menu-slide-left,
+    .teromac-menu-container-outer.teromac-menu-slide-right {
+        width: $menu-width-mobile;
+    }
+    .teromac-layout.teromac-menu-open {
+        .teromac-menu-push-left + .teromac-body {
+            @include transform(translateX($menu-width-mobile));
+        }
+        .teromac-menu-push-right + .teromac-body {
+            @include transform(translateX(-$menu-width-mobile));
+        }
+    }
+}
+
+/* ==========================================================================
+   Plan View
+   ========================================================================== */
+$plan-dates-divider-size: 32px;
+$plan-date-date-color: $default-accent-color;
+
+.teromac-plan-dates-container {
+    color: $default-font-color;
+    margin: ($default-spacing-unit * 2) 0;
+    padding: 0 $default-spacing-unit;
+}
+.teromac-plan-dates-divider {
+    width: $plan-dates-divider-size;
+    height: $plan-dates-divider-size;
+    margin: (-$plan-dates-divider-size / 2) 0 0 (-$plan-dates-divider-size / 2);
+    color: $default-input-border-color;
+}
+.teromac-plan-date-checkin {
+    padding-right: $default-spacing-unit * 2;
+}
+.teromac-plan-date-checkout {
+    padding-left: $default-spacing-unit * 2;
+}
+.teromac-plan-date-label {
+    @include font-size($default-font-size, 14);
+}
+.teromac-plan-date-date {
+    @include font-size($default-font-size, 28);
+    color: $default-accent-color;
+}
+.teromac-plan-year {
+    @include font-size($default-font-size, 16);
+}
+.teromac-plan-inputs-con {
+    margin-top: $default-spacing-unit;
+}
+.teromac-plan-inputs > div {
+    padding: 0 ($default-spacing-unit * 2);
+}
+.teromac-codes-btn {
+    margin-top: ($default-spacing-unit * 2);
+}
+
+/* ==========================================================================
+   Dates View
+   ========================================================================== */
+$calendar-default-font-color: #5C5B5B;
+$calendar-max-width-desired: 310px;
+$calendar-max-width-padded: $calendar-max-width-desired - ($default-spacing-unit * 2);
+$calendar-max-width: $calendar-max-width-padded + (7 - ($calendar-max-width-padded % 7));
+$calendar-header-font-color: #363636;
+$calendar-day-font-color: #7D7C7C;
+$calendar-disabled-font-color: #A3A3A3;
+$calendar-date-in-range-color: #FF9442;
+$calendar-date-sold-out-color: #E5E5E5;
+$calendar-legend-icon-size: 18px;
+$date-legend-label-color: $default-font-color;
+
+.teromac-cal-navigation {
+    padding: 0 ($default-spacing-unit * 2);
+
+    > div {
+        width: $default-min-tap-area-size;
+        height: $default-min-tap-area-size;
+    }
+}
+.teromac-cal-prev,
+.teromac-cal-next {
+    color: $default-input-border-color;
+}
+.teromac-cal-container table {
+    max-width: $calendar-max-width;
+    margin: ($default-spacing-unit * 2) auto ($default-spacing-unit * 3);
+}
+.teromac-cal-header {
+    @include font-size($default-font-size, 20);
+    color: $calendar-header-font-color;
+}
+.teromac-cal-day {
+    color: $calendar-day-font-color;
+    @include font-size($default-font-size, 13);
+}
+.teromac-cal-date .teromac-table-cell {
+    color: $calendar-default-font-color;
+    @include font-size($default-font-size, 16);
+    
+    &:hover,
+    &.teromac-cal-is-start-date,
+    &.teromac-cal-is-in-range,
+    &.teromac-cal-is-end-date,
+    &.teromac-cal-is-temp-end-date {
+        color: $default-font-color-inverse;
+        border-width: $default-border-width;
+    }
+    &.teromac-cal-is-in-range {
+        background-color: $calendar-date-in-range-color;
+        border-color: $calendar-date-in-range-color;
+    }
+    &:hover,
+    &.teromac-cal-is-start-date,
+    &.teromac-cal-is-end-date,
+    &.teromac-cal-is-temp-end-date {
+        background-color: $default-accent-color;
+        border-color: $default-accent-color;
+    }
+    &.teromac-cal-is-start-date {
+        @include border-radius($default-border-radius 0 0 $default-border-radius);
+    }
+    &.teromac-cal-is-end-date,
+    &.teromac-cal-is-temp-end-date {
+        @include border-radius(0 $default-border-radius $default-border-radius 0);
+    }
+    &.teromac-cal-is-past,
+    &.teromac-cal-is-blank {
+        color: $calendar-disabled-font-color;
+        border-color: transparent;
+        background-color: transparent;
+    }
+}
+.teromac-dates-controls {
+    padding: 0 ($default-spacing-unit * 2);
+}
+.teromac-dates-legend {
+    @include vertically-align-text($fixed-bottom-button-height);
+
+    li {
+        margin-right: $default-spacing-unit;
+    }
+}
+.teromac-dates-legend-icon {
+    width: $calendar-legend-icon-size;
+    height: $calendar-legend-icon-size;
+    @include border-radius($default-border-radius);
+}
+.teromac-dates-legend-label {
+    @include vertically-align-text($calendar-legend-icon-size);
+    color: $date-legend-label-color;
+}
+.teromac-dates-legend-reset {
+    color: $default-input-border-color;
+
+    &:after {
+        width: $calendar-legend-icon-size;
+        @include vertically-align-text($calendar-legend-icon-size);
+        @include icon("4", strip-units($calendar-legend-icon-size));
+    }
+}
+.teromac-dates-legend-icon-sold-out {
+    background-color: $calendar-date-sold-out-color;
+}
+.teromac-dates-legend-icon-min-stay {
+    background-color: $calendar-date-in-range-color;
+}
+
+@media (max-width: 768px) {
+    .teromac-cal-container {
+        border-bottom: $default-border-width solid $default-hr-color;
+        margin-bottom: $default-spacing-unit * 2;
+    }
+    .teromac-dates-controls {
+        height: ($fixed-bottom-button-height * 2) + ($default-spacing-unit * 2);
+    }
+    .teromac-dates-legend {
+        bottom: $fixed-bottom-button-height;
+        background-color: $default-content-background-color;
+        @include box-shadow(0 2px 13px 0 rgba(87, 87, 87, 0.5));
+    }
+}
+
+/* ==========================================================================
+   Codes View
+   ========================================================================== */
+$code-icon-size: 50px;
+$code-clear-btn-size: 28px;
+
+#teromac-codes-view h2 {
+    @include font-size($default-font-size, 18);
+    padding: $default-spacing-unit ($default-spacing-unit * 1.5);
+    margin: 0 0 ($default-spacing-unit * 1.5);
+}
+.teromac-code {
+    padding: $default-spacing-unit ($default-spacing-unit * 1.5);
+    border-top: $default-border-width solid $default-hr-color;
+
+    h3 {
+        @include font-size($default-font-size, 15);
+    }
+}
+.teromac-code-value {
+    line-height: $code-icon-size;
+    margin-left: ($default-spacing-unit * 1.5 + $code-icon-size);
+
+    div {
+        color: $default-accent-color;
+    }
+}
+.teromac-code-active .teromac-code-value {
+    padding: ($code-clear-btn-size / 2) ($default-spacing-unit * 1.5 + $code-clear-btn-size) ($code-clear-btn-size / 2) 0;
+
+    h3 {
+        @include font-size($default-font-size, 13);
+    }
+    div {
+        @include font-size($default-font-size, 15);
+    }
+}
+.teromac-code-focused.teromac-code-active .teromac-code-value h3,
+.teromac-code-focused .teromac-code-value h3 {
+    line-height: $code-icon-size;
+    @include font-size($default-font-size, 15);
+}
+.teromac-code-icon {
+    width: $code-icon-size;
+    height: $code-icon-size;
+    color: $default-input-border-color;
+}
+.teromac-code-promoCode .teromac-code-icon:after {
+    @include icon("!", strip-units($code-icon-size));
+}
+.teromac-code-frequentGuestId .teromac-code-icon:after {
+    @include icon("5", strip-units($code-icon-size));
+}
+.teromac-code-corporateId .teromac-code-icon:after {
+    @include icon("N", strip-units($code-icon-size));
+}
+.teromac-code-aaa .teromac-code-icon:after {
+    @include icon("Y", strip-units($code-icon-size));
+}
+.teromac-code-aarp .teromac-code-icon:after {
+    @include icon("Y", strip-units($code-icon-size));
+}
+.teromac-code-active .teromac-code-icon,
+.teromac-code-focused .teromac-code-icon {
+    color: $default-accent-color;
+}
+.teromac-clear-code-btn {
+    margin-top: -$code-clear-btn-size / 2;
+    width: $code-clear-btn-size;
+    height: $code-clear-btn-size;
+    right: ($default-spacing-unit * 1.5);
+    color: $default-input-border-color;
+}
+.teromac-code-error {
+    color: $default-error-color;
+    @include font-size($default-font-size, 15);
+    margin-bottom: $default-spacing-unit;
+}
+.teromac-code-input {
+    margin-bottom: $code-icon-size - $default-min-tap-area-size;
+
+    &.teromac-error input[type="text"] {
+        border-color: $default-error-color;
+        margin-bottom: $default-spacing-unit / 2;
+    }
+}
+.teromac-code-input-controls > div {
+    padding: 0 ($default-spacing-unit / 2);
+}
+
+/* ==========================================================================
+   Rooms View
+   ========================================================================== */
+$room-mobile-header-height: 22px;
+$room-filter-height: 30px;
+$room-sort-height: 33px;
+$rooms-by-rate-border-color: #E6E6E6;
+$rooms-by-rate-border-width-active: 5px;
+$room-image-width: 260px;
+$room-image-height: 158px;
+$room-type-rate-container-width: 90px;
+$room-special-color: #6CFFC9;
+
+.teromac-mobile-rooms-view-header {
+    padding: 0 ($default-spacing-unit * 2);
+    
+    p {
+        @include font-size($default-font-size, 18);
+        @include vertically-align-text($room-mobile-header-height);
+    }
+}
+.teromac-filter-toggle-btn {
+    @include font-size($default-font-size, 13);
+    @include vertically-align-text($room-mobile-header-height, $default-border-width, $default-border-width);
+    border: $default-border-width solid $default-input-border-color;
+    padding: 0 $default-spacing-unit;
+    @include border-radius($default-border-radius);
+
+    &:before {
+        margin-right: $default-spacing-unit / 4;
+    }
+}
+.teromac-room-filters-container {
+    ul {
+        padding: 0 $default-spacing-unit;
+    }
+    li {
+        margin: 0 ($default-spacing-unit / 4);
+        padding: 0 $default-spacing-unit;
+        border: $default-border-width solid $default-input-border-color;
+        @include border-radius($default-border-radius);
+        @include vertically-align-text($room-filter-height, $default-border-width, $default-border-width);
+    }
+}
+.teromac-item-view-left,
+.teromac-item-view-right {
+    margin: ($default-spacing-unit * 2.5) 0 0;
+}
+.teromac-item-view-left {
+    padding: 0 $default-spacing-unit 0 ($default-spacing-unit * 2);
+}
+.teromac-item-view-right {
+    padding: 0 ($default-spacing-unit * 2) 0 $default-spacing-unit;
+}
+.teromac-room-sort {
+    margin-bottom: $default-spacing-unit * 1.5;
+
+    li {
+        border: $default-border-width solid $default-input-border-color;
+        @include vertically-align-text($room-sort-height, $default-border-width, $default-border-width);
+
+        &:first-of-type {
+            border-right-color: $default-accent-color;
+            @include border-radius($default-border-radius 0 0 $default-border-radius);
+        }
+        &:last-of-type {
+            @include border-radius(0 $default-border-radius $default-border-radius 0);
+        }
+        &.teromac-active {
+            border-color: $default-accent-color;
+            color: $default-accent-color;
+        }
+    }
+}
+.teromac-items-by-rate {
+    border-bottom: $default-border-width solid $rooms-by-rate-border-color;
+    @include border-radius($default-border-radius);
+
+    li {
+        padding: $default-spacing-unit * 1.5;
+        border-color: $rooms-by-rate-border-color;
+        border-width: $default-border-width $default-border-width 0;
+
+        &:nth-child(odd) {
+            background-color: $default-accent-color-inverse;
+        }
+        &.teromac-active {
+            border-color: $default-accent-color;
+            outline: $rooms-by-rate-border-width-active solid $default-accent-color;
+            outline-offset: -$rooms-by-rate-border-width-active + $default-border-width;
+        }
+        a {
+            color: $default-font-color;
+        }
+    }
+    h2 {
+        @include font-size($default-font-size, 20);
+    }
+    .teromac-label,
+    .teromac-value {
+        @include font-size($default-font-size, 18);
+    }
+    .teromac-value {
+        color: $default-accent-color;
+    }
+    li p {
+        margin-top: $default-spacing-unit;
+        @include font-size($default-font-size, 14);
+    }
+    .teromac-view-rate-btn-mobile {
+        @include font-size($default-font-size, 14);
+        color: $default-input-border-color;
+
+        &:after {
+            margin-left: $default-spacing-unit / 2;
+        }
+    }
+}
+.teromac-items-by-item li {
+    margin-bottom: $default-border-width;
+    color: $default-font-color-inverse;
+
+    &.teromac-active {
+        border-color: $default-accent-color;
+        outline: $rooms-by-rate-border-width-active solid $default-accent-color;
+        outline-offset: -$rooms-by-rate-border-width-active;
+    }
+    a {
+        color: $default-font-color-inverse;
+    }
+    .teromac-item-image {
+        padding-top: ($room-image-height / $room-image-width) * 100%;
+    }
+    .teromac-room-type-copy,
+    .teromac-room-type-rate-container {
+        padding: $default-spacing-unit;
+    }
+    .teromac-room-type-copy {
+        padding-right: $room-type-rate-container-width + $default-spacing-unit;
+    }
+    .teromac-room-type-rate-container {
+        width: $room-type-rate-container-width;
+        background-color: $default-modal-overlay-color;
+    }
+    .teromac-item-name,
+    .teromac-room-type-rate-value {
+        @include font-size($default-font-size, 22);
+    }
+    .teromac-item-name,
+    .teromac-room-type-special {
+        @include text-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    .teromac-room-type-max-guests,
+    .teromac-room-type-rate-label {
+        @include font-size($default-font-size, 13);
+    }
+    .teromac-special-badge {
+        @include font-size($default-font-size, 10);
+        padding: ($default-spacing-unit / 2) $default-spacing-unit;
+        border: ($default-border-width * 2) solid $default-font-color-inverse;
+        @include border-radius($default-border-radius);
+        background-color: $default-modal-overlay-color;
+        margin-bottom: $default-spacing-unit / 2;
+    }
+    .teromac-room-type-special {
+        color: $room-special-color;
+        @include font-size($default-font-size, 14);
+    }
+    &.teromac-special .teromac-room-type-rate-value {
+        color: $room-special-color;
+    }
+}
+.teromac-item-view-right {
+    h3 {
+        @include font-size($default-font-size, 18);
+        @include vertically-align-text($room-sort-height);
+        margin-bottom: $default-spacing-unit * 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-room-sort li {
+        border: none;
+
+        &.teromac-active:after {
+            content: "";
+            display: block;
+            height: $default-border-width * 2;
+            background-color: $default-accent-color;
+            margin: 0 auto;
+            max-width: 120px;
+        }
+    }
+    .teromac-item-view-left,
+    .teromac-item-view-right {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+}
+
+/* ==========================================================================
+   Rates View
+   ========================================================================== */
+$rates-room-image-width: 300px;
+$rates-room-image-height: 200px;
+$rates-room-detail-header-height: 27px;
+$rates-room-detail-height-closed: 75px;
+$rates-room-view-toggle-width: 116px;
+$rates-room-view-toggle-height: 30px;
+$rate-controls-width: 260px;
+////
+.teromac-room-image-slider-con-outer,
+.teromac-room-image-slide-inner {
+    padding-top: ($rates-room-image-height / $rates-room-image-width) * 100%;
+}
+.teromac-item-detail-header {
+    margin: ($default-spacing-unit * 3) 0 ($default-spacing-unit * 2);
+}
+.teromac-item-detail-header-name,
+.teromac-item-detail-header-left {
+    @include vertically-align-text($rates-room-detail-header-height);
+}
+.teromac-item-detail-header-name {
+    @include font-size($default-font-size, 22);
+}
+.teromac-item-detail-header-left {
+    @include font-size($default-font-size, 15);
+}
+.teromac-item-detail-header-left-label {
+    margin-right: $default-spacing-unit / 2;
+}
+.teromac-room-details-outer {
+    margin-bottom: $rates-room-view-toggle-height;
+}
+.teromac-room-details-inner {
+    height: $rates-room-detail-height-closed;
+}
+.teromac-room-details-view-toggle-outer {
+    height: $rates-room-detail-height-closed;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, #FFF 75%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, #FFF 75%);
+}
+.teromac-room-details-view-toggle {
+    width: $rates-room-view-toggle-width;
+    margin-left: -$rates-room-view-toggle-width / 2;
+    border-color: $default-hr-color;
+    background-color: $default-hr-color;
+    color: $default-font-color;
+    @include vertically-align-text($rates-room-view-toggle-height);
+    @include border-radius($default-border-radius);
+}
+.teromac-room-details-outer.teromac-show-full-room-details {
+    padding-bottom: $rates-room-view-toggle-height;
+}
+.teromac-room-description,
+.teromac-room-amenities {
+    @include font-size($default-font-size, 13);
+    margin-bottom: $default-spacing-unit * 2;
+}
+.teromac-room-amenities-header {
+    margin: $default-spacing-unit 0;
+}
+.teromac-room-amenities-subheader {
+    @include font-size($default-font-size, 14);
+    margin: $default-spacing-unit 0 ($default-spacing-unit * 2);
+}
+.teromac-rate-toggle {
+    background-color: $default-input-border-color;
+    color: $default-font-color-inverse;
+    padding: 0 $default-min-tap-area-size 0 $default-spacing-unit;
+    @include font-size($default-font-size, 18);
+    @include vertically-align-text($default-min-tap-area-size);
+
+    &:after {
+        width: $default-min-tap-area-size;
+        height: $default-min-tap-area-size;
+    }
+}
+.teromac-rate-details {
+    padding: $default-spacing-unit * 2;
+}
+.teromac-rate {
+    margin-bottom: $default-border-width;
+
+    &.teromac-rate-is-visible .teromac-rate-toggle {
+        background-color: $default-accent-color;
+    }
+}
+.teromac-rate-details-copy {
+    @include font-size($default-font-size, 14);
+}
+.teromac-rate-controls {
+    margin: ($default-spacing-unit * 3) auto 0;
+    max-width: $rate-controls-width;
+    overflow: hidden;
+}
+.teromac-rate-controls-left {
+    width: 65%;
+    padding-right: $default-spacing-unit / 2;
+}
+.teromac-rate-controls-right {
+    width: 35%;
+    padding-left: $default-spacing-unit / 2;
+}
+.teromac-btn.teromac-btn-add-to-compare,
+.teromac-btn.teromac-btn-remove-from-compare {
+    margin-top: $default-spacing-unit;
+    background-color: $default-hr-color;
+    color: $default-font-color;
+    @include font-size($default-font-size, 12);
+
+    &:before {
+        margin-right: $default-spacing-unit * 1.5;
+    }
+}
+.teromac-btn.teromac-btn-add-to-compare {
+    border-color: $default-hr-color;
+}
+.teromac-btn.teromac-btn-remove-from-compare {
+    @include box-shadow(1px 3px 4px rgba(163, 163, 163, 0.5));
+
+    &:before {
+        color: $default-accent-color;
+    }
+}
+.teromac-room-image-navigation-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    cursor: pointer;
+    color: $default-font-color-inverse;
+
+    &.teromac-prev {
+        left: 0;
+
+        &:after {
+            @include icon("w", strip-units($default-min-tap-area-size));
+        }
+    }
+    &.teromac-next {
+        right: 0;
+
+        &:after {
+            @include icon("v", strip-units($default-min-tap-area-size));
+        }
+    }
+    &.teromac-prev:after,
+    &.teromac-next:after {
+        display: block;
+        @include text-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+        width: $default-min-tap-area-size;
+        text-align: center;
+        @include vertically-align-text(60px);
+    }
+}
+.teromac-room-image-navigation-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    ul {
+        @include plain-list();
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+    }
+    button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        color: transparent;
+        border: 0;
+        outline: none;
+        background: transparent;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: black;
+            @include border-radius(50%);
+        }
+    }
+}
+
+/* ==========================================================================
+   Checkout View
+   ========================================================================== */
+#teromac-checkout-view {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    h2 {
+        @include font-size($default-font-size, 18);
+        margin: 0 0 ($default-spacing-unit * 2);
+        padding: 0 ($default-spacing-unit * 3);
+    }
+}
+.teromac-checkout-header {
+    .teromac-btn {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-checkout-view h2 {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+}
+
+/* ==========================================================================
+   Checkout Guest View
+   ========================================================================== */
+#teromac-guest-view form {
+    padding: 0 ($default-spacing-unit * 2.5);
+}
+.teromac-input-container {
+    padding: 0 ($default-spacing-unit / 2);
+}
+.teromac-create-account-input-container {
+    clear: both;
+    margin: 0 0 $default-spacing-unit (-($default-min-tap-area-size - $checkbox-input-size) / 2);
+
+    .teromac-checkbox input[type="checkbox"] + label,
+    span {
+        @include font-size($default-font-size, 18)
+    }
+    .teromac-checkbox input[type="checkbox"] + label {
+        padding-right: 0;
+    }
+    span {
+        color: $default-accent-color;
+        cursor: pointer;
+    }
+}
+.teromac-special-requests-input-container {
+    padding-top: $default-spacing-unit * 4;
+}
+@media (max-width: 768px) {
+    #teromac-guest-view form {
+        padding: 0 ($default-spacing-unit * 1.5);
+    }
+}
+
+/* ==========================================================================
+   Checkout Payment View
+   ========================================================================== */
+#teromac-payment-view form {
+    padding: 0 ($default-spacing-unit * 2.5);
+
+    hr {
+        margin: ($default-spacing-unit * 3) 0;
+    }
+}
+.teromac-payment-view-left,
+.teromac-payment-view-bottom {
+    padding-right: $default-spacing-unit * 3.5;
+}
+.teromac-payment-view-right {
+    padding-left: $default-spacing-unit * 3.5;
+}
+.teromac-payment-view-bottom {
+    margin-bottom: $default-spacing-unit * 8;
+}
+
+@media (max-width: 768px) {
+    #teromac-payment-view form {
+        padding: 0 ($default-spacing-unit * 1.5);
+    }
+}
+
+/* ==========================================================================
+   Checkout Policies View
+   ========================================================================== */
+#teromac-policies-view form {
+    padding: 0 ($default-spacing-unit * 3);
+
+    hr {
+        margin: ($default-spacing-unit * 3) 0;
+    }
+}
+.teromac-policy-view-left,
+.teromac-policy-view-right {
+    margin-bottom: $default-spacing-unit * 5;
+
+    p {
+        @include font-size($default-font-size, 14);
+    }
+}
+.teromac-policy-view-left {
+    padding-right: $default-spacing-unit * 4;
+    border-right: $default-border-width solid $default-hr-color;
+}
+.teromac-policy-view-right {
+    padding-left: $default-spacing-unit * 4;
+
+    p {
+        padding-left: ($default-min-tap-area-size - $checkbox-input-size) / 2;
+    }
+    a {
+        color: $default-font-color;
+    }
+}
+@media (max-width: 768px) {
+    #teromac-policies-view form {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+}
+
+/* ==========================================================================
+   Customize View
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+}
+
+/* ==========================================================================
+   Summary Bar
+   ========================================================================== */
+$summary-bar-height: $default-min-tap-area-size;
+
+.teromac-summary-bar-placeholder {
+    top: -$default-spacing-unit * 2;
+    height: $summary-bar-height;
+
+    &.teromac-sticky-summary-bar-fixed .teromac-summary-bar-outer {
+        top: $header-height;
+    }
+}
+.teromac-summary-bar-inner {
+    background-color: $default-accent-color;
+    color: $default-font-color-inverse;
+    @include vertically-align-text($summary-bar-height);
+    @include border-radius($default-border-radius $default-border-radius 0 0);
+}
+.teromac-summary-bar-left {
+    width: 72%;
+    padding: 0 ($default-spacing-unit * 3);
+    color: $default-font-color-inverse;
+    @include font-size($default-font-size, 18);
+
+    li {
+        margin-right: $default-spacing-unit * 2;
+    }
+}
+.teromac-summary-bar-dates span,
+.teromac-summary-bar-adults,
+.teromac-summary-bar-children,
+.teromac-summary-bar-rooms,
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before,
+.teromac-summary-bar-adults span,
+.teromac-summary-bar-children span,
+.teromac-summary-bar-rooms span {
+    @include vertically-align-text($summary-bar-height);
+}
+.teromac-summary-bar-dates {
+    margin-right: $default-spacing-unit * 4;
+}
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before {
+    margin-right: $default-spacing-unit;
+    @include vertically-align-text($summary-bar-height);
+}
+.teromac-summary-bar-right {
+    width: 28%;
+}
+.teromac-summary-bar-total {
+    background-color: #3A1500;
+    padding: 0 ($default-spacing-unit * 2);
+    color: $default-font-color-inverse;
+    
+    &:after,
+    span {
+        @include vertically-align-text($summary-bar-height);
+    }
+    &:after,
+    .teromac-label {
+        opacity: 0.7;
+    }
+    .teromac-value {
+        @include font-size($default-font-size, 26);
+        margin: 0 $default-spacing-unit 0 ($default-spacing-unit * 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-summary-bar-left {
+        padding: 0 $default-spacing-unit;
+        @include font-size($default-font-size, 13);
+
+        ul li {
+            margin-right: $default-spacing-unit / 2;
+
+            span {
+                @include font-size($default-font-size, 12);
+            }
+        }
+    }
+    .teromac-summary-bar-dates {
+        margin-right: $default-spacing-unit;
+    }
+    .teromac-summary-bar-adults:before,
+    .teromac-summary-bar-children:before,
+    .teromac-summary-bar-rooms:before {
+        margin-right: $default-spacing-unit / 5;
+    }
+    .teromac-summary-bar-total {
+        padding: 0 $default-spacing-unit;
+
+        > div {
+            height: $summary-bar-height;
+            margin-right: $default-spacing-unit / 2;
+            padding: ($default-spacing-unit / 2) 0;
+        }
+        .teromac-label {
+            @include font-size($default-font-size, 10);
+        }
+        .teromac-value {
+            @include font-size($default-font-size, 18);
+        }
+    }
+}
+
+/* ==========================================================================
+   Compare View
+   ========================================================================== */
+$compare-image-width: 300px;
+$compare-image-height: 200px;
+$compare-arrows-background-color: #818181;
+
+#teromac-compare-view h2 {
+    margin: ($default-spacing-unit * 3) 0;
+    @include font-size($default-font-size, 22);
+    padding: 0 ($default-spacing-unit * 2);
+}
+.teromac-compare-items-container-outer {
+    height: 800px;
+}
+.teromac-compare-items-slider,
+.teromac-compare-navigation-outer {
+    padding: 0 ($default-spacing-unit * 2);
+}
+.teromac-compare-items-slider .slick-track {
+    border: $default-border-width solid $default-hr-color;
+}
+.teromac-compare-nagivation-container {
+    top: 96px;
+}
+.teromac-compare-navigation-mid {
+    width: 33.3%;
+    border: $default-border-width solid transparent;
+}
+.teromac-compare-navigation-inner {
+    padding-top: ($compare-image-height / $compare-image-width) * 100%;
+}
+.teromac-compare-navigation {
+    width: $default-spacing-unit * 3.5;
+    background-color: $compare-arrows-background-color;
+    color: $default-font-color-inverse;
+}
+.teromac-compare-item {
+    border: $default-border-width solid $default-hr-color;
+    padding: ($default-spacing-unit * 5) 0 ($default-spacing-unit * 4);
+
+    h3,
+    .teromac-compare-item-body {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+    h3 {
+        @include font-size($default-font-size, 22);
+        @include vertically-align-text(30px);
+    }
+    .teromac-compare-image {
+        margin: ($default-spacing-unit * 1.5) 0;
+        padding-top: ($compare-image-height / $compare-image-width) * 100%;
+    }
+    .teromac-compare-price {
+        margin: ($default-spacing-unit * 2) 0 ($default-spacing-unit * 3);
+
+        .teromac-value {
+            @include font-size($default-font-size, 26);
+        }
+    }
+    .teromac-btn {
+        margin-bottom: $default-spacing-unit;
+    }
+}
+.teromac-compare-item-remove-btn {
+    position: absolute;
+    top: $default-spacing-unit;
+    right: $default-spacing-unit;
+    color: $default-input-border-color;
+    cursor: pointer;
+    
+    &:after {
+        @include icon("A", 22);
+    }
+}
+
+/* Compare button on rates view */
+$compare-btn-height-mobile: 57px;
+
+a.teromac-compare-btn-desktop {
+    top: -($default-min-tap-area-size - $default-spacing-unit);
+    right: -($default-spacing-unit * 2);
+    background-color: $default-content-background-color;
+    border-color: $default-font-color;
+    color: $default-font-color;
+}
+.teromac-compare-btn-container-mobile {
+    height: $compare-btn-height-mobile;
+}
+a.teromac-compare-btn-mobile {
+    background-color: $default-content-background-color;
+    color: $default-font-color;
+    @include vertically-align-text($compare-btn-height-mobile);
+    @include box-shadow(0 2px 13px 0 rgba(87, 87, 87, 0.5));
+
+    .teromac-value {
+        color: $default-accent-color;
+    }
+}
+
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+/* Add room modal */
+#teromac-add-room-modal-view {
+    width: 400px;
+    padding: ($default-spacing-unit * 4) ($default-spacing-unit * 5);
+    text-align: center;
+
+    p {
+        margin: ($default-spacing-unit * 3) 0 ($default-spacing-unit * 4);
+    }
+    .teromac-btn {
+        display: block;
+    }
+}
+
+/* Share modal */
+#teromac-share-modal-view {
+    width: 400px;
+    padding: ($default-spacing-unit * 6) ($default-spacing-unit * 7) ($default-spacing-unit * 4);
+    text-align: center;
+    
+    h2 {
+        @include font-size($default-font-size, 19);
+        font-weight: normal;
+    }
+    a {
+        color: $default-font-color;
+    }
+    .teromac-email-share-btn {
+        display: block;
+
+        &:before,
+        span {
+            display: block;
+        }
+        span {
+            @include font-size($default-font-size, 19)
+        }
+        &:before {
+            @include icon("d", 80);
+        }
+    }
+    .teromac-share-link-container {
+        margin: ($default-spacing-unit * 2) 0;
+    }
+    .teromac-share-link {
+        display: block;
+        @include font-size($default-font-size, 14);
+        white-space: pre-wrap;      /* CSS3 */   
+        white-space: -moz-pre-wrap; /* Firefox */    
+        white-space: -pre-wrap;     /* Opera <7 */   
+        white-space: -o-pre-wrap;   /* Opera 7 */    
+        word-wrap: break-word;      /* IE */
+    }
+    .teromac-btn-container {
+        text-align: center;
+    }
+    .teromac-btn {
+        min-width: 145px;
+    }
+}
+
+$largest-calendar-icon-dimension: 74px;
+
+/* Add to calendar modal */
+#teromac-add-to-calendar-modal-view {
+    width: 430px;
+
+    h2 {
+        @include font-size($default-font-size, 19);
+        font-weight: normal;
+        margin: 0;
+        padding-top: $default-spacing-unit * 3;
+        text-align: center;
+    }
+    .teromac-calendar-downloads {
+        @include plain-list();
+        padding: ($default-spacing-unit * 2) 0;
+    }
+    .teromac-calendar-download {
+        @include font-size($default-font-size, 17);
+        @include vertically-align-text($largest-calendar-icon-dimension + ($default-spacing-unit * 2));
+        padding: 0 ($default-spacing-unit * 3);
+        border-bottom: $default-border-width solid $default-hr-color;
+        cursor: pointer;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            width: $largest-calendar-icon-dimension;
+            height: $largest-calendar-icon-dimension;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: $default-spacing-unit * 2;
+            vertical-align: middle;
+        }
+    }
+    .teromac-calendar-download-outlook:before {
+        background-image: url("/assets/images/ui/calendar-icons/outlook.png");
+    }
+    .teromac-calendar-download-ical:before {
+        background-image: url("/assets/images/ui/calendar-icons/ical.png");
+    }
+    .teromac-calendar-download-google:before {
+        background-image: url("/assets/images/ui/calendar-icons/google.png");
+    }
+    .teromac-calendar-download-yahoo:before {
+        background-image: url("/assets/images/ui/calendar-icons/yahoo.png");
+    }
+}
+
+@media (max-width: 768px) {
+    /* Add room modal */
+    #teromac-add-room-modal-view {
+        width: 320px - ($default-spacing-unit * 2);
+    }
+    
+    /* Share modal */
+    #teromac-share-modal-view {
+        width: 320px - ($default-spacing-unit * 2);
+        padding: ($default-spacing-unit * 3) 0 ($default-spacing-unit * 2);
+
+        .teromac-share-link {
+            margin: 0 ($default-spacing-unit * 2);
+        }
+    }
+
+    /* Add to calendar modal */
+    #teromac-add-to-calendar-modal-view {
+        width: 320px - ($default-spacing-unit * 2);
+    }
+}
+
+/* ==========================================================================
+   Upgrade View
+   ========================================================================== */
+#teromac-upgrade-view {
+    max-width: 400px;
+
+    h2,
+    .teromac-item-detail-header,
+    .teromac-room-amenities-container,
+    .teromac-half-container {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+    h2 {
+        @include font-size($default-font-size, 18);
+        font-weight: normal;
+        text-align: center;
+        margin: 0;
+    }
+    .teromac-room-amenities-container {
+        margin-top: $default-spacing-unit * 2;
+    }
+    .teromac-item-detail-header-left {
+        color: $default-input-border-color;
+    }
+    .teromac-half-container {
+        max-width: 300px;
+        margin: ($default-spacing-unit * 3) auto;
+
+        .teromac-btn {
+            display: block;
+        }
+    }
+}
+.teromac-upgrade-image {
+    position: relative;
+    margin-top: -$default-spacing-unit;
+    padding-top: ($room-image-height / $room-image-width) * 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.teromac-upgrade-items {
+    position: relative;
+    display: block;
+    list-style-type: none;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+    text-align: center;
+    padding: 0 $default-spacing-unit $default-spacing-unit;
+    margin-top: $default-spacing-unit * 2;
+}
+.teromac-upgrade-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: $default-font-size * 1px;
+    padding: $default-spacing-unit ($default-spacing-unit * 3);
+    border: $default-border-width solid $default-hr-color;
+
+    &.teromac-active {
+        background-color: $default-accent-color;
+        border-color: $default-accent-color;
+        color: $default-font-color-inverse;
+
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: $default-spacing-unit solid transparent;
+            border-right: $default-spacing-unit solid transparent;
+            border-top: $default-spacing-unit solid $default-accent-color;
+            position: absolute;
+            bottom: -$default-spacing-unit;
+            left: 50%;
+            margin-left: -$default-spacing-unit;
+        }
+    }
+    .teromac-value {
+        @include font-size($default-font-size, 22);
+    }
+    .teromac-label {
+        @include font-size($default-font-size, 14);
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-upgrade-view h2 {
+        text-align: left;
+    }
+}
+
+/* ==========================================================================
+   Account View
+   ========================================================================== */
+#teromac-account-view {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    h2 {
+        @include font-size($default-font-size, 18);
+        margin: 0 0 ($default-spacing-unit * 2);
+        padding: 0 ($default-spacing-unit * 3);
+    }
+}
+.teromac-account-padding {
+    padding: 0 ($default-spacing-unit * 3);
+}
+
+/* ==========================================================================
+   Account Profile View
+   ========================================================================== */
+#teromac-profile-view {
+    .teromac-btn {
+        margin-top: $default-spacing-unit * 3;
+        min-width: 170px;
+    }
+    h3 {
+        font-weight: normal;
+        @include font-size($default-font-size, 18);
+        margin: 0 0 ($default-spacing-unit * 2);
+    }
+}
+.teromac-profile-view-left {
+    padding-right: $default-spacing-unit * 4;
+    border-right: $default-border-width solid $default-hr-color;
+
+    .teromac-label {
+        @include font-size($default-font-size, 13);
+    }
+    .teromac-value {
+        font-weight: bold;
+        margin-bottom: $default-spacing-unit * 2;
+    }
+}
+.teromac-profile-view-right {
+    padding-left: $default-spacing-unit * 4;
+
+}
+
+@media (max-width: 768px) {
+    #teromac-profile-view {
+        h3 {
+            padding-bottom: $default-spacing-unit;
+            border-bottom: $default-border-width solid $default-hr-color;
+        }
+        .teromac-btn-container {
+            text-align: center;
+            margin-bottom: $default-spacing-unit * 3;
+        }
+    }
+}
+
+/* ==========================================================================
+   Account Reservations View
+   ========================================================================== */
+#teromac-reservations-view .teromac-account-padding > .teromac-btn {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+}
+.teromac-order-confirmation-success-message {
+    text-align: center;
+    background-color: $default-hr-color;
+    margin-bottom: $default-spacing-unit * 2;
+}
+.teromac-success-check-left {
+    position: relative;
+    display: inline-block;
+    padding: ($default-spacing-unit * 3) $default-spacing-unit;
+
+    &:before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -($default-min-tap-area-size / 2);
+        color: $default-input-border-color;
+        border: 3px solid $default-input-border-color;
+        width: $default-min-tap-area-size;
+        @include vertically-align-text($default-min-tap-area-size);
+        margin-right: $default-spacing-unit;
+        @include icon("7", 27);
+        @include border-radius(50%);
+    }
+    div {
+        @include font-size($default-font-size, 20);
+        font-weight: bold;
+    }
+}
+.teromac-upcoming-reservations {
+    @include plain-list();
+}
+.teromac-upcoming-reservation {
+    @include box-shadow(0 2px 4px 0 rgba(193, 187, 187, 0.5));
+    @include border-radius($default-border-radius);
+    margin-bottom: $default-spacing-unit * 3;
+}
+.teromac-upcoming-reservation-header {
+    background-color: $default-accent-color;
+    color: $default-font-color-inverse;
+    font-weight: bold;
+    padding: $default-spacing-unit ($default-spacing-unit * 3);
+    @include border-radius($default-border-radius $default-border-radius 0 0);
+
+    &:before {
+        @include icon("9", 22);
+        vertical-align: bottom;
+        margin-right: $default-spacing-unit;
+    }
+}
+.teromac-upcoming-reservation-body {
+    padding: $default-spacing-unit * 3;
+    overflow: hidden;
+
+    .teromac-label {
+        @include font-size($default-font-size, 15);
+    }
+    .teromac-value {
+        font-weight: bold;
+        @include font-size($default-font-size, 18);
+        margin-bottom: $default-spacing-unit * 2;
+    }
+}
+.teromac-upcoming-reservation-left,
+.teromac-upcoming-reservation-right {
+    width: 50%;
+    float: left;
+}
+.teromac-upcoming-reservation-left {
+    padding-right: $default-spacing-unit * 2;
+}
+.teromac-upcoming-reservation-right {
+    padding-left: $default-spacing-unit * 2;
+
+    .teromac-half-container {
+        margin-bottom: $default-spacing-unit;
+    }
+    .teromac-btn-inverse {
+        color: $default-font-color;
+        background-color: $default-hr-color;
+        border-color: $default-hr-color;
+    }
+    .teromac-btn {
+        display: block;
+        margin-bottom: $default-spacing-unit;
+    }
+}
+.teromac-btn-view-details-icon:before,
+.teromac-btn-modify-icon:before,
+.teromac-btn-cancel-icon:before {
+    vertical-align: middle;
+    margin-right: $default-spacing-unit;
+}
+.teromac-btn-view-details-icon:before {
+    @include icon("2", 18);
+}
+.teromac-btn-modify-icon:before {
+    @include icon("Y", 18);
+}
+.teromac-btn-cancel-icon:before {
+    @include icon("A", 18);
+}
+
+@media (max-width: 768px) {
+    #teromac-reservations-view .teromac-account-padding > .teromac-btn {
+        width: 100%;
+    }
+    .teromac-upcoming-reservation-header  {
+        padding: $default-spacing-unit ($default-spacing-unit * 2);
+    }
+    .teromac-upcoming-reservation-body {
+        padding: $default-spacing-unit;
+    }
+    .teromac-upcoming-reservation-left,
+    .teromac-upcoming-reservation-right {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* ==========================================================================
+   Account Payment Methods View
+   ========================================================================== */
+$credit-card-icon-width: 59px;
+$credit-card-icon-height: 37px;
+
+#teromac-payment-methods-view .teromac-btn {
+    &.teromac-desktop-only {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+    }
+    &.teromac-mobile-only {
+        width: 100%;
+        margin-bottom: $default-spacing-unit * 2;
+    }
+}
+.teromac-payment-methods {
+    @include plain-list();
+    
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+}
+.teromac-payment-method-outer {
+    float: left;
+    width: 50%;
+    padding-bottom: $default-min-tap-area-size + ($default-spacing-unit * 2);
+}
+.teromac-payment-method-outer:nth-child(odd){
+    padding-right: $default-spacing-unit * 1.5;
+    clear: left;
+}
+.teromac-payment-method-outer:nth-child(even){
+    padding-left: $default-spacing-unit * 1.5;
+}
+.teromac-payment-method-inner {
+    position: relative;
+    padding: $default-spacing-unit;
+    border: $default-border-width solid $default-hr-color;
+    @include box-shadow(0 2px 4px 0 rgba(193, 187, 187, 0.5));
+    @include border-radius($default-border-radius);
+
+    .teromac-label {
+        margin-top: $default-spacing-unit * 3;
+        @include font-size($default-font-size, 13);
+    }
+    .teromac-value {
+        margin-bottom: $default-spacing-unit * 3;
+        font-weight: bold;
+    }
+    .teromac-btn {
+        display: block;
+    }
+    .teromac-checkbox {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
+.teromac-cc-default-label {
+    display: none;
+    color: $default-accent-color;
+    position: absolute;
+    top: $default-spacing-unit / 2;
+    left: $default-spacing-unit;
+    @include font-size($default-font-size, 12);
+}
+.teromac-default-payment-method {
+    .teromac-payment-method-inner {
+        border-color: $default-accent-color;
+    }
+    .teromac-checkbox {
+        display: none;
+    }
+    .teromac-cc-default-label {
+        display: block;
+    }
+}
+.teromac-cc-last-four {
+    font-weight: bold;
+    @include font-size($default-font-size, 18);
+    @include vertically-align-text($credit-card-icon-height);
+}
+.teromac-cc-icon {
+    float: right;
+    width: $credit-card-icon-width;
+    height: $credit-card-icon-height;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.teromac-cc-icon-visa {
+    background-image: url("/assets/images/ui/credit-card-icons/visa.png");
+}
+.teromac-cc-icon-mastercard {
+    background-image: url("/assets/images/ui/credit-card-icons/mastercard.png");
+}
+
+@media (max-width: 768px) {
+    #teromac-payment-methods-view .teromac-btn.teromac-desktop-only {
+        display: none;
+    }
+    .teromac-payment-method-outer {
+        float: none;
+        width: 100%;
+    }
+    .teromac-payment-method-outer:nth-child(odd) {
+        padding-right: 0;
+    }
+    .teromac-payment-method-outer:nth-child(even) {
+        padding-left: 0;
+    }
+    .teromac-default-payment-method {
+        padding-bottom: $default-spacing-unit * 2;
+    }
+}
+
+/* ==========================================================================
+   Cart View / Review View
+   ========================================================================== */
+#teromac-review-view,
+#teromac-cart-view {
+    display: table;
+    height: 100%;
+    max-width: 1024px;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    h2 {
+        font-weight: normal;
+        @include font-size($default-font-size, 22);
+        margin: 0 0 ($default-spacing-unit * 3);
+
+        .teromac-value {
+            color: $default-accent-color;
+        }
+    }
+    .teromac-item-detail-header {
+        margin-bottom: $default-spacing-unit;
+    }
+    .teromac-thirds .teromac-btn {
+        display: block;
+    }
+}
+#teromac-review-view .teromac-review-view-right h2 {
+    padding: 0;
+}
+.teromac-review-view-left,
+.teromac-cart-view-left {
+    float: left;
+    width: 60%;
+
+    h2 {
+        padding: ($default-spacing-unit * 2) ($default-spacing-unit * 6) 0 ($default-spacing-unit * 5);
+    }
+    .teromac-line-item {
+        @include font-size($default-font-size, 15);
+    }
+    .teromac-btn-add-room {
+        display: block;
+        width: 205px;
+        margin: ($default-spacing-unit * 2) auto;
+    }
+}
+.teromac-review-view-right,
+.teromac-cart-view-right {
+    float: right;
+    width: 40%;
+    padding: ($default-spacing-unit * 2) $default-spacing-unit ($default-spacing-unit * 2) $default-spacing-unit;
+
+    .teromac-line-item {
+        @include font-size($default-font-size, 14);
+    }
+    .teromac-btn-codes,
+    .teromac-btn-checkout {
+        display: block;
+    }
+    .teromac-btn-codes {
+        width: 180px;
+        margin: 0 auto $default-spacing-unit;
+    }
+    .teromac-btn-checkout {
+        margin: ($default-spacing-unit * 2) $default-spacing-unit 0;
+    }
+    p {
+        color: $default-input-border-color;
+    }
+}
+.teromac-cart-item {
+    padding: ($default-spacing-unit * 3) ($default-spacing-unit * 6) ($default-spacing-unit * 2) ($default-spacing-unit * 5);
+
+    &:first-of-type {
+        padding-top: 0;
+    }
+    .teromac-item-detail-header {
+        padding: 0 ($default-spacing-unit * 2);
+    }
+    .teromac-item-detail-header-left {
+        @include font-size($default-font-size, 22);
+    }
+    .teromac-thirds {
+        margin-top: $default-spacing-unit * 3;
+    }
+}
+.teromac-line-item-group {
+    padding: $default-spacing-unit ($default-spacing-unit * 2);
+}
+.teromac-cart-item-image {
+    padding-top: ($room-image-height / $room-image-width) * 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.teromac-line-item-group-inverse {
+    background-color: $default-hr-color;
+}
+.teromac-line-items {
+    @include plain-list();
+}
+.teromac-line-item {
+    margin-bottom: $default-spacing-unit / 2;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    .teromac-label,
+    .teromac-value {
+        width: 50%;
+        float: left;
+    }
+    .teromac-value {
+        text-align: right;
+    }
+}
+.teromac-line-item-total {
+    font-weight: bold;
+
+    .teromac-label {
+        @include font-size(14, 15);
+    }
+    .teromac-value {
+        @include font-size(14, 20);
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-review-view-left,
+    .teromac-cart-view-left,
+    .teromac-review-view-right,
+    .teromac-cart-view-right {
+        width: 100%;
+        padding: 0 ($default-spacing-unit * 2);
+    }
+    .teromac-review-view-right,
+    .teromac-cart-view-right {
+        margin-bottom: $default-spacing-unit * 3;
+    }
+    .teromac-cart-item {
+        padding: 0 0 ($default-spacing-unit * 2);
+    }
+}
+
+/* ==========================================================================
+   Confirmation View
+   ========================================================================== */
+#teromac-confirmation-view {
+    max-width: 1024px;
+
+    h2 {
+        @include font-size($default-font-size, 22);
+        font-weight: normal;
+        margin: ($default-spacing-unit * 2) 0 0;
+        text-align: center;
+    }
+    .teromac-order-confirmation-success-message {
+        margin-top: -($default-spacing-unit * 2);
+    }
+    .teromac-upcoming-reservation {
+        margin: ($default-spacing-unit * 2) 0;
+    }
+    .teromac-quarters .teromac-value {
+        margin-bottom: $default-spacing-unit * 2;
+    }
+}
+.teromac-confirmation-view-padding {
+    padding: 0 ($default-spacing-unit * 4);
+}
+.teromac-order-email-confirmation-message {
+    text-align: center;
+    @include font-size($default-font-size, 18);
+    padding: ($default-spacing-unit * 2) 0;
+
+    p {
+        margin: 0;
+    }
+    a {
+        font-weight: bold;
+        color: $default-font-color;
+    }
+}
+.teromac-upcoming-reservation-controls,
+.teromac-confirmation-message-controls {
+    text-align: center;
+    padding-top: $default-spacing-unit * 4;
+}
+.teromac-confirmation-message,
+.teromac-confirmation-hotel-information {
+    padding: $default-spacing-unit * 2;
+
+    h3 {
+        @include font-size($default-font-size, 20);
+        font-weight: bold;
+        margin: 0 0 $default-spacing-unit;
+    }
+    p {
+        @include font-size($default-font-size, 18);
+        margin: 0;
+    }
+}
+.teromac-confirmation-hotel-information {
+    overflow: hidden;
+
+    img {
+        display: block;
+    }
+}
+.teromac-confirmation-hotel-address {
+    @include font-size($default-font-size, 12);
+    margin-top: $default-spacing-unit * 5;
+
+    h4,
+    p {
+        margin: 0;
+    }
+    h4 {
+        font-weight: bold;
+    }
+}
+.teromac-confirmation-billing {
+    background-color: $default-background-color;
+    padding: ($default-spacing-unit * 6) ($default-spacing-unit * 6) ($default-spacing-unit * 4);
+
+    .teromac-confirmation-billing-header {
+        margin-bottom: $default-spacing-unit * 6;
+    }
+    .teromac-confirmation-billing-number,
+    .teromac-value {
+        font-weight: bold;
+    }
+    .teromac-confirmation-billing-number {
+        @include font-size($default-font-size, 17);
+    }
+    .teromac-confirmation-billing-date,
+    .teromac-label {
+        @include font-size($default-font-size, 15);
+    }
+    .teromac-value {
+        @include font-size($default-font-size, 18);
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-confirmation-view {
+        .teromac-quarters .teromac-quarter {
+            width: 100%;
+            padding: 0;
+
+            &.teromac-quarter-first,
+            &.teromac-quarter-second {
+                float: left;
+                width: 50%;
+            }
+            &.teromac-quarter-first {
+                padding-right: $default-spacing-unit / 2;
+            }
+            &.teromac-quarter-second {
+                padding-left: $default-spacing-unit / 2;
+            }
+        }
+    }
+    .teromac-confirmation-view-padding {
+        padding: 0 $default-spacing-unit;
+    }
+    .teromac-half-mobile .teromac-btn {
+        display: block;
+    }
+    .teromac-upcoming-reservation-controls,
+    .teromac-confirmation-message-controls {
+        padding-top: 0;
+
+        .teromac-btn {
+            display: block;
+        }
+    }
+    .teromac-upcoming-reservation {
+        .teromac-thirds-left,
+        .teromac-thirds-right {
+            width: 50%;
+            padding: 0;
+        }
+        .teromac-thirds-left {
+            padding-right: $default-spacing-unit / 2;
+        }
+        .teromac-thirds-mid {
+            padding-left: $default-spacing-unit / 2;
+        }
+        .teromac-thirds-right {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    .teromac-confirmation-billing {
+        padding: ($default-spacing-unit * 2) ($default-spacing-unit * 3);
+
+        .teromac-confirmation-billing-header {
+            margin-bottom: ($default-spacing-unit * 2);
+
+            span {
+                display: block;
+            }
+            .teromac-confirmation-billing-number {
+                color: $default-accent-color;
+            }
+        }
+    }
+    .teromac-confirmation-cancellation-message .teromac-confirmation-message-controls {
+        padding-top: 20px;
+        overflow: hidden;
+    }
+}
+
+/* ==========================================================================
+   Addons View
+   ========================================================================== */
+#teromac-addons-view {
+    max-width: 1024px;
+    overflow: hidden;
+
+    h3 {
+        font-weight: normal;
+        margin: 0 0 ($default-spacing-unit * 1.5);
+        @include font-size($default-font-size, 22);
+        @include vertically-align-text(33px);
+    }
+    .teromac-item-view-left,
+    .teromac-item-view-right {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-addons-view {
+        .teromac-item-view-right {
+            display: none;
+        }
+        &.teromac-is-addon-detail-view {
+            .teromac-item-view-left {
+                display: none;
+            }
+            .teromac-item-view-right {
+                display: block;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Addon View
+   ========================================================================== */
+#teromac-addon-view {
+    .teromac-item-detail-header-left {
+        @include font-size($default-font-size, 24);
+    }
+}
+.teromac-addon-description-container hr {
+    margin: ($default-spacing-unit * 2) 0;
+}
+.teromac-addon-description {
+    @include font-size($default-font-size, 14);
+}
+
+@media (max-width: 768px) {
+    #teromac-addon-view {
+        .teromac-half.teromac-push-left,
+        .teromac-half.teromac-push-right {
+            float: none;
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Dialogs
+   ========================================================================== */
+#teromac-dialog-alert,
+#teromac-dialog-confirm {
+    width: 400px;
+    background-color: $default-content-background-color;
+    padding: $default-spacing-unit * 2;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    #teromac-dialog-alert,
+    #teromac-dialog-confirm {
+        width: 320px - ($default-spacing-unit * 2);
+    }
+}

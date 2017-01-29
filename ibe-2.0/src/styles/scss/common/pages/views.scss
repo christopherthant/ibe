@@ -1,0 +1,34 @@
+#teromac-plan-view {
+    width: $plan-view-width;
+    text-align: $plan-view-text-align;
+}
+
+#teromac-codes-view {
+    width: $plan-view-width;
+    background-color:$default-content-bg-color;
+}
+#teromac-codes-view h2 {
+  font-size: 1.125em;
+  padding: 10px 15px;
+  margin: 0 0 15px; 
+}
+
+#teromac-rooms-view {
+    max-width: $rooms-view-width;
+    overflow: $rooms-view-overflow;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: $default-tablet-width) {
+    #teromac-rooms-view {
+        &.mobile-show-rates .teromac-item-view-left {
+            display: $tablet-rooms-view-show-rates-view-left-display;
+        }
+        &.mobile-show-rooms .teromac-item-view-right {
+            display: $tablet-rooms-view-show-rooms-view-right-display;
+        }
+    }
+}

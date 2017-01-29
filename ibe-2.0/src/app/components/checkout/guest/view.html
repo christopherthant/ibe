@@ -1,0 +1,35 @@
+<div id="teromac-guest-view">
+    <h2 translate="Enter contact information"></h2>
+    <form>
+        <div class="teromac-input-container teromac-first-name-input-container">
+            <label for="teromac-first-name-input" translate="First Name"></label>
+            <input type="text" id="teromac-first-name-input" />
+        </div>
+        <div class="teromac-input-container teromac-last-name-input-container">
+            <label for="teromac-last-name-input" translate="Last Name"></label>
+            <input type="text" id="teromac-last-name-input" />
+        </div>
+        <div class="teromac-input-container teromac-email-input-container">
+            <label for="teromac-email-input" translate="Email Address"></label>
+            <input type="email" id="teromac-email-input" />
+        </div>
+        <div class="teromac-input-container teromac-create-account-input-container">
+            <div class="teromac-checkbox">
+                <input type="checkbox" id="teromac-create-account-input" ng-model="vm.createAccount" />
+                <label for="teromac-create-account-input" translate="Use this information to create an account"></label>
+            </div>
+            <span ng-click="vm.createAccountReason()" translate="(why?)"></span>
+        </div>
+        <div class="teromac-input-container teromac-password-input-container" ng-if="vm.createAccount">
+            <label for="teromac-password-input" translate="Password"></label>
+            <input type="password" id="teromac-password-input" />
+        </div>
+        <div class="teromac-input-container teromac-special-requests-input-container">
+            <label for="teromac-special-requests-input" translate="Special Requests"></label>
+            <textarea id="teromac-special-requests-input" rows="11"></textarea>
+        </div>
+        <div class="teromac-btn-fixed-container-bottom">
+            <a ui-sref="payment" class="teromac-btn teromac-btn-fixed-bottom" translate="Save Details & Continue"></a>
+        </div>
+    </form>
+</div>

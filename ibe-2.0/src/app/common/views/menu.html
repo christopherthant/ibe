@@ -1,0 +1,121 @@
+<div class="teromac-top-menu">
+    <div class="teromac-top-menu-btn teromac-mobile-only teromac-menu-back"></div>
+    <div class="teromac-top-menu-btn teromac-menu-toggle" ng-click="vm.toggleMenu()">
+        <span translate="menu"></span>
+    </div>
+    <div class="teromac-top-menu-btn teromac-desktop-only" ng-click="vm.showLoginForm()" ng-if="!vm.isLoggedIn" translate="Log In"></div>
+    <div class="teromac-top-menu-btn teromac-desktop-only" ng-click="vm.showFindReservationForm()" translate="Find a Reservation"></div>
+</div><!-- .teromac-top-menu -->
+<div class="teromac-menu-overlay" ng-click="vm.toggleMenu()"></div>
+<div class="teromac-menu-container-outer teromac-menu-push-right">
+    <div class="teromac-menu-container-inner">
+        <div class="teromac-menu-close-btn" ng-click="vm.toggleMenu()"></div>
+        <div class="teromac-menu-back-btn" ng-click="vm.toggleMenu()">
+            <span class="teromac-menu-back-btn-icon"></span>
+            <span class="teromac-menu-back-btn-label" translate="Back to making a reservation"></span>
+        </div>
+        <a href="" class="teromac-hotel-website-link">
+            <span class="teromac-menu-back-btn-icon"></span>
+            <span class="teromac-menu-back-btn-label" translate="Go to hotel website"></span>
+        </a>
+        <ul class="teromac-menu">
+            <li>
+                <p class="teromac-submenu-header" translate="Profile"></p>
+                <ul class="teromac-submenu" ng-if="!vm.isLoggedIn">
+                    <li ng-class="{'teromac-submenu-form-is-visible': vm.submenuFormIsVisible.logIn || vm.submenuFormIsVisible.createAccount}">
+                        <div class="teromac-submenu-form-toggle teromac-submenu-form-toggle-tabs">
+                            <span class="teromac-submenu-form-tab" ng-class="{'teromac-submenu-form-tab-active': vm.submenuFormIsVisible.logIn}" ng-click="vm.toggleSubmenuForm('logIn')" translate="Log In"></span>
+                            <span class="teromac-submenu-form-tab-divider">|</span>
+                            <span class="teromac-submenu-form-tab" ng-class="{'teromac-submenu-form-tab-active': vm.submenuFormIsVisible.createAccount}" ng-click="vm.toggleSubmenuForm('createAccount')" translate="Create Account"></span>
+                        </div><!-- .teromac-submenu-form-toggle -->
+                        <form class="teromac-submenu-form" ng-show="vm.submenuFormIsVisible.logIn">
+                            <input type="email" placeholder="Email Address" />
+                            <input type="password" placeholder="Password" />
+                            <input type="submit" value="Log In" class="teromac-btn" ng-click="vm.login()" />
+                            <div class="teromac-forgot-password-btn" translate="Forgot Password"></div>
+                        </form><!-- .teromac-submenu-form -->
+                        <form class="teromac-submenu-form" ng-show="vm.submenuFormIsVisible.createAccount">
+                            <input type="email" placeholder="Email Address" />
+                            <input type="password" placeholder="Password" />
+                            <input type="submit" value="Sign Up" class="teromac-btn" />
+                        </form><!-- .teromac-submenu-form -->
+                    </li>
+                    <li ng-class="{'teromac-submenu-form-is-visible': vm.submenuFormIsVisible.findReservation}">
+                        <div class="teromac-submenu-form-toggle" ng-click="vm.toggleSubmenuForm('findReservation')" translate="Find Reservations"></div>
+                        <form class="teromac-submenu-form">
+                            <input type="email" placeholder="Guest Email Address" />
+                            <input type="password" placeholder="Confirmation No. or Last Name" />
+                            <input type="submit" value="Search" class="teromac-btn" />
+                        </form><!-- .teromac-submenu-form -->
+                    </li>
+                </ul><!-- .teromac-submenu -->
+                <ul class="teromac-submenu teromac-submenu-authenticated" ng-if="vm.isLoggedIn">
+                    <li class="teromac-submenu-form-is-visible">
+                        <div class="teromac-submenu-form-toggle">David Resnick</div>
+                        <div class="teromac-half-container">
+                            <div class="teromac-half teromac-push-left">
+                                <a ui-sref="profile" class="teromac-btn" ng-click="vm.toggleMenu()" translate="Profile"></a>
+                            </div>
+                            <div class="teromac-half teromac-push-right">
+                                <div class="teromac-btn teromac-btn-inverse" ng-click="vm.logout()" translate="Log Out"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="teromac-submenu-header" translate="Settings"></p>
+                <ul class="teromac-submenu">
+                    <li ng-class="{'teromac-submenu-form-is-visible': vm.submenuFormIsVisible.selectLanguage}">
+                        <div class="teromac-submenu-form-toggle"  ng-click="vm.toggleSubmenuForm('selectLanguage')" translate="Language"></div>
+                        <form class="teromac-submenu-form">
+                            <div class="teromac-styled-select">
+                                <select>
+                                    <option translate="Select Language"></option>
+                                </select>
+                            </div>
+                        </form><!-- .teromac-submenu-form -->
+                    </li>
+                    <li ng-class="{'teromac-submenu-form-is-visible': vm.submenuFormIsVisible.changeCurrency}">
+                        <div class="teromac-submenu-form-toggle" ng-click="vm.toggleSubmenuForm('changeCurrency')" translate="Currency"></div>
+                        <form class="teromac-submenu-form">
+                            <div class="teromac-styled-select">
+                                <select>
+                                    <option translate="Select Currency"></option>
+                                </select>
+                            </div><!-- .teromac-styled-select -->
+                        </form><!-- .teromac-submenu-form -->
+                    </li>
+                    <li>
+                        <a href="" translate="Privacy Policy"></a>
+                    </li>
+                </ul><!-- .teromac-submenu -->
+            </li>
+        </ul><!-- .teromac-menu -->
+        <div class="teromac-menu-contact">
+            <p class="teromac-menu-contact-header" translate="Contact Us"></p>
+            <div class="teromac-menu-hotel-address">
+                <p>Belmond El Encanto</p>
+                <p>800 Alvarado Place</p>
+                <p>Santa Barbara, CA 93103</p>
+            </div><!-- .teromac-menu-hotel-address -->
+        </div><!-- .teromac-menu-contact -->
+        <ul class="teromac-menu-external-links">
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <div class="teromac-icon teromac-icon teromac-icon-facebook-square"></div>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/" target="_blank">
+                    <div class="teromac-icon teromac-icon teromac-icon-icon-artboard-29"></div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.pinterest.com/" target="_blank">
+                    <div class="teromac-icon teromac-icon teromac-icon-pinterest"></div>
+                </a>
+            </li>
+        </ul><!-- .teromac-menu-external-links -->
+    </div><!-- .teromac-menu-container-inner -->
+</div><!-- .teromac-menu-container-outer -->

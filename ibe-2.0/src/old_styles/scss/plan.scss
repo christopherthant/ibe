@@ -1,0 +1,28 @@
+@import "mixins.scss";
+
+#teromac-plan-view {
+    width: 480px;
+    text-align: center;
+}
+.teromac-plan-dates-container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.teromac-plan-dates-divider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    &:after {
+        @include icon("W", 31);
+    }
+}
+.teromac-plan-date {
+    width: 50%;
+    float: left;
+}
+.teromac-plan-date-label {
+    font-weight: bold;
+}

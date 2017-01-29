@@ -1,0 +1,60 @@
+$room-image-slider-slide-position: relative;
+$room-image-slider-slide-width: 100%;
+$room-image-slider-slide-padding-top: ($default-rates-room-image-height / 
+	$default-rates-room-image-width) * 100%;
+
+$room-image-slider-con-inner-position: absolute;
+$room-image-slider-con-inner-top: 0;
+$room-image-slider-con-inner-right: 0;
+$room-image-slider-con-inner-bottom: 0;
+$room-image-slider-con-inner-left: 0;
+
+$room-image-nav-arrow-position: absolute;
+$room-image-nav-arrow-top: 50%;
+$room-image-nav-arrow-margin-top: -30px;
+$room-image-nav-arrow-cursor: pointer;
+$room-image-nav-arrow-color: $default-font-color-inverse;
+
+$room-image-nav-arrow-prev-left: 0;
+
+$room-image-nav-arrow-prev-after-char-code: "w";
+$room-image-nav-arrow-prev-after-font-size: strip-units($default-min-tap-area-size);
+
+$room-image-nav-arrow-next-right: 0;
+
+$room-image-nav-arrow-after-char-code: "v";
+$room-image-nav-arrow-after-font-size: strip-units($default-min-tap-area-size);
+
+$room-image-nav-arrow-prev-next-after-display: block;
+$room-image-nav-arrow-prev-next-after-text-shadow: (0 1px 4px rgba(0, 0, 0, 0.5));
+$room-image-nav-arrow-prev-next-after-width: $default-min-tap-area-size;
+$room-image-nav-arrow-prev-next-after-txt-align: center;
+$room-image-nav-arrow-prev-next-after-v-align-txt: 60px;
+
+$room-image-nav-dots-position: absolute;
+$room-image-nav-dots-bottom: 0;
+$room-image-nav-dots-left: 0;
+$room-image-nav-dots-width: 100%;
+
+$room-image-nav-dots-ul-txt-align: center;
+
+$room-image-nav-dots-li-display: inline-block;
+
+$room-image-nav-dots-btn-font-size: 0;
+$room-image-nav-dots-btn-line-height: 0;
+$room-image-nav-dots-btn-display: block;
+$room-image-nav-dots-btn-width: 20px;
+$room-image-nav-dots-btn-height: 20px;
+$room-image-nav-dots-btn-padding: 5px;
+$room-image-nav-dots-btn-cursor: pointer;
+$room-image-nav-dots-btn-color: transparent;
+$room-image-nav-dots-btn-border: 0;
+$room-image-nav-dots-btn-outline: none;
+$room-image-nav-dots-btn-bg: transparent;
+
+$room-image-nav-dots-btn-after-content: "";
+$room-image-nav-dots-btn-after-display: block;
+$room-image-nav-dots-btn-after-width: 10px;
+$room-image-nav-dots-btn-after-height: 10px;
+$room-image-nav-dots-btn-after-bg: black;
+$room-image-nav-dots-btn-after-border-radius: 50%;

@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+.teromac-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0; }
+
+.teromac-menu-container-outer {
+  position: fixed;
+  line-height: normal; }
+  .teromac-menu-container-outer a {
+    text-decoration: none; }
+  .teromac-menu-container-outer p {
+    margin: 0; }
+  .teromac-menu-container-outer.teromac-menu-push-left, .teromac-menu-container-outer.teromac-menu-push-right, .teromac-menu-container-outer.teromac-menu-slide-left, .teromac-menu-container-outer.teromac-menu-slide-right {
+    top: 0;
+    height: 100%;
+    overflow-y: scroll; }
+  .teromac-menu-container-outer.teromac-menu-push-left, .teromac-menu-container-outer.teromac-menu-slide-left {
+    left: 0; }
+  .teromac-menu-container-outer.teromac-menu-slide-right, .teromac-menu-container-outer.teromac-menu-push-right {
+    right: 0; }
+
+.teromac-menu-container-inner {
+  position: relative; }
+
+.teromac-layout.teromac-menu-open {
+  overflow: hidden; }
+  .teromac-layout.teromac-menu-open .teromac-menu-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: 1; }
+  .teromac-layout.teromac-menu-open .teromac-btn-fixed-bottom {
+    display: none; }
+
+.teromac-menu-close-btn {
+  position: absolute;
+  cursor: pointer;
+  text-align: center; }
+  .teromac-menu-close-btn:after {
+    content: "A";
+    font-family: "teromac Icons";
+    font-size: 16px; }
+
+.teromac-menu-back-btn,
+.teromac-hotel-website-link {
+  display: block;
+  cursor: pointer; }
+
+.teromac-menu-back-btn-icon {
+  display: inline-block;
+  vertical-align: middle; }
+  .teromac-menu-back-btn-icon:after {
+    content: "0";
+    font-family: "teromac Icons";
+    font-size: 16px; }
+
+.teromac-menu,
+.teromac-submenu,
+.teromac-menu-external-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.teromac-menu .teromac-btn {
+  display: block; }
+.teromac-menu .teromac-half .teromac-btn {
+  max-width: none; }
+
+p.teromac-submenu-header {
+  font-weight: bold; }
+
+.teromac-submenu-form-toggle,
+.teromac-submenu-form-tab {
+  display: inline-block;
+  cursor: pointer; }
+
+.teromac-submenu-form-tab-active {
+  font-weight: bold; }
+
+.teromac-submenu-form-toggle-tabs,
+.teromac-submenu-form-tab-divider {
+  cursor: default; }
+
+.teromac-submenu-form {
+  display: none; }
+
+.teromac-submenu-form-is-visible:first-of-type {
+  margin-top: 0; }
+.teromac-submenu-form-is-visible .teromac-submenu-form {
+  display: block; }
+.teromac-submenu-form-is-visible .teromac-submenu-form-toggle:not(.teromac-submenu-form-toggle-tabs) {
+  font-weight: bold; }
+
+.teromac-forgot-password-btn {
+  cursor: pointer; }
+
+.teromac-menu-contact-header {
+  font-weight: bold; }
+
+.teromac-menu-external-links li {
+  float: left; }

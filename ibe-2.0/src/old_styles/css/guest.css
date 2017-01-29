@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+.teromac-first-name-input-container,
+.teromac-last-name-input-container,
+.teromac-email-input-container,
+.teromac-password-input-container {
+  float: left;
+  width: 50%; }
+
+.teromac-special-requests-input-container {
+  clear: both; }
+
+@media (max-width: 768px) {
+  .teromac-email-input-container {
+    float: none;
+    clear: both;
+    width: 100%; } }

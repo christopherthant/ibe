@@ -1,0 +1,189 @@
+.teromac-menu-overlay {
+    position: $menu-overlay-position;
+    top: $menu-overlay-top;
+    left: $menu-overlay-left;
+    width: $menu-overlay-width;
+    height: $menu-overlay-height;
+    opacity: $menu-overlay-opacity;
+    background-color: $default-modal-overlay-color;
+    @include transition($menu-overlay-transition);
+}
+.teromac-menu-container-outer {
+    position: $menu-container-outer-position;
+    line-height: $menu-container-outer-line-height;
+    background-color: $menu-container-outer-bg-color;
+    color: $menu-container-outer-color;
+    @include transition($menu-container-transition);
+    
+    a {
+        text-decoration: $menu-container-outer-a-text-decoration;
+        color: $menu-container-outer-a-color;
+    }
+    p {
+        margin: $menu-container-outer-p-margin;
+    }
+    .teromac-btn,
+    a.teromac-btn {
+        max-width: $menu-container-outer-btn-max-width;
+        color: $menu-container-outer-btn-color;
+    }
+    &.teromac-menu-push-left,
+    &.teromac-menu-push-right,
+    &.teromac-menu-slide-left,
+    &.teromac-menu-slide-right {
+        top: $menu-container-outer-menu-push-slide-top;
+        height: $menu-container-outer-menu-push-slide-height;
+        overflow-y: $menu-container-outer-menu-push-slide-overflow-y;
+        width: $menu-container-outer-menu-push-slide-width;
+    }
+    &.teromac-menu-push-left,
+    &.teromac-menu-slide-left {
+        left: $menu-container-outer-menu-push-slide-left-left;
+        @include transform($menu-container-outer-menu-push-slide-left-transform);
+    }
+    &.teromac-menu-slide-right,
+    &.teromac-menu-push-right {
+        right: $menu-container-outer-menu-push-slide-right-right;
+        @include transform($menu-container-outer-menu-push-slide-right-transform);
+    }
+    .teromac-menu-external-links {
+        padding: $menu-container-outer-menu-external-links-padding;
+    }
+}
+.teromac-menu-container-inner {
+    position: $menu-container-inner-position;
+    padding: $menu-container-inner-padding;
+}
+.teromac-layout.teromac-menu-open {
+    overflow: $layout-menu-open-overflow;
+
+    .teromac-menu-overlay {
+        width: $layout-menu-open-menu-overlay-width;
+        height: $layout-menu-open-menu-overlay-height;
+        opacity: $layout-menu-open-menu-overlay-opacity;
+    }
+    .teromac-btn-fixed-bottom {
+        display: $layout-menu-open-btn-fixed-bottom-display;
+    }
+    .teromac-menu-container-outer.teromac-menu-push-left,
+    .teromac-menu-container-outer.teromac-menu-slide-left,
+    .teromac-menu-container-outer.teromac-menu-push-right,
+    .teromac-menu-container-outer.teromac-menu-slide-right {
+        @include transform($layout-menu-open-menu-container-outer-menu-push-slide-transform);
+    }
+    .teromac-menu-push-left + .teromac-body {
+        @include transform(translateX($layout-menu-open-menu-push-left-body-transform));
+    }
+    .teromac-menu-push-right + .teromac-body {
+        @include transform(translateX($layout-menu-open-menu-push-right-body-transform));
+    }
+}
+.teromac-body {
+    @include transition($body-transition);
+}
+
+
+.teromac-menu,
+.teromac-submenu,
+.teromac-menu-external-links {
+    @include plain-list();
+}
+
+.teromac-submenu li {
+    padding: $submenu-li-padding;
+}
+
+.teromac-menu {
+    .teromac-btn {
+        display: $menu-btn-display;
+    }
+    .teromac-half .teromac-btn {
+        max-width: $menu-half-btn-max-width;
+    }
+}
+
+.teromac-submenu-header {
+    color: $submenu-header-color;
+    border-bottom: $submenu-header-border-bottom solid $submenu-header-solid;
+    margin-top: $submenu-header-margin-top;
+    padding: $submenu-header-padding;
+    @include font-size($submenu-header-base-font-size
+        , $submenu-header-final-font-size);
+}
+
+p.teromac-submenu-header {
+    font-weight: $p-submenu-header-font-weight;
+}
+.teromac-submenu-form-toggle,
+.teromac-submenu-form-tab {
+    display: $submenu-form-toggle-tab-display;
+    cursor: $submenu-form-toggle-tab-cursor;
+}
+.teromac-submenu-form-tab-active {
+    font-weight: $submenu-form-tab-active-font-weight;
+}
+.teromac-submenu-form-toggle-tabs,
+.teromac-submenu-form-tab-divider {
+    cursor: $submenu-form-toggle-tabs-tab-divider-cursor;
+}
+.teromac-submenu-form {
+    display: $submenu-form-display;
+    padding-bottom: $submenu-form-padding-bottom;
+}
+.teromac-submenu-form-is-visible {
+    background-color: $submenu-form-is-visible-bg-color;
+    margin-top: $submenu-form-is-visible-margin-top;
+
+    &:first-of-type {
+        margin-top: $submenu-form-is-visible-first-of-type-margin-top;
+    }
+    .teromac-submenu-form {
+        display: $submenu-form-is-visible-submenu-form-display;
+    }
+    .teromac-submenu-form-toggle {
+        padding-bottom: $submenu-form-is-visible-submenu-form-toggle-padding-bottom;
+    }
+    .teromac-submenu-form-toggle:not(.teromac-submenu-form-toggle-tabs) {
+        font-weight: $submenu-form-is-visible-submenu-form-toggle-not-toggle-tabs-font-weight;
+    }
+}
+
+.teromac-submenu-authenticated .teromac-half-container {
+    padding: $submenu-authenticated-half-container-padding;
+}
+
+
+.teromac-menu-contact {
+    padding: $menu-contact-padding;
+}
+
+.teromac-menu-contact-header {
+    font-weight: $menu-contact-header-font-weight;
+    padding: $menu-contact-header-padding;
+    @include font-size($menu-contact-header-base-font-size
+        , $menu-contact-header-final-font-size);
+}
+.teromac-menu-external-links li {
+    float: $menu-external-links-li-float;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: $default-tablet-width) {
+    .teromac-menu-container-outer.teromac-menu-push-left,
+    .teromac-menu-container-outer.teromac-menu-push-right,
+    .teromac-menu-container-outer.teromac-menu-slide-left,
+    .teromac-menu-container-outer.teromac-menu-slide-right {
+        width: $tablet-menu-container-outer-menu-push-slide-width;
+    }
+    .teromac-layout.teromac-menu-open {
+        .teromac-menu-push-left + .teromac-body {
+            @include transform($tablet-layout-menu-open-menu-push-left-body-transform);
+        }
+        .teromac-menu-push-right + .teromac-body {
+            @include transform($tablet-layout-menu-open-menu-push-right-body-transform);
+        }
+    }
+}

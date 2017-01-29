@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-account-view {
+  max-width: 1024px; }
+  #teromac-account-view .teromac-account-header ul {
+    text-align: left; }
+  #teromac-account-view h2 {
+    font-weight: normal; }
+
+@media (max-width: 768px) {
+  #teromac-account-view .teromac-account-header ul {
+    text-align: center; } }

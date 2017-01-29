@@ -1,0 +1,86 @@
+<div id="teromac-plan-view">
+    <a ui-sref="dates" class="teromac-plan-dates-container">
+        <div class="teromac-plan-date teromac-plan-date-checkin">
+            <div class="teromac-plan-date-label" translate="CHECK-IN"></div>
+            <div class="teromac-plan-date-date">
+                <span class="teromac-plan-month" ng-bind="(vm.plan.data.check_in | date:'MMM') || '?'"></span>
+                <span class="teromac-plan-day" ng-bind="vm.plan.data.check_in | date:'d'"></span>
+            </div>
+            <div class="teromac-plan-year" ng-bind="vm.plan.data.check_in | date:'yyyy'"></div>
+        </div><!-- .teromac-plan-date-checkin -->
+        <div class="teromac-plan-dates-divider"></div>
+        <div class="teromac-plan-date teromac-plan-date-checkout">
+            <div class="teromac-plan-date-label" translate="CHECK-OUT"></div>
+            <div class="teromac-plan-date-date">
+                <span class="teromac-plan-month" ng-bind="(vm.plan.data.check_out | date:'MMM') || '?'"></span>
+                <span class="teromac-plan-day" ng-bind="vm.plan.data.check_out | date:'d'"></span>
+            </div>
+            <div class="teromac-plan-year" ng-bind="vm.plan.data.check_out | date:'yyyy'"></div>
+        </div><!-- .teromac-plan-date-checkin -->
+    </a>
+    <div>
+        <div class="teromac-checkbox">
+            <label for="teromac-multiroom-input" translate="Multiple Rooms"></label>
+            <input type="checkbox" id="teromac-multiroom-input" ng-model="vm.plan.data.multiRoom" />
+        </div>
+    </div>
+    <div class="teromac-plan-inputs-con" ng-if="!vm.plan.data.multiRoom">
+        <hr />
+        <div class="teromac-plan-inputs">
+            <div class="teromac-input-group teromac-input-group-number">
+                <div class="teromac-input-group-label" translate="ADULTS"></div>
+                <div class="teromac-input-group-input">
+                    <div class="teromac-input-number-btn-minus" ng-click="vm.plan.removeAdult()"></div>
+                    <div class="teromac-input-number-btn-plus" ng-click="vm.plan.addAdult()"></div>
+                    <div class="teromac-input-number-value" ng-bind="vm.plan.data.adults"></div>
+                </div>
+            </div>
+            <hr />
+            <div class="teromac-input-group teromac-input-group-number">
+                <div class="teromac-input-group-label" translate="CHILDREN"></div>
+                <div class="teromac-input-group-input">
+                    <div class="teromac-input-number-btn-minus" ng-click="vm.plan.removeChild()"></div>
+                    <div class="teromac-input-number-btn-plus" ng-click="vm.plan.addChild()"></div>
+                    <div class="teromac-input-number-value" ng-bind="vm.plan.data.children"></div>
+                </div>
+            </div>
+            <div class="teromac-input-group teromac-input-group-select" ng-repeat="childAge in vm.plan.data.childrenAges track by $index">
+                <div class="teromac-input-group-label">
+                    <span translate="CHILD"></span>
+                    <span ng-bind="$index + 1"></span>
+                    <span translate="AGE"></span>
+                </div>
+                <div class="teromac-input-group-input">
+                    <div class="teromac-styled-select" ng-class="{'teromac-error': vm.formSubmitted && (!vm.plan.data.childrenAges[$index] || vm.plan.data.childrenAges[$index] === '') }">
+                        <select ng-model="vm.plan.data.childrenAges[$index]">
+                            <option value=""></option>
+                            <option value="0">&lt;&nbsp;1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <a ui-sref="codes" class="teromac-codes-btn teromac-btn teromac-btn-hollow-inverse" translate="Special Rates"></a>
+    <div class="teromac-btn-fixed-container-bottom">
+        <span class="teromac-btn teromac-btn-fixed-bottom" ng-click="vm.checkAvailability()" translate="Check Availability"></span>
+    </div>
+</div>

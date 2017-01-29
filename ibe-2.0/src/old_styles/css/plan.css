@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-plan-view {
+  width: 480px;
+  text-align: center; }
+
+.teromac-plan-dates-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+
+.teromac-plan-dates-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+  .teromac-plan-dates-divider:after {
+    content: "W";
+    font-family: "teromac Icons";
+    font-size: 31px; }
+
+.teromac-plan-date {
+  width: 50%;
+  float: left; }
+
+.teromac-plan-date-label {
+  font-weight: bold; }

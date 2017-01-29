@@ -1,0 +1,61 @@
+$room-filters-container-position: relative;
+
+$room-filters-container-ul-display: block;
+$room-filters-container-ul-list-style-type: none;
+$room-filters-container-ul-white-space: nowrap;
+$room-filters-container-ul-font-size: 0;
+$room-filters-container-ul-overflow: auto;
+$room-filters-container-ul-text-align: center;
+$room-filters-container-ul-padding: 0 $default-spacing-unit;
+
+$room-filters-container-ul-webkit-scrollbar-display: none;
+
+$room-filters-container-li-display: inline-block;
+$room-filters-container-li-cursor: pointer;
+$room-filters-container-li-font-size: 14px;
+$room-filters-container-li-margin: 0 ($default-spacing-unit / 4);
+$room-filters-container-li-padding: 0 $default-spacing-unit;
+$room-filters-container-li-border: $default-border-width solid $default-input-border-color;
+$room-filters-container-li-border-radius: $default-border-radius;
+$room-filters-container-li-v-align-text-height: $default-room-filter-height;
+$room-filters-container-li-v-align-text-top-border: $default-border-width;
+$room-filters-container-li-v-align-text-bottom-border: $default-border-width;
+
+$room-filters-container-li-first-of-type-border: none;
+$room-filters-container-li-first-of-type-text-decoration: underline;
+
+$room-sort-margin-top: 0;
+$room-sort-padding: 0;
+$room-sort-list-style-type: none;
+$room-sort-overflow: hidden;
+$room-sort-margin-bottom: $default-spacing-unit * 1.5;
+
+$room-sort-overflow-li-position: relative;
+$room-sort-overflow-li-width: 50%;
+$room-sort-overflow-li-float: left;
+$room-sort-overflow-li-text-align: center;
+$room-sort-overflow-li-cursor: pointer;
+$room-sort-overflow-li-border: $default-border-width solid $default-input-border-color;
+$room-sort-overflow-li-v-align-text-height: $default-room-sort-height;
+$room-sort-overflow-li-v-align-text-top-border: $default-border-width;
+$room-sort-overflow-li-v-align-text-bottom-border: $default-border-width;
+
+$room-sort-overflow-li-first-of-type-border-right-color: $default-accent-color;
+$room-sort-overflow-li-first-of-type-border-radius: $default-border-radius 0 0 $default-border-radius;
+
+$room-sort-overflow-li-last-of-type-border-left-width: 0;
+$room-sort-overflow-li-last-of-type-border-radius: 0 $default-border-radius $default-border-radius 0;
+
+$room-sort-overflow-li-active-border-color: $default-accent-color;
+$room-sort-overflow-li-active-color: $default-accent-color;
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+   
+$tablet-room-sort-li-active-after-content: "";
+$tablet-room-sort-li-active-after-display: block;
+$tablet-room-sort-li-active-after-height: $default-border-width;
+$tablet-room-sort-li-active-after-bg-color: $default-accent-color;
+$tablet-room-sort-li-active-after-margin: 0 auto;
+$tablet-room-sort-li-active-after-max-width: 120px;

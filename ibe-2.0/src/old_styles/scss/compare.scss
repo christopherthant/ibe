@@ -1,0 +1,112 @@
+@import "mixins.scss";
+
+$compare-image-width: 300px;
+$compare-image-height: 200px;
+
+#teromac-compare-view {
+    width: 100%;
+    max-width: 1024px;
+
+    h2 {
+        font-weight: normal;
+        text-align: center;
+    }
+}
+.teromac-compare-items-container-outer {
+    position: relative;
+}
+.teromac-compare-items-container-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.teromac-compare-items-slider {
+    position: relative;
+}
+.teromac-compare-nagivation-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+.teromac-compare-navigation-outer {
+    position: relative;
+}
+.teromac-compare-navigation-mid {
+    margin: 0 auto;
+}
+.teromac-compare-navigation {
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    top: 0;
+    pointer-events: auto;
+
+    &.teromac-prev {
+        left: 0;
+
+        .teromac-table-cell:before {
+            @include icon("w", 22);
+        }
+    }
+    &.teromac-next {
+        right: 0;
+
+        .teromac-table-cell:before {
+            @include icon("v", 22);
+        }
+    }
+    &.slick-disabled {
+        opacity: 0.5;
+    }
+}
+.teromac-compare-item {
+    position: relative;
+    float: left;
+
+    h3 {
+        font-weight: normal;
+        margin: 0;
+    }
+    .teromac-compare-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h4 {
+        font-weight: normal;
+        margin: 0;
+    }
+    .teromac-btn {
+        width: 100%;
+    }
+}
+
+/* Compare button on rates view */
+a.teromac-compare-btn-desktop {
+    position: absolute;
+}
+a.teromac-compare-btn-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+
+    &:after {
+        @include icon("W", 13);
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-compare-view h2 {
+        text-align: left;
+    }
+    .teromac-compare-navigation-mid {
+        width: 100%;
+    }
+}

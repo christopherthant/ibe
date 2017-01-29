@@ -1,0 +1,18 @@
+<div class="teromac-layout" ng-class="{'teromac-menu-open': vm.menuIsOpen}">
+    <div ng-include="'app/common/views/menu.html'" include-replace></div>
+    <div class="teromac-body">
+        <div class="teromac-sticky-header" ng-class="{'teromac-sticky-header-mobile': vm.hasStickyHeaderMobile()}">
+            <div class="teromac-background-image"></div>
+            <div class="teromac-header">
+                <div class="teromac-hotel-name" translate="hotelName"></div>
+            </div><!-- .teromac-header -->
+            <div class="teromac-hotel-logo"></div>
+            <div class="teromac-content-mask-outer">
+                <div class="teromac-content-mask-mid">
+                    <div class="teromac-content-mask-inner"></div>
+                </div>
+            </div><!-- .teromac-content-mask-outer -->
+        </div><!-- .teromac-sticky-header -->
+        <div class="teromac-content ui-view"></div>
+    </div><!-- .teromac-body -->
+</div><!-- .teromac-layout  -->

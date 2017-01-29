@@ -1,0 +1,45 @@
+body.teromac-modal-open {
+    overflow: $body-modal-open-overflow;
+}
+.teromac-modal-overlay {
+    position: $modal-overlay-position;
+    top: $modal-overlay-top;
+    right: $modal-overlay-right;
+    bottom: $modal-overlay-bottom;
+    left: $modal-overlay-left;
+    overflow-y: $modal-overlay-overflow-y;
+    background-color: $modal-overlay-bg-color;
+}
+
+.teromac-modal-content-outer {
+    margin: $modal-content-outer-margin;
+}
+
+.teromac-modal-content-inner {
+    position: $modal-content-inner-position;
+    display: $modal-content-inner-display;
+    margin: $modal-content-inner-margin;
+
+}
+.teromac-modal-content > div {
+    width: $modal-content-child-divs-width;
+    cursor: $modal-content-child-divs-cursor;
+    background-color: $modal-content-child-divs-bg-color;
+}
+.teromac-modal-close-btn {
+    position: $modal-close-btn-position;
+    right: $modal-close-btn-right;
+    text-align: $modal-close-btn-text-align;
+    cursor: $modal-close-btn-cursor;
+    top: $modal-close-btn-top;
+    width: $modal-close-btn-width;
+    height: $modal-close-btn-height;
+    color: $modal-close-btn-color;
+    
+    &:after {
+        display: $modal-close-btn-after-display;
+        line-height: $modal-close-btn-after-line-height;
+        @include icon($modal-close-btn-after-character-set
+            , $modal-close-btn-after-font-size);
+    }
+}

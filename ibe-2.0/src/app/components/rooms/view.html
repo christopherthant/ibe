@@ -1,0 +1,133 @@
+<div id="teromac-rooms-view" ng-class="{'mobile-show-rooms': vm.state.current.name === 'rooms', 'mobile-show-rates': vm.state.current.name === 'rates'}">
+    <div ng-include="'app/common/views/summaryBar.html'" include-replace></div>
+    <div class="teromac-mobile-rooms-view-header teromac-mobile-only">
+        <div class="teromac-filter-toggle-btn" ng-click="showMobileFilters = !showMobileFilters" translate="Filters"></div>
+        <p translate="Available Rooms"></p>
+    </div>
+    <div class="teromac-room-filters-container" ng-class="{'teromac-desktop-only': !showMobileFilters}">
+        <ul>
+            <li ng-repeat="filter in vm.filters track by $index" ng-bind="filter"></li>
+        </ul>
+    </div>
+    <div class="teromac-item-view-left">
+        <ul class="teromac-room-sort" ng-init="viewBy = 'room'">
+            <li ng-class="{'teromac-active': viewBy === 'room'}" ng-click="viewBy = 'room'"><span translate="View by Room"></span></li>
+            <li ng-class="{'teromac-active': viewBy === 'rate'}" ng-click="viewBy = 'rate'"><span translate="View by Rate"></span></li>
+        </ul>
+        <ul class="teromac-items-by-rate" ng-show="viewBy === 'rate'" ng-init="selectedRateIndex = 1">
+            <li ng-click="selectedRateIndex = 1" ng-class="{'teromac-active': selectedRateIndex === 1}">
+                <a ui-sref="rates">
+                    <h2>Best flexible rate</h2>
+                    <div>
+                        <span class="teromac-label" translate="Rates From"></span>
+                        <span class="teromac-value">$150</span>
+                    </div>
+                    <p>Payment must be made at time of reservation blablaPayment must be made at time of reservation</p>
+                    <span class="teromac-view-rate-btn-mobile teromac-mobile-only">View</span>
+                </a>
+            </li>
+            <li ng-click="selectedRateIndex = 2" ng-class="{'teromac-active': selectedRateIndex === 2}">
+                <a ui-sref="rates">
+                    <h2>Fall into winter</h2>
+                    <div>
+                        <span class="teromac-label" translate="Rates From"></span>
+                        <span class="teromac-value">$180</span>
+                    </div>
+                    <p>Payment must be made at time of reservation blablaPayment must be made at time of reservation</p>
+                    <span class="teromac-view-rate-btn-mobile teromac-mobile-only">View</span>
+                </a>
+            </li>
+            <li ng-click="selectedRateIndex = 3" ng-class="{'teromac-active': selectedRateIndex === 3}">
+                <a ui-sref="rates">
+                    <h2>Deluxe Night</h2>
+                    <div>
+                        <span class="teromac-label" translate="Rates From"></span>
+                        <span class="teromac-value">$240</span>
+                    </div>
+                    <p>Payment must be made at time of reservation blablaPayment must be made at time of reservation</p>
+                    <span class="teromac-view-rate-btn-mobile teromac-mobile-only">View</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="teromac-items-by-item" ng-show="viewBy === 'room'" ng-init="selectedRoomIndex = 1">
+            <li class="teromac-special" ng-click="selectedRoomIndex = 1" ng-class="{'teromac-active': selectedRoomIndex === 1}">
+                <a ui-sref="rates">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/01-standard/01-standard.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <span class="teromac-special-badge" translate="Special"></span>
+                        <p class="teromac-item-name">Standard</p>
+                        <p class="teromac-room-type-special">See our special deal. Only available through May 1st</p>
+                        <div class="teromac-room-type-max-guests">
+                            <span class="teromac-room-type-max-guests-label" translate="Max Guests"></span>
+                            <span class="teromac-room-type-max-guests-value">4</span>
+                        </div>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-label" translate="Rates From"></div>
+                        <div class="teromac-room-type-rate-value">$110</div>
+                    </div>
+                </a>
+            </li>
+            <li ng-click="selectedRoomIndex = 2" ng-class="{'teromac-active': selectedRoomIndex === 2}">
+                <a ui-sref="rates">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/02-deluxe/01-deluxe.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <span class="teromac-special-badge" translate="Special"></span>
+                        <p class="teromac-item-name">Deluxe</p>
+                        <p class="teromac-room-type-special">See our special deal. Only available through May 1st</p>
+                        <div class="teromac-room-type-max-guests">
+                            <span class="teromac-room-type-max-guests-label" translate="Max Guests"></span>
+                            <span class="teromac-room-type-max-guests-value">4</span>
+                        </div>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-label" translate="Rates From"></div>
+                        <div class="teromac-room-type-rate-value">$130</div>
+                    </div>
+                </a>
+            </li>
+            <li ng-click="selectedRoomIndex = 3" ng-class="{'teromac-active': selectedRoomIndex === 3}">
+                <a ui-sref="rates">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/03-standard-suite/01-standard-suite.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <span class="teromac-special-badge" translate="Special"></span>
+                        <p class="teromac-item-name">Standard Suite</p>
+                        <p class="teromac-room-type-special">See our special deal. Only available through May 1st</p>
+                        <div class="teromac-room-type-max-guests">
+                            <span class="teromac-room-type-max-guests-label" translate="Max Guests"></span>
+                            <span class="teromac-room-type-max-guests-value">6</span>
+                        </div>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-label" translate="Rates From"></div>
+                        <div class="teromac-room-type-rate-value">$300</div>
+                    </div>
+                </a>
+            </li>
+            <li ng-click="selectedRoomIndex = 4" ng-class="{'teromac-active': selectedRoomIndex === 4}">
+                <a ui-sref="rates">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/04-deluxe-suite/01-deluxe-suite.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <span class="teromac-special-badge" translate="Special"></span>
+                        <p class="teromac-item-name">Deluxe Suite</p>
+                        <p class="teromac-room-type-special">See our special deal. Only available through May 1st</p>
+                        <div class="teromac-room-type-max-guests">
+                            <span class="teromac-room-type-max-guests-label" translate="Max Guests"></span>
+                            <span class="teromac-room-type-max-guests-value">8</span>
+                        </div>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-label" translate="Rates From"></div>
+                        <div class="teromac-room-type-rate-value">$500</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="teromac-item-view-right" ui-view>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Default Variables
+   ========================================================================== */
+
+$ng-cloak-display: none;
+
+$default-main-color: #363636;
+$default-main-color-a: #5D5754;
+$default-main-color-b: #716A66;
+$default-main-color-c: #857D78;
+$default-main-color-d: #E1E1E1;
+$default-main-color-e: #EAEAEA;
+$default-main-color-f: #F5F5F5;
+
+$default-accent-color: #DE5200;
+$default-accent-color-a: #DF590B;
+$default-accent-color-b: #DF590B;
+$default-accent-color-c: #F5CBB2;
+
+$default-error-color: #DE1D00;
+
+$default-min-tap-area-size: 44px;
+
+$default-bg-color: $default-main-color-f;
+$default-content-bg-color: #FFF;
+$default-modal-overlay-color: rgba(0, 0, 0, 0.5);
+$default-accent-color: $default-accent-color;
+$default-accent-color-inverse: $default-main-color-f;
+$default-font-color: $default-main-color-a;
+$default-font-color-inverse: #FFF;
+
+$default-font-size: 16;
+
+$default-transition-time: 0.3s;
+$default-transition-easing: ease-out;
+$default-spacing-unit: 10px;
+$default-border-width: 1px;
+$default-border-radius: 0;
+$default-input-border-color: #908D91;
+$default-input-fill-color-inverse: #B8B8B5;
+$default-input-height: $default-min-tap-area-size;
+$default-hr-color: $default-main-color-d;
+
+$default-font-size: 16;
+
+$default-sticky-header-transition-time: $default-transition-time;
+$default-sticky-header-transition-easing: $default-transition-easing;
+$default-header-height: $default-min-tap-area-size;
+$default-hotel-name-kerning: -0.15px;
+
+$default-layout-margin: $default-spacing-unit;
+$default-layout-padding: $default-spacing-unit * 2;
+
+$default-bg-image-url-desktop: "/assets/images/hotels/belmond/background.jpg";
+$default-bg-image-url-mobile: "/assets/images/hotels/belmond/background.jpg";
+$default-bg-width-mobile: 680px;
+$default-bg-height-mobile: 700px;
+$default-bg-image-overlay-color: $default-modal-overlay-color;
+
+$default-logo-image-url: "/assets/images/hotels/belmond/logo.png";
+$default-logo-height: 65px;
+$default-logo-spacing-vertical-desktop: 40px;
+$default-logo-spacing-vertical-mobile: 100px;
+
+$default-checkbox-input-size: 24px;
+$default-checkbox-bg-color: $default-content-bg-color;
+$default-checkbox-border-color: $default-input-border-color;
+
+$default-select-carret-width: 35px;
+
+$default-fixed-bottom-btn-width-desktop: 360px;
+$default-fixed-bottom-btn-height: 60px;
+
+$default-input-number-btn-color: $default-accent-color;
+$default-input-group-number-color: inherit;
+
+$default-menu-transition-time: $default-transition-time;
+$default-menu-transition-easing: $default-transition-easing;
+$default-menu-width-desktop: 400px;
+$default-menu-width-mobile: 100%;
+$default-menu-spacing: 6px;
+$default-menu-bg-color: $default-bg-color;
+$default-menu-font-color: $default-font-color;
+$default-menu-divider-color: rgba(151, 151, 151, .41);
+$default-menu-button-max-width: 160px;
+$default-menu-back-button-size: 19px;
+$default-menu-external-link-icon-size: 30px;
+
+$default-plan-dates-divider-size: 32px;
+$default-plan-date-date-color: $default-accent-color;
+
+$default-room-mobile-header-height: 22px;
+$default-room-filter-height: 30px;
+$default-room-sort-height: 33px;
+$default-rooms-by-rate-border-color: #E6E6E6;
+$default-rooms-by-rate-border-width-active: 5px;
+$default-room-image-width: 260px;
+$default-room-image-height: 158px;
+$default-room-type-rate-container-width: 90px;
+$default-room-special-color: #6CFFC9;
+
+$default-rates-room-image-width: 300px;
+$default-rates-room-image-height: 200px;
+$default-rates-room-detail-header-height: 27px;
+$default-rates-room-detail-height-closed: 75px;
+$default-rates-room-view-toggle-width: 116px;
+$default-rates-room-view-toggle-height: 30px;
+$default-rate-controls-width: 260px;
+
+$default-summary-bar-height: $default-min-tap-area-size;
+
+/* ==========================================================================
+   Mobile Default Variables
+   ========================================================================== */
+
+$default-tablet-width: 768px;
+
+/* ==========================================================================
+   SCSS Partials
+   ========================================================================== */
+
+@import "global/mixins.scss";
+@import "../fonts/proxima-nova.scss";
+@import "../fonts/teromac-icons.scss";
+
+@import "variables/_accordion.scss";
+@import "variables/_buttons.scss";
+@import "variables/_dates.scss";
+@import "variables/_filters.scss";
+@import "variables/_forms.scss";
+@import "variables/_image_lists.scss";
+@import "variables/_images.scss";
+@import "variables/_layout.scss";
+@import "variables/_menu.scss";
+@import "variables/_sliders.scss";
+@import "variables/_summaryBar.scss";
+@import "variables/_modal.scss";
+@import "variables/_views.scss";
+
+@import "global/layout.scss";
+@import "global/menu.scss";
+@import "global/z-index.scss";
+@import "global/modal.scss";
+
+@import "components/accordion.scss";
+@import "components/buttons.scss";
+@import "components/dates.scss";
+@import "components/filters.scss";
+@import "components/forms.scss";
+@import "components/image_lists.scss";
+@import "components/images.scss";
+@import "components/sliders.scss";
+@import "components/summaryBar.scss";
+
+@import "pages/views.scss";

@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "services": {
+        "StaticData": "/mock-api/gaylord/staticData.json",
+        "StaticLanguageData": "/mock-api/gaylord/staticLanguageData.json",
+        "Availability": "",
+        "Reservations": "",
+        "Currency": "",
+        "ExchangeRate": "",
+        "MapImage": ""
+    }
+}

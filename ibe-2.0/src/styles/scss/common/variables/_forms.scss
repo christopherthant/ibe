@@ -1,0 +1,96 @@
+$checkbox-display: inline-block;
+$checkbox-input-position: absolute;
+$checkbox-input-left: -9999px;
+
+$checkbox-and-label-position: relative;
+$checkbox-and-label-cursor: pointer;
+$checkbox-and-label-padding-left: $default-min-tap-area-size;
+$checkbox-and-label-padding-right: ($default-min-tap-area-size - $default-checkbox-input-size) / 2;
+$checkbox-and-label-v-align-text: $default-min-tap-area-size;
+
+$checkbox-and-label-ends-width: $default-checkbox-input-size;
+$checkbox-and-label-ends-top: ($default-min-tap-area-size - $default-checkbox-input-size) / 2;
+$checkbox-and-label-ends-left: ($default-min-tap-area-size - $default-checkbox-input-size) / 2;
+$checkbox-and-label-ends-content: "";
+$checkbox-and-label-ends-display: block;
+$checkbox-and-label-ends-position: absolute;
+$checkbox-and-label-ends-bg-repeat: no-repeat;
+$checkbox-and-label-ends-bg-position: center;
+
+$checkbox-and-label-before-height: $default-checkbox-input-size;
+$checkbox-and-label-before-border: $default-border-width;
+$checkbox-and-label-before-solid: $default-checkbox-border-color;
+$checkbox-and-label-before-bg-color: $default-checkbox-bg-color;
+$checkbox-and-label-before-border-radius: $default-border-radius;
+$checkbox-and-label-before-border-shadow: 1px 2px 3px 0 rgba(162, 162, 162,  0.5);
+
+$checkbox-and-label-after-text-align: center;
+$checkbox-and-label-after-color: $default-accent-color;
+$checkbox-and-label-after-v-align-text: $default-checkbox-input-size;
+
+$checkedbox-and-label-after-character-code: "7";
+$checkedbox-and-label-after-font-size: 12;
+
+$styled-select-width: 100%;
+
+$styled-select-overflow: hidden;
+$styled-select-position: relative;
+$styled-select-bg-color: $default-content-bg-color;
+$styled-select-height: $default-min-tap-area-size;
+$styled-select-border-radius: $default-border-radius;
+
+$styled-select-after-color: $default-input-border-color;
+$styled-select-after-width: $default-select-carret-width;
+$styled-select-after-character-set: "B";
+$styled-select-after-font-size: 13;
+$styled-select-after-text-align: center;
+$styled-select-after-position: absolute;
+$styled-select-after-top: 0;
+$styled-select-after-right: 0;
+$styled-select-after-pointer-events: none;
+$styled-select-after-v-align-text-height: $default-min-tap-area-size;
+$styled-select-after-v-align-text-top-border: $default-border-width;
+$styled-select-after-v-align-text-bottom-border: $default-border-width;
+
+$styled-select-error-border-color: $default-accent-color;
+
+$styled-selected-bg: transparent;
+$styled-selected-height: 100%;
+$styled-selected-border: 0;
+$styled-selected-webkit-appearance: none;
+$styled-selected-moz-appearance: window;
+$styled-selected-padding: 0 $default-select-carret-width 0 $default-spacing-unit;
+$styled-selected-v-align-text-height: $default-min-tap-area-size;
+$styled-selected-v-align-text-top-border: $default-border-width;
+$styled-selected-v-align-text-bottom-border: $default-border-width;
+
+$input-group-bottom-margin: $default-spacing-unit / 2;
+
+$input-group-input-label-position: relative;
+$input-group-input-label-width: 50%;
+$input-group-input-label-float: left;
+$input-group-input-label-padding: 0 $default-spacing-unit;
+$input-group-input-label-v-align-text-height: $default-min-tap-area-size;
+
+$input-group-label-text-align: left;
+$input-group-label-base-font-size: $default-font-size;
+$input-group-label-final-font-size: 14;
+
+$input-group-number-color: $default-input-group-number-color;
+
+$input-group-number-input-group-input-padding: 0;
+
+$price-diff-position: absolute;
+$price-diff-bottom: 100%;
+$price-diff-text-align: center;
+$price-diff-line-height: normal;
+$price-diff-width: $default-min-tap-area-size;
+$price-diff-base-font-size: $default-font-size;
+$price-diff-final-font-size: 12;
+
+$price-diff-minus-left: 0;
+
+$price-diff-plus-right: 0;
+
+$plan-inputs-con-margin-top: $default-spacing-unit;
+$plan-inputs-child-divs-padding: 0 ($default-spacing-unit * 2);

@@ -1,0 +1,426 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+[ng-cloak],
+.ng-cloak {
+  display: none !important; }
+
+html,
+body,
+#teromac-container,
+.teromac-layout,
+.teromac-body {
+  height: 100%; }
+
+body {
+  margin: 0; }
+
+#teromac-container {
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.teromac-layout,
+.teromac-modal-overlay {
+  -webkit-box-sizing: border-box;
+  /* Android ≤ 2.3, iOS ≤ 4 */
+  -moz-box-sizing: border-box;
+  /* Firefox ≤ 28 */
+  box-sizing: border-box;
+  /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */ }
+  .teromac-layout *, .teromac-layout *:before, .teromac-layout *:after,
+  .teromac-modal-overlay *,
+  .teromac-modal-overlay *:before,
+  .teromac-modal-overlay *:after {
+    -webkit-box-sizing: border-box;
+    /* Android ≤ 2.3, iOS ≤ 4 */
+    -moz-box-sizing: border-box;
+    /* Firefox ≤ 28 */
+    box-sizing: border-box;
+    /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */ }
+  .teromac-layout hr,
+  .teromac-modal-overlay hr {
+    border: none;
+    clear: both; }
+  .teromac-layout a,
+  .teromac-modal-overlay a {
+    text-decoration: none; }
+  .teromac-layout label,
+  .teromac-layout input,
+  .teromac-layout select,
+  .teromac-layout textarea,
+  .teromac-layout img,
+  .teromac-modal-overlay label,
+  .teromac-modal-overlay input,
+  .teromac-modal-overlay select,
+  .teromac-modal-overlay textarea,
+  .teromac-modal-overlay img {
+    display: block;
+    width: 100%; }
+  .teromac-layout select:active, .teromac-layout select:hover,
+  .teromac-modal-overlay select:active,
+  .teromac-modal-overlay select:hover {
+    outline: none; }
+  .teromac-layout textarea,
+  .teromac-layout input[type="text"],
+  .teromac-layout input[type="email"],
+  .teromac-layout input[type="password"],
+  .teromac-modal-overlay textarea,
+  .teromac-modal-overlay input[type="text"],
+  .teromac-modal-overlay input[type="email"],
+  .teromac-modal-overlay input[type="password"] {
+    display: block;
+    width: 100%; }
+
+.teromac-checkbox {
+  display: inline-block; }
+  .teromac-checkbox input[type="checkbox"]:not(:checked),
+  .teromac-checkbox input[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px; }
+  .teromac-checkbox input[type="checkbox"]:not(:checked) + label,
+  .teromac-checkbox input[type="checkbox"]:checked + label {
+    position: relative;
+    cursor: pointer; }
+    .teromac-checkbox input[type="checkbox"]:not(:checked) + label:before, .teromac-checkbox input[type="checkbox"]:not(:checked) + label:after,
+    .teromac-checkbox input[type="checkbox"]:checked + label:before,
+    .teromac-checkbox input[type="checkbox"]:checked + label:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .teromac-checkbox input[type="checkbox"]:not(:checked) + label:after,
+    .teromac-checkbox input[type="checkbox"]:checked + label:after {
+      text-align: center; }
+  .teromac-checkbox input[type="checkbox"]:checked + label:after {
+    content: "7";
+    font-family: "teromac Icons";
+    font-size: 12px; }
+
+.teromac-styled-select,
+.teromac-styled-select select {
+  width: 100%; }
+
+.teromac-styled-select {
+  overflow: hidden; }
+  .teromac-styled-select:after {
+    content: "B";
+    font-family: "teromac Icons";
+    font-size: 13px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none; }
+
+.teromac-styled-select select {
+  background: transparent;
+  height: 100%;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: window; }
+
+.teromac-btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer; }
+  .teromac-btn.teromac-btn-disabled {
+    cursor: default; }
+
+.teromac-input-group-label,
+.teromac-input-group-input {
+  position: relative;
+  width: 50%;
+  float: left; }
+
+.teromac-input-group-label {
+  text-align: left; }
+
+.teromac-input-group-number .teromac-input-group-input {
+  padding: 0; }
+
+.teromac-input-number-btn-minus,
+.teromac-input-number-btn-plus {
+  position: relative;
+  cursor: pointer; }
+  .teromac-input-number-btn-minus:before, .teromac-input-number-btn-minus:after,
+  .teromac-input-number-btn-plus:before,
+  .teromac-input-number-btn-plus:after {
+    position: absolute; }
+  .teromac-input-number-btn-minus:before,
+  .teromac-input-number-btn-plus:before {
+    content: ""; }
+
+.teromac-input-number-btn-minus {
+  float: left; }
+  .teromac-input-number-btn-minus:after {
+    content: "Q";
+    font-family: "teromac Icons";
+    font-size: 12px; }
+
+.teromac-input-number-btn-plus {
+  float: right; }
+  .teromac-input-number-btn-plus:after {
+    content: "R";
+    font-family: "teromac Icons";
+    font-size: 12px; }
+
+.teromac-price-diff-minus,
+.teromac-price-diff-plus {
+  position: absolute;
+  bottom: 100%;
+  text-align: center;
+  line-height: normal; }
+
+.teromac-price-diff-minus {
+  left: 0; }
+
+.teromac-price-diff-plus {
+  right: 0; }
+
+.teromac-btn-fixed-container-bottom {
+  clear: both; }
+
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+  display: block; }
+
+.teromac-half {
+  width: 50%;
+  float: left; }
+
+.teromac-success-check {
+  font-weight: normal; }
+  .teromac-success-check:before {
+    display: block;
+    content: "7";
+    font-family: "teromac Icons";
+    font-size: 27px;
+    border-radius: 50%;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+.teromac-clear-both {
+  clear: both; }
+
+.teromac-tabbed-header-navigation ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: center; }
+  .teromac-tabbed-header-navigation ul::-webkit-scrollbar {
+    display: none; }
+.teromac-tabbed-header-navigation li {
+  display: inline-block; }
+
+.teromac-table,
+.teromac-table-cell {
+  width: 100%;
+  height: 100%; }
+
+.teromac-table {
+  display: table; }
+
+.teromac-table-cell {
+  display: table-cell;
+  vertical-align: middle; }
+
+.teromac-mobile-only {
+  display: none; }
+
+.teromac-top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.teromac-top-menu-btn {
+  float: right;
+  cursor: pointer; }
+
+.teromac-menu-toggle:before {
+  content: "z";
+  font-family: "teromac Icons";
+  font-size: 25px;
+  vertical-align: middle;
+  float: right; }
+
+.teromac-background-image,
+.teromac-background-image:after,
+.teromac-header,
+.teromac-header:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.teromac-background-image,
+.teromac-header {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .teromac-background-image:after,
+  .teromac-header:after {
+    content: "";
+    opacity: 0; }
+
+.teromac-header:after {
+  position: absolute;
+  height: 100%; }
+
+.teromac-background-image,
+.teromac-background-image:after {
+  height: 100%; }
+
+.teromac-hotel-name {
+  position: relative;
+  text-align: center; }
+
+.teromac-hotel-logo {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  top: 0; }
+  .teromac-hotel-logo:after {
+    display: block;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center; }
+
+.teromac-content-mask-outer {
+  position: fixed;
+  width: 100%;
+  display: none; }
+
+.teromac-content-mask-mid {
+  display: table;
+  margin: 0 auto; }
+
+.teromac-scrolled .teromac-hotel-name {
+  top: 0; }
+.teromac-scrolled .teromac-background-image:after,
+.teromac-scrolled .teromac-header:after {
+  opacity: 1; }
+
+.teromac-scrolled-deeper .teromac-content-mask-outer {
+  display: block; }
+
+.teromac-content {
+  display: table;
+  position: relative;
+  width: 100%; }
+
+/* Modal */
+body.teromac-modal-open {
+  overflow: hidden; }
+
+.teromac-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll; }
+
+.teromac-modal-content-inner {
+  position: relative;
+  display: table;
+  margin: 0 auto; }
+
+.teromac-modal-content > div {
+  width: 100%;
+  cursor: auto; }
+
+.teromac-modal-close-btn {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  cursor: pointer; }
+  .teromac-modal-close-btn:after {
+    display: block;
+    content: "A";
+    font-family: "teromac Icons";
+    font-size: 22px; }
+
+@media (max-width: 768px) {
+  .teromac-layout,
+  .teromac-body {
+    height: auto; }
+
+  .teromac-desktop-only {
+    display: none; }
+
+  .teromac-mobile-only {
+    display: block; }
+
+  .teromac-btn-fixed-bottom,
+  a.teromac-btn-fixed-bottom {
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+  .teromac-tabbed-header-navigation ul {
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+    margin-left: 0; }
+
+  .teromac-menu-toggle span {
+    display: none; }
+  .teromac-menu-toggle:before {
+    margin-left: 0; }
+
+  .teromac-background-image,
+  .teromac-background-image:after {
+    height: 0; }
+
+  .teromac-background-image:after,
+  .teromac-header:after {
+    display: block;
+    opacity: 1; }
+
+  .teromac-hotel-name {
+    display: block;
+    top: 0; }
+
+  .teromac-hotel-logo {
+    display: none; }
+
+  .teromac-content-mask-outer {
+    display: block; }
+
+  .teromac-sticky-header-mobile.teromac-sticky-header {
+    height: auto; }
+  .teromac-sticky-header-mobile .teromac-background-image:after,
+  .teromac-sticky-header-mobile .teromac-header:after {
+    opacity: 0; }
+  .teromac-sticky-header-mobile .teromac-hotel-logo {
+    display: block; }
+  .teromac-sticky-header-mobile.teromac-scrolled .teromac-hotel-name {
+    top: 0; }
+  .teromac-sticky-header-mobile.teromac-scrolled .teromac-background-image:after,
+  .teromac-sticky-header-mobile.teromac-scrolled .teromac-header:after {
+    opacity: 1; }
+  .teromac-sticky-header-mobile .teromac-content-mask-outer {
+    display: none; }
+  .teromac-sticky-header-mobile.teromac-scrolled-deeper .teromac-content-mask-outer {
+    display: block; }
+
+  .teromac-content {
+    display: block; }
+    .teromac-content > div {
+      margin: 0 auto;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important; } }

@@ -1,0 +1,69 @@
+<div id="teromac-plan-view">
+    <a ui-sref="dates" class="teromac-plan-dates-container">
+        <div class="teromac-plan-date teromac-plan-date-checkin">
+            <div class="teromac-plan-date-label" translate="CHECK-IN"></div>
+            <div class="teromac-plan-date-date">
+                <span class="teromac-plan-month" ng-bind="(vm.plan.data.check_in | date:'MMM') || '?'"></span>
+                <span class="teromac-plan-day" ng-bind="vm.plan.data.check_in | date:'d'"></span>
+            </div>
+            <div class="teromac-plan-year" ng-bind="vm.plan.data.check_in | date:'yyyy'"></div>
+        </div><!-- .teromac-plan-date-checkin -->
+        <div class="teromac-plan-dates-divider"></div>
+        <div class="teromac-plan-date teromac-plan-date-checkout">
+            <div class="teromac-plan-date-label" translate="CHECK-OUT"></div>
+            <div class="teromac-plan-date-date">
+                <span class="teromac-plan-month" ng-bind="(vm.plan.data.check_out | date:'MMM') || '?'"></span>
+                <span class="teromac-plan-day" ng-bind="vm.plan.data.check_out | date:'d'"></span>
+            </div>
+            <div class="teromac-plan-year" ng-bind="vm.plan.data.check_out | date:'yyyy'"></div>
+        </div><!-- .teromac-plan-date-checkin -->
+    </a>
+    <div ng-if=vm.allowMultiRoom><!-- optional by hotel setting -->
+        <div class="teromac-checkbox">
+            <label for="teromac-multiroom-input" translate="Multiple Rooms"></label>
+            <input type="checkbox" id="teromac-multiroom-input" ng-model="vm.plan.data.multiRoom" />
+        </div>
+    </div>
+    <div class="teromac-plan-inputs-con" ng-if="!vm.plan.data.multiRoom">
+        <hr />
+        <div class="teromac-plan-inputs">
+            <div class="teromac-input-group teromac-input-group-number" ng-repeat-start="guestType in 
+            vm.plan.data.guestTypes track by $index">
+                <div class="teromac-input-group-label" translate="{{::guestType.label}}"></div>
+                <div class="teromac-input-group-input">
+                    <div class="teromac-input-number-btn-minus" ng-click="vm.plan.removeGuest($index)"></div>
+                    <div class="teromac-input-number-btn-plus" ng-click="vm.plan.addGuest($index)"></div>
+                    <div class="teromac-input-number-value" ng-bind="guestType.count"></div>
+                </div>
+            </div>
+            <hr ng-repeat-end ng-if="!$last">
+            <div class="teromac-input-group teromac-input-group-select" ng-repeat="guestTypeValue in vm.plan.data.guestTypeValues track by $index">
+                <div class="teromac-input-group-label">
+                    <span translate="{{guestTypeValue.label}}"></span> <!-- MAKE SINGULAR IN TRANSLATE -->
+                    <span ng-bind="$index + 1"></span>
+                    <span translate="{{guestTypeValue.values.label}}"></span>
+                </div>
+                <div class="teromac-input-group-input">
+                    <div class="teromac-styled-select" ng-class="{'teromac-error': vm.formSubmitted && (!vm.plan.data.childrenAges[$index] || vm.plan.data.childrenAges[$index] === '') }">
+                        <select ng-model="vm.plan.data.vm.plan.data.guestTypeValues[$index]">
+                            <option ng-repeat="option in guestTypeValue.values.select.options" 
+                            value="{{option.value}}">{{option.label}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="vm.plan.data.multiRoom">
+        <div>You will be able to enter the number of guests during room selection</div>
+    </div>
+    <hr />
+    <div ng-if = vm.rateCodeApplied>
+        <div>{{::vm.appliedCodeMessage}}</div>
+    </div>
+    <a ng-if = !vm.rateCodeApplied ui-sref="codes" class="teromac-codes-btn teromac-btn teromac-btn-hollow-inverse" translate="{{::vm.noCodeLabel}}"></a>
+    <a ng-if = vm.rateCodeApplied ui-sref="codes" class="teromac-codes-btn teromac-btn teromac-btn-hollow-inverse" translate="{{::vm.appliedCodeLabel}}"></a>
+    <div class="teromac-btn-fixed-container-bottom">
+        <span class="teromac-btn teromac-btn-fixed-bottom" ng-click="vm.checkAvailability()" translate="Check Availability"></span>
+    </div>
+</div>

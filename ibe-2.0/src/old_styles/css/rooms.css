@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-rooms-view {
+  max-width: 1024px;
+  overflow: hidden; }
+
+.teromac-filter-toggle-btn {
+  float: right;
+  cursor: pointer; }
+  .teromac-filter-toggle-btn:before {
+    content: "Y";
+    font-family: "teromac Icons";
+    font-size: 12px;
+    vertical-align: top; }
+
+.teromac-room-filters-container {
+  position: relative; }
+  .teromac-room-filters-container ul {
+    display: block;
+    list-style-type: none;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+    text-align: center; }
+    .teromac-room-filters-container ul::-webkit-scrollbar {
+      display: none; }
+  .teromac-room-filters-container li {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px; }
+    .teromac-room-filters-container li:first-of-type {
+      border: none;
+      text-decoration: underline; }
+
+.teromac-item-view-left,
+.teromac-item-view-right {
+  float: left; }
+
+.teromac-item-view-left {
+  width: 35%; }
+
+.teromac-item-view-right {
+  width: 65%; }
+
+.teromac-room-sort {
+  margin-top: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden; }
+  .teromac-room-sort li {
+    position: relative;
+    width: 50%;
+    float: left;
+    text-align: center;
+    cursor: pointer; }
+    .teromac-room-sort li:last-of-type {
+      border-left-width: 0; }
+
+.teromac-items-by-rate {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .teromac-items-by-rate li {
+    border-style: solid;
+    cursor: pointer;
+    overflow: hidden; }
+    .teromac-items-by-rate li a {
+      display: block; }
+  .teromac-items-by-rate h2 {
+    margin: 0;
+    font-weight: normal; }
+  .teromac-items-by-rate .teromac-label,
+  .teromac-items-by-rate .teromac-value {
+    font-weight: bold; }
+  .teromac-items-by-rate .teromac-view-rate-btn-mobile {
+    float: right; }
+    .teromac-items-by-rate .teromac-view-rate-btn-mobile:after {
+      content: "W";
+      font-family: "teromac Icons";
+      font-size: 13px;
+      vertical-align: middle; }
+
+.teromac-items-by-item {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .teromac-items-by-item li {
+    position: relative;
+    cursor: pointer; }
+    .teromac-items-by-item li.teromac-active .teromac-item-overlay,
+    .teromac-items-by-item li.teromac-active .teromac-room-type-copy,
+    .teromac-items-by-item li.teromac-active .teromac-room-type-rate-container {
+      display: none; }
+    .teromac-items-by-item li a {
+      display: block; }
+    .teromac-items-by-item li .teromac-item-image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .teromac-items-by-item li .teromac-item-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: -webkit-linear-gradient(top, transparent 55%, #000 100%);
+      background: linear-gradient(to bottom, transparent 55%, #000 100%);
+      opacity: 0.8; }
+    .teromac-items-by-item li .teromac-room-type-copy,
+    .teromac-items-by-item li .teromac-room-type-rate-container {
+      position: absolute;
+      bottom: 0; }
+    .teromac-items-by-item li .teromac-room-type-copy {
+      left: 0;
+      width: 100%; }
+    .teromac-items-by-item li .teromac-room-type-rate-container {
+      right: 0;
+      text-align: center; }
+    .teromac-items-by-item li .teromac-item-name,
+    .teromac-items-by-item li .teromac-room-type-special {
+      margin: 0; }
+    .teromac-items-by-item li .teromac-room-type-rate-label {
+      opacity: 0.8; }
+    .teromac-items-by-item li .teromac-special-badge,
+    .teromac-items-by-item li .teromac-room-type-special {
+      display: none; }
+    .teromac-items-by-item li .teromac-special-badge {
+      font-weight: bold; }
+    .teromac-items-by-item li.teromac-special .teromac-room-type-special {
+      display: block; }
+    .teromac-items-by-item li.teromac-special .teromac-special-badge {
+      display: inline-block; }
+    .teromac-items-by-item li.teromac-special .teromac-room-type-max-guests {
+      display: none; }
+
+.teromac-item-view-right h3 {
+  font-weight: normal;
+  margin-top: 0; }
+
+@media (max-width: 768px) {
+  .teromac-item-view-left,
+  .teromac-item-view-right {
+    float: none;
+    width: 100%; }
+
+  .teromac-item-view-right h3 {
+    display: none; }
+
+  #teromac-rooms-view.mobile-show-rates .teromac-item-view-left {
+    display: none; }
+  #teromac-rooms-view.mobile-show-rooms .teromac-item-view-right {
+    display: none; } }

@@ -1,0 +1,48 @@
+<div id="teromac-compare-view">
+    <div ng-include="'app/common/views/summaryBar.html'" include-replace></div>
+    <h2 translate="Room and Rate Comparison"></h2>
+    <div class="teromac-compare-items-container-outer">
+        <div class="teromac-compare-items-container-inner">
+            <div class="teromac-compare-nagivation-container">
+                <div class="teromac-compare-navigation-outer">
+                    <div class="teromac-compare-navigation-mid">
+                        <div class="teromac-compare-navigation-inner">
+                            <div class="teromac-compare-navigation teromac-prev">
+                                <div class="teromac-table">
+                                    <div class="teromac-table-cell"></div>
+                                </div>
+                            </div>
+                            <div class="teromac-compare-navigation teromac-next">
+                                <div class="teromac-table">
+                                    <div class="teromac-table-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <slick class="teromac-compare-items-slider" autoplay="false" arrows="true" dots="false" draggable="true" infinite="false" slides-to-show="3" slides-to-scroll="1" responsive="[{breakpoint: 768, settings: {slidesToShow: 1, slidesToScroll: 1 }}]" speed="300" next-arrow=".teromac-next" prev-arrow=".teromac-prev">
+                <div class="teromac-compare-item" ng-repeat="n in []|range:1:4">
+                    <div class="teromac-compare-item-remove-btn"></div>
+                    <h3>Classic King {{n}}</h3>
+                    <div class="teromac-compare-image" style="background-image: url(/assets/images/hotels/belmond/rooms/01-standard/01-standard.jpg)"></div>
+                    <div class="teromac-compare-item-body">
+                        <h4>Advance Purchase Best Flexible Rate</h4>
+                        <div class="teromac-compare-price">
+                            <div class="teromac-value">$120</div>
+                            <div class="teromac-label" translate="/ night"></div>
+                        </div>
+                        <div class="teromac-btn" translate="Book"></div>
+                        <div class="teromac-btn teromac-btn-hollow-inverse" translate="Policies"></div>
+                        <ul>
+                            <li>1 king bed</li>
+                            <li>1 sofa bed</li>
+                            <li>1 bath</li>
+                            <li>2 sinks</li>
+                        </ul>
+                    </div>
+                </div>
+            </slick>
+        </div>
+    </div>
+</div>

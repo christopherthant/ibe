@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-payment-view form {
+  overflow: hidden; }
+
+.teromac-payment-view-left,
+.teromac-payment-view-right,
+.teromac-payment-view-bottom {
+  overflow: hidden;
+  float: left;
+  width: 50%; }
+
+.teromac-cc-exp-month-input-container,
+.teromac-cc-exp-year-input-container,
+.teromac-cc-security-code-input-container,
+.teromac-billing-country-input-container,
+.teromac-billing-state-input-container,
+.teromac-billing-postal-code-input-container {
+  float: left;
+  width: 50%; }
+
+@media (max-width: 768px) {
+  .teromac-payment-view-left,
+  .teromac-payment-view-right,
+  .teromac-payment-view-bottom {
+    clear: both;
+    float: none;
+    width: 100%;
+    padding: 0; } }

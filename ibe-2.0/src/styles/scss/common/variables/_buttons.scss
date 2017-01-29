@@ -1,0 +1,116 @@
+$codes-btn-margin-top: ($default-spacing-unit * 2);
+
+$filter-toggle-btn-float: right;
+$filter-toggle-btn-cursor: point;
+$filter-toggle-btn-border: $default-border-width;
+$filter-toggle-btn-solid: $default-input-border-color;
+$filter-toggle-btn-padding: 0 $default-spacing-unit;
+$filter-toggle-btn-base-font-size: $default-font-size;
+$filter-toggle-btn-final-font-size: 13; 
+$filter-toggle-btn-v-align-text-height: $default-room-mobile-header-height;
+$filter-toggle-btn-v-align-text-top-border: $default-border-width;
+$filter-toggle-btn-v-align-text-bottom-border: $default-border-width;
+$filter-toggle-btn-border-radius: $default-border-radius;
+
+$filter-toggle-btn-before-margin-right: $default-spacing-unit / 4;
+$filter-toggle-btn-before-character-set: "Y";
+$filter-toggle-btn-before-font-size: 12;
+$filter-toggle-btn-before-v-align: top;
+
+$modal-close-btn-position: absolute;
+$modal-close-btn-right: 0;
+$modal-close-btn-text-align: center;
+$modal-close-btn-cursor: pointer;
+$modal-close-btn-top: -$default-min-tap-area-size;
+$modal-close-btn-width: $default-min-tap-area-size;
+$modal-close-btn-height: $default-min-tap-area-size;
+$modal-close-btn-color: $default-font-color-inverse;
+
+$modal-close-btn-after-display: block;
+$modal-close-btn-after-line-height: $default-min-tap-area-size;
+$modal-close-btn-after-character-set: "A";
+$modal-close-btn-after-font-size: 22;
+
+$rate-controls-btn-width: 100%;
+
+$btn-btn-compare-width: 100%;
+$btn-btn-compare-margin-top: $default-spacing-unit;
+$btn-btn-compare-bg-color: $default-hr-color;
+$btn-btn-compare-color: $default-font-color;
+$btn-btn-compare-base-font-size: $default-font-size;
+$btn-btn-compare-final-font-size: 12;
+
+$btn-btn-compare-before-v-align: top;
+$btn-btn-compare-before-margin-right: $default-spacing-unit * 1.5;
+$btn-btn-compare-before-char-code: "7";
+$btn-btn-compare-before-font-size: 18;
+
+$btn-btn-add-compare-border-color: $default-hr-color;
+
+$btn-btn-remove-compare-box-shadow: (1px 3px 4px rgba(163, 163, 163, 0.5));
+
+$btn-btn-remove-compare-before-color: $default-accent-color;
+
+$btn-display: inline-block;
+$btn-text-align: center;
+$btn-cursor: pointer;
+$btn-bg-color: $default-accent-color;
+$btn-color: $default-font-color-inverse;
+$btn-border: $default-border-width;
+$btn-solid: $default-accent-color;
+$btn-padding: 0 $default-spacing-unit;
+$btn-v-align-text-height: $default-input-height;
+$btn-v-align-text-top-border: $default-border-width;
+$btn-v-align-text-bottom-border: $default-border-width;
+$btn-base-font-size: $default-font-size;
+$btn-final-font-size: 16;
+$btn-border-radius: $default-border-radius;
+
+$btn-disabled-cursor: default;
+$btn-disabled-bg-color: $default-input-border-color;
+
+$btn-inverse-bg-color: $default-input-fill-color-inverse;
+$btn-inverse-border-color: $default-input-fill-color-inverse;
+
+$btn-hollow-bg-color: $default-bg-color;
+$btn-hollow-color: $default-accent-color;
+
+$btn-hollow-inverse-bg-color: $default-content-bg-color;
+$btn-hollow-inverse-color: $default-input-border-color;
+$btn-hollow-inverse-border-color: $default-input-border-color;
+
+$input-number-btn-position: relative;
+$input-number-btn-cursor: pointer;
+$input-number-btn-width: $default-min-tap-area-size;
+$input-number-btn-height: $default-min-tap-area-size;
+$input-number-btn-color: $default-accent-color;
+
+$input-number-btn-ends-position: absolute;
+$input-number-btn-ends-width: $default-checkbox-input-size;
+$input-number-btn-ends-top: ($default-min-tap-area-size - $default-checkbox-input-size) / 2;
+$input-number-btn-ends-left: ($default-min-tap-area-size - $default-checkbox-input-size) / 2;
+
+$input-number-btn-before-content: "";
+$input-number-btn-before-height: $default-checkbox-input-size;
+$input-number-btn-before-border: $default-border-width;
+$input-number-btn-before-solid: $default-input-number-btn-color;
+$input-number-btn-before-border-radius: $default-border-radius;
+
+$input-number-btn-after-v-align-text-height: $default-checkbox-input-size;
+
+$input-number-value-base-font-size: $default-font-size;
+$input-number-value-final-font-size: 24;
+
+$input-number-btn-minuts-float: left;
+$input-number-btn-minuts-after-character-set: "Q";
+$input-number-btn-minuts-after-font-size: 12;
+
+$btn-fixed-bottom-container-v-align-text-height: $default-fixed-bottom-btn-height;
+$btn-fixed-bottom-container-base-font-size: $default-font-size;
+$btn-fixed-bottom-container-final-font-size: 18;
+
+$btn-fixed-container-bottom-clear: both;
+
+$btn-fixed-bottom-display: block;
+$btn-fixed-bottom-margin: ($default-spacing-unit * 2) auto;
+$btn-fixed-bottom-width: $default-fixed-bottom-btn-width-desktop;

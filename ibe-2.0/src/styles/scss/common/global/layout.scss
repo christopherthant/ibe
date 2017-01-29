@@ -1,0 +1,843 @@
+[ng-cloak],
+.ng-cloak {
+    display: $ng-cloak-display;
+}
+
+html,
+body,
+#teromac-container,
+.teromac-layout,
+.teromac-body {
+    height: $container-height;
+}
+
+html,
+#teromac-container {
+    background-color: $container-bg-color;
+    color: $container-font-color;
+}
+
+body {
+    margin: $body-margin;
+}
+
+#teromac-container {
+    position: $container-position;
+    font-family: $container-font-family;
+}
+
+.teromac-layout,
+.teromac-modal-overlay {
+    font-size: $default-font-size * 1px;
+    @include box-sizing($layout-box-sizing);
+
+    *, *:before, *:after {
+        @include box-sizing($layout-elements-box-sizing);
+    }
+    .teromac-clearfix:after {
+        content: $layout-clearfix-after-content;
+        display: $layout-clearfix-after-display;
+        clear: $layout-clearfix-after-clear;
+    }
+    hr {
+        border: none;
+        clear: $layout-hr-clear;
+        height: $layout-hr-height;
+        margin: $layout-hr-margin;
+        color: $layout-hr-color;
+        background-color: $layout-hr-bg-color;
+    }
+    label {
+        @include font-size($layout-label-base-font-size
+            , $layout-label-final-font-size);
+    }
+    a {
+        text-decoration: $layout-select-action-outline;
+    }
+    label,
+    input,
+    select,
+    textarea,
+    img {
+        display: $layout-inputs-display;
+        width: $layout-inputs-width;
+    }
+    input,
+    textarea,
+    select {
+        @include font-size($layout-input-text-select-base-font-size
+            , $layout-input-text-select-final-font-size);
+        @include border-radius($layout-input-text-select-border-radius);
+    }
+    select {
+        &:active,
+        &:hover {
+            outline: $layout-select-action-outline
+        }
+    }
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"], 
+    .teromac-styled-select {
+        display: $layout-inputs-display;
+        width: $layout-inputs-width;
+        border: $layout-inputs-border solid $layouts-inputs-solid;
+        margin-bottom: $layouts-inputs-margin-bottom;
+    }
+    textarea {
+        resize: $layout-textarea-resize;
+        padding: $layout-textarea-padding;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        height: $layout-input-text-email-password-height;
+        padding: $layout-input-text-email-password-padding;
+    }
+}
+
+
+
+
+
+.teromac-half-container:after {
+    @extend .teromac-clearfix:after;
+}
+.teromac-half {
+    width: $half-width;
+    float: $half-float;
+    &.teromac-push-left {
+        padding-right: $half-push-left-padding-right;
+    }
+    &.teromac-push-right {
+        padding-left: $half-push-right-padding-left;
+    }
+}
+.teromac-half-mobile {
+    display: inline-block;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+}
+
+.teromac-thirds {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    > div {
+        width: $thirds-child-divs-width;
+        float: $thirds-child-divs-float;
+    }
+    .teromac-thirds-left {
+        padding-right: $thirds-thirds-left-padding-right;
+    }
+    .teromac-thirds-mid {
+        padding: $thirds-thirds-mid-padding;
+    }
+    .teromac-thirds-right {
+        padding-left: $thirds-thirds-right-padding-left;
+    }
+}
+.teromac-quarters {
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+    .teromac-quarter {
+        float: $quarters-quarter-float;
+        width: $quarters-quarter-width;
+        padding-right: $quarters-quarter-padding-right;
+    }
+}
+.teromac-success-check {
+    font-weight: $success-check-font-weight;
+    @include font-size($success-check-base-font-size
+        , $success-check-final-font-size);
+
+    &:before {
+        display: $success-check-before-display;
+        color: $success-check-before-color;
+        border: $success-check-before-border solid $success-check-before-solid;
+        width: $success-check-before-width;
+        margin: $success-check-before-margin;
+        @include icon($success-check-before-display
+            , $success-check-before-font-size);
+        @include border-radius($success-check-before-border-radius);
+        @include vertically-align-text($success-check-v-align-text-height);
+    }
+}
+.teromac-clear-both {
+    clear: $clear-both-clear;
+}
+.teromac-tabbed-header-navigation {
+    padding: $tabbed-header-nav-padding;
+    ul {
+        padding: $tabbed-header-nav-ul-padding;
+        list-style-type: $tabbed-header-nav-ul-list-style-type;
+        text-align: $tabbed-header-nav-ul-text-align;
+        margin: $tabbed-header-nav-ul-margin;
+
+        &::-webkit-scrollbar { 
+            display: $tabbed-header-nav-ul-webkit-scrollbar-display; 
+        }
+    }
+
+    li {
+        display: $tabbed-header-nav-li-display;
+    }
+
+    li.teromac-active a {
+        color: $tabbed-header-nav-li-active-a-color;
+        border-bottom: $tabbed-header-nav-li-active-a-border-bottom solid $tabbed-header-nav-li-active-a-solid;
+    }
+
+    a {
+        color: $tabbed-header-nav-a-color;
+        padding: $tabbed-header-nav-a-padding;
+        @include vertically-align-text($tabbed-header-nav-a-v-align-text-height);
+    }
+}
+.teromac-table,
+.teromac-table-cell {
+    width: $table-width;
+    height: $table-height;
+}
+.teromac-table {
+    display: $table-display;
+}
+.teromac-table-cell {
+    display: $table-cell-display;
+    vertical-align: $table-cell-vertical-align;
+}
+.teromac-mobile-only {
+    display: $mobile-only-display;
+}
+.teromac-top-menu {
+    position: $top-menu-position;
+    top: $top-menu-top;
+    left: $top-menu-left;
+    width: $top-menu-width;
+    color: $top-menu-color;
+    @include vertically-align-text($top-menu-v-align-text-height);
+}
+
+.teromac-menu-toggle:before {
+    vertical-align: $top-menu-toggle-before-vertical-align;
+    float: $top-menu-toggle-before-float;
+    margin-left: $top-menu-toggle-before-margin-left;
+    @include icon($top-menu-toggle-before-character-set
+        , $top-menu-toggle-before-font-size);
+}
+.teromac-background-image,
+.teromac-background-image:after,
+.teromac-header,
+.teromac-header:after {
+    position: $header-bg-image-position;
+    top: $header-bg-image-top;
+    left: $header-bg-image-left;
+    width: $header-bg-image-width;
+}
+.teromac-background-image,
+.teromac-header {
+    background-color: $header-bg-image-bg-color;
+    background-position: $header-bg-image-bg-position;
+    background-repeat: $header-bg-image-bg-repeat;
+    background-size: $header-bg-image-bg-size;
+
+    &:after {
+        content: $header-bg-image-after-content;
+        opacity: $header-bg-image-after-opacity;
+        background-color: $header-bg-image-after-bg-color;
+        @include transition($header-bg-image-transition);
+    }
+}
+.teromac-header:after {
+    position: $header-after-position;
+    height: $header-after-height;
+}
+.teromac-background-image,
+.teromac-sticky-header.teromac-scrolled .teromac-header {
+    background-image: $bg-image-sticky-header-scrolled-header-bg-image;
+}
+
+.teromac-background-image,
+.teromac-background-image:after {
+    height: $bg-image-height;
+}
+.teromac-hotel-name {
+    position: $hotel-name-position;
+    text-align: $header-after-height;
+    top: $hotel-name-top;
+    letter-spacing: $hotel-name-letter-spacing;
+    color: $hotel-name-color;
+    @include vertically-align-text($hotel-name-v-align-text);
+    @include font-size($hotel-name-base-font-size
+        , $hotel-name-final-font-size);
+    @include transition($hotel-name-transition);
+}
+.teromac-hotel-logo {
+    position: $hotel-logo-position;
+    display: $hotel-logo-display;
+    margin: $hotel-logo-margin;
+    width: $hotel-logo-width;
+    top: $hotel-logo-top;
+    padding: $hotel-logo-padding;
+    @include transition($hotel-logo-transition);
+
+    &:after {
+        display: $hotel-logo-after-display;
+        content: $hotel-logo-after-content;
+        background-repeat: $hotel-logo-after-bg-repeat;
+        background-position: $hotel-logo-after-bg-position;
+        background-image: $hotel-logo-after-bg-image;
+        height: $default-logo-height;
+    }
+}
+.teromac-sticky-header.teromac-scrolled .teromac-hotel-logo {
+    top: $sticky-header-scrolled-hotel-logo-top;
+}
+
+.teromac-content-mask-outer {
+    position: $content-mask-outer-position;
+    width: $content-mask-outer-width;
+    display: $content-mask-outer-display;
+    top: $content-mask-outer-top;
+}
+.teromac-content-mask-mid {
+    display: $content-mask-mid-display;
+    margin: $content-mask-mid-margin;
+}
+
+.teromac-content-mask-inner {
+    background-color: $content-mask-inner-bg-color;
+    @include border-radius($content-mask-inner-border-radius);
+}
+
+.teromac-scrolled {
+    .teromac-hotel-name {
+        top: $scrolled-hotel-name-top;
+    }
+    .teromac-background-image:after,
+    .teromac-header:after {
+        opacity: $scrolled-header-bg-image-opacity;
+    }
+}
+.teromac-scrolled-deeper .teromac-content-mask-outer {
+    display: $scrolled-deeper-content-mask-outer-display;
+}
+.teromac-content {
+    display: $content-display;
+    position: $content-position;
+    width: $content-width;
+}
+
+.teromac-content > div {
+    background-color: $content-child-divs-bg-color;
+    padding: $content-child-divs-padding;
+    margin: $content-child-divs-margin;
+    @include border-radius($content-child-divs-border-radius);
+}
+
+.teromac-plan-dates-container {
+    display: $plan-dates-container-display;
+    position: $plan-dates-container-position;
+    overflow: $plan-dates-container-overflow;
+    cursor: $plan-dates-container-cursor;
+    color: $plan-dates-container-color;
+    margin: $plan-dates-container-margin;
+    padding: $plan-dates-container-padding;
+}
+.teromac-plan-dates-divider {
+    position: $plan-dates-divider-position;
+    top: $plan-dates-divider-top;
+    left: $plan-dates-divider-left;
+    width: $plan-dates-divider-width;
+    height: $plan-dates-divider-height;
+    margin: $plan-dates-divider-margin;
+    color: $plan-dates-divider-color;
+
+    &:after {
+        @include icon($plan-dates-divider-after-character-set
+            , $plan-dates-divider-after-font-size);
+    }
+}
+
+.teromac-item-view-left,
+.teromac-item-view-right {
+    float: $item-view-float;
+    margin: ($default-spacing-unit * 2.5) 0 0;
+}
+.teromac-item-view-left {
+    width: $item-view-left-width;
+    padding: 0 $default-spacing-unit 0 ($default-spacing-unit * 2);
+}
+.teromac-item-view-right {
+    width: $item-view-right-width;
+    padding: 0 ($default-spacing-unit * 2) 0 $default-spacing-unit;
+    h3 {
+        font-weight: $item-view-right-h3-font-weight;
+        margin-top: $item-view-right-h3-margin-top;
+        margin-bottom: $item-view-right-h3-margin-bottom;
+        @include font-size($item-view-right-h3-base-font-size
+            , $item-view-right-h3-final-font-size);
+        @include vertically-align-text($item-view-right-h3-v-align-text-height);  
+    }
+}
+
+.teromac-mobile-rooms-view-header {
+    padding: $mobile-rooms-view-header-padding;
+    
+    p {
+        @include font-size($mobile-rooms-view-header-p-base-font-size
+            , $mobile-rooms-view-header-p-final-font-size);
+        @include vertically-align-text($mobile-rooms-view-header-p-v-align-text-height);
+    }
+}
+
+.teromac-item-detail-header-name,
+.teromac-item-detail-header-left {
+    @include vertically-align-text($item-detail-header-left-name-v-align-text-height);
+}
+
+.teromac-item-detail-header-name {
+    font-weight: $item-detail-header-name-font-weight;
+    margin: $item-detail-header-name-margin;
+    @include font-size($item-detail-header-name-base-font-size, $item-detail-header-name-final-font-size);
+}
+
+.teromac-item-detail-header {
+    margin: $item-detail-header-margin;
+}
+
+.teromac-item-detail-header-left {
+    float: $item-detail-header-left-float;
+    @include font-size($item-detail-header-left-base-font-size
+        , $item-detail-header-left-final-font-size);
+}
+
+.teromac-item-detail-header-left-label {
+    margin-right: $item-detail-header-left-label-margin-right;
+}
+
+.teromac-room-details-outer {
+    position: $room-details-outer-position;
+    margin-bottom: $room-details-outer-margin-bottom;
+}
+
+.teromac-room-details-inner {
+    overflow: $room-details-inner-overflow;
+    height: $room-details-inner-height;
+}
+
+.teromac-room-description,
+.teromac-room-amenities {
+    @include font-size($room-dscrptn-amenities-base-font-size
+        , $room-dscrptn-amenities-final-font-size);
+    margin-bottom: $room-dscrptn-amenities-margin-bottom;
+}
+
+.teromac-room-amenities-header {
+    font-weight: $room-amenities-header-font-weight;
+    margin: $room-amenities-header-margin;
+}
+
+.teromac-room-amenities-subheader {
+    @include font-size($room-amenities-subheader-base-font-size
+        , $room-amenities-subheader-final-font-size);
+    margin: $room-amenities-subheader-margin;
+}
+
+.teromac-room-amenities {
+    overflow: $room-amenities-overflow;
+}
+.teromac-room-amenity {
+    width: $room-amenity-width;
+    float: $room-amenity-float;
+}
+.teromac-rates-container {
+    position: $rates-container-position;
+}
+.teromac-rates {
+    @include plain-list();
+}
+
+.teromac-rate-toggle {
+    position: $rates-toggle-position;
+    cursor: $rates-toggle-cursor;
+    background-color: $rates-toggle-bg-color;
+    color: $rates-toggle-color;
+    padding: $rates-toggle-base-font-size;
+    @include font-size($rates-toggle-base-font-size, $rates-toggle-final-font-size);
+    @include vertically-align-text($rates-toggle-v-align-txt);
+
+    &:after {
+        position: $rates-toggle-after-position;
+        width: $rates-toggle-after-width;
+        height: $rates-toggle-after-height;
+        top: $rates-toggle-after-top;
+        right: $rates-toggle-after-right;
+        text-align: $rates-toggle-after-text-align;
+        @include icon($rates-toggle-after-character-code, $rates-toggle-after-font-size);
+    }
+}
+
+.teromac-rate-details {
+    padding: $rate-details-padding;
+}
+.teromac-rate {
+    margin-bottom: $rate-margin-bottom;
+
+    .teromac-rate-details {
+        display: $rate-rate-details-display;
+    }
+    &.teromac-rate-is-visible {
+        .teromac-rate-toggle:after {
+            @include icon($rate-rate-is-visible-rate-toggle-after-char-code, 
+                $rate-rate-is-visible-rate-toggle-after-font-size);
+            opacity: $rate-rate-is-visible-rate-toggle-after-opacity;
+            background-color: $rate-rate-is-visible-rate-toggle-after-bg-color;
+        }
+        .teromac-rate-details {
+            display: $rate-rate-is-visible-rate-details-display;
+        }
+    }
+}
+
+.teromac-rate-details-copy {
+    margin: $rate-details-copy-margin;
+    @include font-size($rate-details-copy-base-font-size
+        , $rate-details-copy-final-font-size);
+}
+
+.teromac-rate-controls {
+    width: $rate-controls-width;
+    margin: $rate-controls-margin;
+    max-width: $rate-controls-max-width;
+    overflow: $rate-controls-overflow;
+}
+
+.teromac-rate-controls-left,
+.teromac-rate-controls-right {
+    float: $rate-controls-left-right-float;
+}
+
+.teromac-rate-controls-left {
+    width: $rate-controls-left-width;
+    padding-right: $rate-controls-left-padding-right;
+}
+.teromac-rate-controls-right {
+    width: $rate-controls-right-width;
+    padding-left: $rate-controls-right-padding-left;
+}
+
+
+/* ==========================================================================
+   Codes View
+   ========================================================================== */
+.teromac-codes {
+    @include plain-list();
+}
+.teromac-code {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    cursor: pointer;
+    
+    h3 {
+        font-weight: normal;
+        margin: 0;
+    }
+}
+.teromac-code {
+    padding: 10px 15px;
+    border-top: 1px solid #EDEDE9; 
+}
+.teromac-code h3 {
+    font-size: 0.9375em; 
+}
+.teromac-code-value {
+    width: auto;
+
+    div {
+        font-weight: bold;
+    }
+}
+.teromac-code-value {
+    line-height: 50px;
+    margin-left: 65px; 
+}
+.teromac-code-value div {
+    color: #F05800; 
+}
+.teromac-code-active {
+    .teromac-code-value {
+        h3,
+        div {
+            line-height: normal;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+    .teromac-clear-code-btn {
+        display: block;
+    }
+}
+.teromac-code-active .teromac-code-value {
+    padding: 14px 43px 14px 0; 
+}
+.teromac-code-active .teromac-code-value h3 {
+    font-size: 0.8125em; 
+}
+.teromac-code-active .teromac-code-value div {
+    font-size: 0.9375em; 
+}
+.teromac-code-focused {
+    .teromac-code-value {
+        padding: 0 !important;
+
+        div {
+            display: none;
+        }
+    }
+    .teromac-clear-code-btn {
+        display: none;
+    }
+}
+.teromac-code-focused.teromac-code-active .teromac-code-value h3,
+.teromac-code-focused .teromac-code-value h3 {
+  line-height: 50px;
+  font-size: 0.9375em; 
+}
+.teromac-code-focused .teromac-code-input {
+    display: block;
+}
+.teromac-code-active .teromac-code-icon,
+.teromac-code-focused .teromac-code-icon {
+    color: #F05800; 
+}
+.teromac-code-input {
+    clear: both;
+    display: none;
+
+    &.teromac-error .teromac-code-error {
+        display: block;
+    }
+}
+.teromac-code-input {
+    margin-bottom: 6px; 
+}
+.teromac-code-input.teromac-error input[type="text"] {
+    border-color: #FF0000;
+    margin-bottom: 5px; 
+}
+.teromac-code-input-controls > div {
+    padding: 0 5px; 
+}
+
+.teromac-code-icon {
+    float: left;
+    &:after {
+        position: relative;
+        top: -2px;
+    }
+}
+.teromac-code-input-controls {
+    overflow: hidden;
+    max-width: 290px;
+    margin: 0 auto;
+    > div {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    .teromac-btn {
+        width: 100%;
+        max-width: 135px;
+    }
+}
+.teromac-code-icon {
+    width: 50px;
+    height: 50px;
+    color: #908D91; 
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.teromac-clear-code-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+
+    &:after {
+        @include icon("F", 28);
+    }
+}
+.teromac-clear-code-btn {
+    margin-top: -14px;
+    width: 28px;
+    height: 28px;
+    right: 15px;
+    color: #908D91; 
+}
+.teromac-code-error {
+    display: none;
+}
+.teromac-code-error {
+    color: #FF0000;
+    font-size: 0.9375em;
+    margin-bottom: 10px; 
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: $default-tablet-width) {
+    .teromac-layout,
+    .teromac-body {
+        height: auto;
+    }
+
+    .teromac-desktop-only {
+        display: none;
+    }
+
+    .teromac-mobile-only {
+        display: block;
+    }
+
+    .teromac-half-mobile {
+        width: $tablet-half-mobile-width;
+    }
+
+    .teromac-half-mobile-push-left,
+    .teromac-half-mobile-push-right {
+        float: $tablet-half-mobile-push-float;
+    }
+
+    .teromac-half-mobile-push-left {
+        padding-right: $tablet-half-mobile-push-left-padding-right;
+    }
+
+    .teromac-half-mobile-push-right {
+        padding-left: $tablet-half-mobile-push-right-padding-left;
+    }
+
+    
+    .teromac-tabbed-header-navigation ul {
+        display: $tablet-tabbed-header-nav-ul-display;
+        white-space: $tablet-tabbed-header-nav-ul-white-space;
+        font-size: $tablet-tabbed-header-nav-ul-font-size;
+        overflow: $tablet-tabbed-header-nav-ul-overflow;
+        margin-left: $tablet-tabbed-header-nav-ul-margin-left;
+    }
+
+    .teromac-tabbed-header-navigation {
+        padding: $tablet-tabbed-header-nav-padding;
+
+        ul {
+            margin-bottom: $tablet-tabbed-header-nav-ul-margin-bottom;
+        }
+        li {
+            font-size: $tablet-tabbed-header-nav-li-font-size;
+        }
+        .teromac-btn {
+            margin-bottom: $tablet-tabbed-header-nav-btn-margin-bottom;
+        }
+    }
+    .teromac-menu-toggle {
+        span {
+            display: $tablet-menu-toggle-display;
+        }
+        &:before {
+            margin-left: $tablet-menu-toggle-before-margin-left;
+        }
+    }
+
+    .teromac-background-image,
+    .teromac-header {
+        background-image: $tablet-bg-image-header-bg-image;
+    }
+
+    .teromac-background-image,
+    .teromac-background-image:after {
+        height: $tablet-bg-image-height;
+        padding-top: $tablet-bg-image-padding-top;
+    }
+
+    .teromac-background-image:after,
+    .teromac-header:after {
+        display: $tablet-header-bg-image-after-display;
+        opacity: $tablet-header-bg-image-after-opacity;
+    }
+    .teromac-hotel-name {
+        display: $tablet-hotel-name-display;
+        top: $tablet-hotel-name-top;
+    }
+    .teromac-hotel-logo {
+        display: $tablet-hotel-logo-display;
+        padding: $tablet-hotel-logo-padding;
+    }
+    .teromac-content-mask-outer {
+        display: $tablet-content-mask-outer-display;
+    }
+
+    .teromac-sticky-header {
+        height: $tablet-sticky-header-height;
+    }
+
+    .teromac-sticky-header-mobile {
+        &.teromac-sticky-header {
+            height: $tablet-sticky-header-mobile-sticky-header-height;
+        }
+        .teromac-background-image:after,
+        .teromac-header:after {
+            opacity: $tablet-sticky-header-mobile-header-bg-image-after-opacity;
+        }
+        .teromac-hotel-name {
+            top: $tablet-sticky-header-mobile-hotle-name-top;
+        }
+        .teromac-hotel-logo {
+            display: $tablet-sticky-header-mobile-hotel-logo-display;
+        }
+        &.teromac-scrolled {
+            .teromac-hotel-name {
+                top: $tablet-sticky-header-mobile-scrolled-hotel-name-top;
+            }
+            .teromac-background-image:after,
+            .teromac-header:after {
+                opacity: $tablet-sticky-header-mobile-scrolled-header-bg-image-after-opacity;
+            }
+        }
+        .teromac-content-mask-outer {
+            display: $tablet-sticky-header-mobile-content-mask-outer-display;
+        }
+        &.teromac-scrolled-deeper .teromac-content-mask-outer {
+            display: $tablet-sticky-header-mobile-scrolled-deeper-content-mask-outer-display;
+        }
+    }
+    .teromac-content {
+        display: $tablet-content-display;
+        padding: $tablet-content-padding;
+
+        > div {
+            margin: $tablet-content-child-divs-margin;
+            width: $tablet-content-child-divs-width;
+            min-width: $tablet-content-child-divs-min-width;
+            max-width: $tablet-content-child-divs-max-width;
+        }
+    }
+
+    .teromac-item-view-left,
+    .teromac-item-view-right {
+        float: $tablet-item-view-float;
+        width: $tablet-item-view-width;
+        padding: $tablet-item-view-padding;
+    }
+    .teromac-item-view-right h3 {
+        display: $tablet-item-view-right-h3-display;
+    }
+}

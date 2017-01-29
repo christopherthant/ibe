@@ -1,0 +1,18 @@
+@import "mixins.scss";
+
+#teromac-account-view {
+    max-width: 1024px;
+
+    .teromac-account-header ul {
+        text-align: left;
+    }
+    h2 {
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    #teromac-account-view .teromac-account-header ul {
+        text-align: center;
+    }
+}

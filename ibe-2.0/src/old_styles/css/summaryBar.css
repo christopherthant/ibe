@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+.teromac-summary-bar-placeholder {
+  position: relative; }
+  .teromac-summary-bar-placeholder.teromac-sticky-summary-bar-fixed .teromac-summary-bar-outer {
+    position: fixed;
+    width: 100%; }
+  .teromac-summary-bar-placeholder.teromac-sticky-summary-bar-fixed .teromac-summary-bar-mid {
+    display: table;
+    margin: 0 auto; }
+
+.teromac-summary-bar-outer,
+.teromac-summary-bar-mid,
+.teromac-summary-bar-inner {
+  width: 100%; }
+
+.teromac-summary-bar-inner {
+  overflow: hidden; }
+
+.teromac-summary-bar-left {
+  display: block;
+  float: left;
+  text-align: left; }
+  .teromac-summary-bar-left ul {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+
+.teromac-summary-bar-dates span,
+.teromac-summary-bar-adults,
+.teromac-summary-bar-children,
+.teromac-summary-bar-rooms,
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before,
+.teromac-summary-bar-adults span,
+.teromac-summary-bar-children span,
+.teromac-summary-bar-rooms span {
+  display: inline-block;
+  vertical-align: middle; }
+
+.teromac-summary-bar-dates {
+  display: inline-block;
+  vertical-align: top; }
+
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before {
+  vertical-align: middle; }
+
+.teromac-summary-bar-adults:before {
+  content: "T";
+  font-family: "teromac Icons";
+  font-size: 22px; }
+
+.teromac-summary-bar-children:before {
+  content: "P";
+  font-family: "teromac Icons";
+  font-size: 22px; }
+
+.teromac-summary-bar-rooms:before {
+  content: "X";
+  font-family: "teromac Icons";
+  font-size: 22px; }
+
+.teromac-summary-bar-right {
+  float: right; }
+
+.teromac-summary-bar-total {
+  display: block;
+  text-align: center;
+  cursor: pointer; }
+  .teromac-summary-bar-total > div {
+    display: inline-block; }
+  .teromac-summary-bar-total:after,
+  .teromac-summary-bar-total span {
+    display: inline-block;
+    vertical-align: middle; }
+  .teromac-summary-bar-total:after {
+    content: "B";
+    font-family: "teromac Icons";
+    font-size: 13px; }
+
+@media (max-width: 768px) {
+  .teromac-summary-bar-left ul li:last-of-type {
+    margin-right: 0; }
+  .teromac-summary-bar-left ul li span {
+    font-weight: bold; }
+
+  .teromac-summary-bar-adults:before,
+  .teromac-summary-bar-children:before,
+  .teromac-summary-bar-rooms:before {
+    font-size: 11px; }
+
+  .teromac-summary-bar-total > div {
+    vertical-align: middle; }
+  .teromac-summary-bar-total span {
+    display: block;
+    height: auto;
+    line-height: normal; }
+  .teromac-summary-bar-total .teromac-value {
+    margin: 0; } }

@@ -1,0 +1,31 @@
+$modal-overlay-position: fixed;
+$modal-overlay-top: 0;
+$modal-overlay-right: 0;
+$modal-overlay-bottom: 0;
+$modal-overlay-left: 0;
+$modal-overlay-overflow-y: scroll;
+$modal-overlay-bg-color: $default-modal-overlay-color;
+
+$modal-content-outer-margin: $default-spacing-unit * 2;
+
+$modal-content-inner-position: relative;
+$modal-content-inner-display: table;
+$modal-content-inner-margin: 0 auto;
+
+$modal-content-child-divs-width: 100%;
+$modal-content-child-divs-cursor: auto;
+$modal-content-child-divs-bg-color: $default-content-bg-color;
+
+$modal-close-btn-position: absolute;
+$modal-close-btn-right: 0;
+$modal-close-btn-text-align: center;
+$modal-close-btn-cursor: pointer;
+$modal-close-btn-top: -$default-min-tap-area-size;
+$modal-close-btn-width: $default-min-tap-area-size;
+$modal-close-btn-height: $default-min-tap-area-size;
+$modal-close-btn-color: $default-font-color-inverse;
+
+$modal-close-btn-after-display: block;
+$modal-close-btn-after-line-height: $default-min-tap-area-size;
+$modal-close-btn-after-character-set: "A";
+$modal-close-btn-after-font-size: 22;

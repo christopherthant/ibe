@@ -1,0 +1,119 @@
+$items-by-rate-overflow: hidden;
+$items-by-rate-border-bottom: $default-border-width solid $default-rooms-by-rate-border-color;
+$items-by-rate-border-radius: $default-border-radius;
+
+$items-by-rate-li-border-style: solid;
+$items-by-rate-li-cursor: pointer;
+$items-by-rate-li-overflow: hidden;
+$items-by-rate-li-padding: $default-spacing-unit * 1.5;
+$items-by-rate-li-border-color: $default-rooms-by-rate-border-color;
+$items-by-rate-li-border-width: $default-border-width $default-border-width 0;
+
+$items-by-rate-nth-child-odd-bg-color: $default-accent-color-inverse;
+
+$items-by-rate-active-border-color: $default-accent-color;
+$items-by-rate-active-outline: $default-rooms-by-rate-border-width-active solid $default-accent-color;
+$items-by-rate-active-outline-offset: -$default-rooms-by-rate-border-width-active + $default-border-width;
+
+$items-by-rate-li-a-display: block;
+$items-by-rate-li-a-color: $default-font-color;
+
+$items-by-rate-h2-margin: 0;
+$items-by-rate-h2-font-weight: normal;
+$items-by-rate-h2-base-font-size: $default-font-size;
+$items-by-rate-h2-final-font-size: 20;
+
+$items-by-rate-label-value-font-weight: bold;
+$items-by-rate-label-value-base-font-size: $default-font-size;
+$items-by-rate-label-value-final-font-size: 18;
+
+$items-by-rate-value-color: $default-accent-color;
+
+$items-by-rate-li-p-margin-top: $default-spacing-unit;
+$items-by-rate-li-p-base-font-size: $default-font-size;
+$items-by-rate-li-p-final-font-size: 14; 
+
+$items-by-rate-view-rate-btn-mobile-float: right;
+$items-by-rate-view-rate-btn-mobile-color: $default-input-border-color;
+$items-by-rate-view-rate-btn-mobile-base-font-size: $default-font-size;
+$items-by-rate-view-rate-btn-mobile-final-font-size: 14;
+
+$items-by-rate-view-rate-btn-mobile-after-character-set: "W";
+$items-by-rate-view-rate-btn-mobile-after-font-size: 13;
+$items-by-rate-view-rate-btn-mobile-after-v-align: middle;
+$items-by-rate-view-rate-btn-mobile-after-margin-left: $default-spacing-unit;
+
+$items-by-item-li-position: relative;
+$items-by-item-li-cursor: pointer;
+$items-by-item-li-margin-bottom: $default-border-width;
+$items-by-item-li-color: $default-font-color-inverse;
+
+$items-by-item-li-active-border-color: $default-accent-color;
+$items-by-item-li-active-outline: $default-rooms-by-rate-border-width-active solid $default-accent-color;
+$items-by-item-li-active-outline-offset: -$default-rooms-by-rate-border-width-active;
+
+$items-by-item-li-active-child-display: block;
+
+$items-by-item-li-a-display: block;
+$items-by-item-li-a-color: $default-accent-color-inverse;
+
+$items-by-item-li-item-image-bg-size: cover;
+$items-by-item-li-item-image-bg-repeat: no-repeat;
+$items-by-item-li-item-image-bg-position: center;
+$items-by-item-li-item-image-padding-top: ($default-room-image-height / $default-room-image-width) * 100%;
+
+$items-by-item-li-item-overlay-position: absolute;
+$items-by-item-li-item-overlay-top: 0;
+$items-by-item-li-item-overlay-left: 0;
+$items-by-item-li-item-overlay-bottom: 0;
+$items-by-item-li-item-overlay-right: 0;
+$items-by-item-li-item-overlay-bg-wlg:-webkit-linear-gradient(top, transparent 55%, #000 100%);
+$items-by-item-li-item-overlay-bg-lg: linear-gradient(to bottom, transparent 55%, #000 100%);
+$items-by-item-li-item-overlay-opacity: 0.8;
+
+$items-by-item-li-room-type-copy-rate-container-position: absolute;
+$items-by-item-li-room-type-copy-rate-container-bottom: 0;
+$items-by-item-li-room-type-copy-rate-container-padding: $default-spacing-unit;
+
+$items-by-item-li-room-type-copy-left: 0;
+$items-by-item-li-room-type-copy-width: 100%;
+$items-by-item-li-room-type-copy-padding-right: $default-room-type-rate-container-width + $default-spacing-unit;
+
+$items-by-item-li-room-type-rate-container-right: 0;
+$items-by-item-li-room-type-rate-container-text-align: center;
+$items-by-item-li-room-type-rate-container-width: $default-room-type-rate-container-width;
+$items-by-item-li-room-type-rate-container-bg-color: $default-modal-overlay-color;
+
+$items-by-item-li-name-type-rate-value-base-font-size: $default-font-size;
+$items-by-item-li-name-type-rate-value-final-font-size: 22;
+
+$items-by-item-li-item-name-room-type-special-margin: 0;
+$items-by-item-li-item-name-room-type-special-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+$items-by-item-li-room-type-rate-label-opacity: 0.8;
+
+$items-by-item-li-special-badge-room-type-special-display: none;
+
+$items-by-item-li-type-max-guests-type-rate-lable-base-font-size: $default-font-size;
+$items-by-item-li-type-max-guests-type-rate-lable-final-font-size: 13;
+
+$items-by-item-li-special-badge-font-weight: bold;
+$items-by-item-li-special-badge-padding: ($default-spacing-unit / 2) $default-spacing-unit;
+$items-by-item-li-special-badge-border: ($default-border-width * 2) solid $default-font-color-inverse;
+$items-by-item-li-special-badge-bg-color: $default-modal-overlay-color;
+$items-by-item-li-special-badge-margin-bottom:$default-spacing-unit / 2;
+$items-by-item-li-special-badge-base-font-size: $default-font-size;
+$items-by-item-li-special-badge-final-font-size: 10;
+$items-by-item-li-special-badge-border-radius: $default-border-radius;
+
+$items-by-item-li-room-type-special-color: $default-room-special-color;
+$items-by-item-li-room-type-special-base-font-size: $default-font-size;
+$items-by-item-li-room-type-special-final-font-size: 14;
+
+$items-by-item-li-special-room-type-special-display: block;
+
+$items-by-item-li-special-special-badge-display: inline-block;
+
+$items-by-item-li-special-room-type-max-guests-display: none;
+
+$items-by-item-li-special-room-type-rate-value-color: $default-room-special-color;

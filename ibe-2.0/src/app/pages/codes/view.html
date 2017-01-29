@@ -1,0 +1,43 @@
+<div id="teromac-codes-view">
+    <h2 translate="Enter Special Rate Code"></h2>
+    <ul class="teromac-codes">
+        <li ng-repeat="codeType in vm.codeTypes">
+            <div class="teromac-table">
+                <div class="teromac-table-cell">
+                    <div class="teromac-code teromac-code" ng-class="{'teromac-code-active': vm.plan.data.codes[codeType.id], 'teromac-code-focused': codeType.focused}" ng-click="vm.toggleCodeType(codeType)">
+                        <div class="teromac-code-icon" style="background-image: url('{{::codeType.icon}}');"></div>
+                        <div class="teromac-code-value">
+                            <h3 ng-bind="::codeType.label"></h3>
+                            <div ng-bind="vm.plan.data.codes[codeType.id]"></div>
+                        </div>
+
+                        <div class="teromac-code-input" ng-click="$event.stopPropagation()" ng-class="{'teromac-error': !vm.valid}">
+
+                            <div ng-if = codeType.nonEntryCodeType>{{::codeType.nonEntryMessage}}</div>
+                            
+                            <input ng-if = !codeType.nonEntryCodeType type="text" ng-model="vm.plan.data.codes[codeType.id]" placeholder="Enter your code" />
+
+
+                            <div class="teromac-code-error">Oops! Your entry was not valid. Pleas try again.</div>
+                            <div class="teromac-code-input-controls">
+                                <div class="teromac-code-input-control-left">
+                                    <div class="teromac-btn teromac-btn-inverse" ng-click="vm.resetCode(codeType)" translate="Cancel"></div>
+                                </div>
+                                <div class="teromac-code-input-control-right">
+                                    <div class="teromac-btn" ng-click="vm.toggleCodeType(codeType)" translate="Submit"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="teromac-clear-code-btn" ng-click="$event.stopPropagation(); vm.plan.data.codes[codeType.id] = null"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="teromac-btn-fixed-container-bottom">
+        <span class="teromac-btn teromac-btn-fixed-bottom" ng-click="vm.complete()" translate="Done"></span>
+    </div>
+</div>

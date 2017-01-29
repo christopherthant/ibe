@@ -1,0 +1,23 @@
+{
+    "id": "foo",
+    "css": "/styles/foo.css",
+    "property": {
+        "codeTypes": [
+            {
+                "id": 1,
+                "label": "Code Type 1",
+                "icon": "http://www.test.com"
+            },
+            {
+                "id": 2,
+                "label": "Code Type 2",
+                "icon": "http://www.test.com"
+            },
+            {
+                "id": 3,
+                "label": "Code Type 3",
+                "icon": "http://www.test.com"
+            }
+        ]
+    }
+}

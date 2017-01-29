@@ -1,0 +1,116 @@
+@import "mixins.scss";
+
+#teromac-codes-view {
+    width: 480px;
+}
+.teromac-codes {
+    @include plain-list();
+}
+.teromac-code {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    cursor: pointer;
+    
+    h3 {
+        font-weight: normal;
+        margin: 0;
+    }
+}
+.teromac-code-value {
+    width: auto;
+
+    div {
+        font-weight: bold;
+    }
+}
+.teromac-code-active {
+    .teromac-code-value {
+        h3,
+        div {
+            line-height: normal;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+    .teromac-clear-code-btn {
+        display: block;
+    }
+}
+.teromac-code-focused {
+    .teromac-code-value {
+        padding: 0 !important;
+
+        div {
+            display: none;
+        }
+    }
+    .teromac-clear-code-btn {
+        display: none;
+    }
+}
+.teromac-code-icon {
+    float: left;
+
+    &:after {
+        position: relative;
+        top: -2px;
+    }
+}
+.teromac-clear-code-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+
+    &:after {
+        @include icon("F", 28);
+    }
+}
+.teromac-code-error {
+    display: none;
+}
+.teromac-code-input {
+    clear: both;
+    display: none;
+
+    &.teromac-error .teromac-code-error {
+        display: block;
+    }
+}
+.teromac-code-focused .teromac-code-input {
+    display: block;
+}
+.teromac-code-input-controls {
+    overflow: hidden;
+    max-width: 290px;
+    margin: 0 auto;
+
+    > div {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    .teromac-btn {
+        width: 100%;
+        max-width: 135px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-code-input-controls {
+        max-width: none;
+
+        .teromac-code-input-control-left {
+            padding-left: 0;
+        }
+        .teromac-code-input-control-right {
+            padding-right: 0;
+        }
+        .teromac-btn {
+            max-width: none;
+        }
+    }
+}

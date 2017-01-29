@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-codes-view {
+  width: 480px; }
+
+.teromac-codes {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.teromac-code {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  cursor: pointer; }
+  .teromac-code h3 {
+    font-weight: normal;
+    margin: 0; }
+
+.teromac-code-value {
+  width: auto; }
+  .teromac-code-value div {
+    font-weight: bold; }
+
+.teromac-code-active .teromac-code-value h3,
+.teromac-code-active .teromac-code-value div {
+  line-height: normal;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+.teromac-code-active .teromac-clear-code-btn {
+  display: block; }
+
+.teromac-code-focused .teromac-code-value {
+  padding: 0 !important; }
+  .teromac-code-focused .teromac-code-value div {
+    display: none; }
+.teromac-code-focused .teromac-clear-code-btn {
+  display: none; }
+
+.teromac-code-icon {
+  float: left; }
+  .teromac-code-icon:after {
+    position: relative;
+    top: -2px; }
+
+.teromac-clear-code-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  cursor: pointer; }
+  .teromac-clear-code-btn:after {
+    content: "F";
+    font-family: "teromac Icons";
+    font-size: 28px; }
+
+.teromac-code-error {
+  display: none; }
+
+.teromac-code-input {
+  clear: both;
+  display: none; }
+  .teromac-code-input.teromac-error .teromac-code-error {
+    display: block; }
+
+.teromac-code-focused .teromac-code-input {
+  display: block; }
+
+.teromac-code-input-controls {
+  overflow: hidden;
+  max-width: 290px;
+  margin: 0 auto; }
+  .teromac-code-input-controls > div {
+    float: left;
+    width: 50%;
+    text-align: center; }
+  .teromac-code-input-controls .teromac-btn {
+    width: 100%;
+    max-width: 135px; }
+
+@media (max-width: 768px) {
+  .teromac-code-input-controls {
+    max-width: none; }
+    .teromac-code-input-controls .teromac-code-input-control-left {
+      padding-left: 0; }
+    .teromac-code-input-controls .teromac-code-input-control-right {
+      padding-right: 0; }
+    .teromac-code-input-controls .teromac-btn {
+      max-width: none; } }

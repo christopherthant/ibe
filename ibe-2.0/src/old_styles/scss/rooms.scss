@@ -1,0 +1,193 @@
+@import "mixins.scss";
+
+#teromac-rooms-view {
+    max-width: 1024px;
+    overflow: hidden;
+}
+.teromac-filter-toggle-btn {
+    float: right;
+    cursor: pointer;
+
+    &:before {
+        @include icon("Y", 12);
+        vertical-align: top;
+    }
+}
+.teromac-room-filters-container {
+    position: relative;
+
+    ul {
+        display: block;
+        list-style-type: none;
+        white-space: nowrap;
+        font-size: 0;
+        overflow: auto;
+        text-align: center;
+
+        &::-webkit-scrollbar { 
+            display: none; 
+        } 
+    }
+    li {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:first-of-type {
+            border: none;
+            text-decoration: underline;
+        }
+    }
+}
+.teromac-item-view-left,
+.teromac-item-view-right {
+    float: left;
+}
+.teromac-item-view-left {
+    width: 35%;
+}
+.teromac-item-view-right {
+    width: 65%;
+}
+.teromac-room-sort {
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+
+    li {
+        position: relative;
+        width: 50%;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+
+        &:last-of-type {
+            border-left-width: 0;
+        }
+    }
+}
+.teromac-items-by-rate {
+    overflow: hidden;
+    @include plain-list();
+
+    li {
+        border-style: solid;
+        cursor: pointer;
+        overflow: hidden;
+
+        a {
+            display: block;
+        }
+    }
+    h2 {
+        margin: 0;
+        font-weight: normal;
+    }
+    .teromac-label,
+    .teromac-value {
+        font-weight: bold;
+    }
+    .teromac-view-rate-btn-mobile {
+        float: right;
+
+        &:after {
+            @include icon("W", 13);
+            vertical-align: middle;
+        }
+    }
+}
+.teromac-items-by-item {
+    @include plain-list();
+
+    li {
+        position: relative;
+        cursor: pointer;
+
+        &.teromac-active {
+            .teromac-item-overlay,
+            .teromac-room-type-copy,
+            .teromac-room-type-rate-container {
+                display: none;
+            }
+        }
+        a {
+            display: block;
+        }
+        .teromac-item-image {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .teromac-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: -webkit-linear-gradient(top, transparent 55%, #000 100%);
+            background: linear-gradient(to bottom, transparent 55%, #000 100%);
+            opacity: 0.8;
+        }
+        .teromac-room-type-copy,
+        .teromac-room-type-rate-container {
+            position: absolute;
+            bottom: 0;
+        }
+        .teromac-room-type-copy {
+            left: 0;
+            width: 100%;
+        }
+        .teromac-room-type-rate-container {
+            right: 0;
+            text-align: center;
+        }
+        .teromac-item-name,
+        .teromac-room-type-special {
+            margin: 0;
+        }
+        .teromac-room-type-rate-label {
+            opacity: 0.8;
+        }
+        .teromac-special-badge,
+        .teromac-room-type-special {
+            display: none;
+        }
+        .teromac-special-badge {
+            font-weight: bold;
+        }
+        &.teromac-special {
+            .teromac-room-type-special {
+                display: block;
+            }
+            .teromac-special-badge {
+                display: inline-block;
+            }
+            .teromac-room-type-max-guests {
+                display: none;
+            }
+        }
+    }
+}
+.teromac-item-view-right h3 {
+    font-weight: normal;
+    margin-top: 0;
+}
+@media (max-width: 768px) {
+    .teromac-item-view-left,
+    .teromac-item-view-right {
+        float: none;
+        width: 100%;
+    }
+    .teromac-item-view-right h3 {
+        display: none;
+    }
+    #teromac-rooms-view {
+        &.mobile-show-rates .teromac-item-view-left {
+            display: none;
+        }
+        &.mobile-show-rooms .teromac-item-view-right {
+            display: none;
+        }
+    }
+}

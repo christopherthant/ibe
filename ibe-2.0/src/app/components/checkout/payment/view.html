@@ -1,0 +1,75 @@
+<div id="teromac-payment-view">
+    <h2 translate="Enter billing information"></h2>
+    <form>
+        <div class="teromac-payment-view-left">
+            <div class="teromac-input-container teromac-name-input-container">
+                <label for="teromac-name-input" translate="Name on Card"></label>
+                <input type="text" id="teromac-name-input" />
+            </div>
+            <div class="teromac-input-container teromac-cc-number-input-container">
+                <label for="teromac-cc-number-input" translate="Card Number"></label>
+                <input type="text" id="teromac-cc-number-input" />
+            </div>
+            <div class="teromac-input-container teromac-cc-exp-month-input-container">
+                <div class="teromac-styled-select">
+                    <select>
+                        <option value="" translate="Exp Month"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="teromac-input-container teromac-cc-exp-year-input-container">
+                <div class="teromac-styled-select">
+                    <select ng-options="expirationYear as expirationYear for expirationYear in vm.expirationYears" ng-model="vm.expirationYear">
+                        <option value="" translate="Exp Month" translate="Exp Year"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="teromac-input-container teromac-cc-security-code-input-container">
+                <input type="text" id="teromac-cc-security-code-input" placeholder="Security Code" />
+            </div>
+        </div>
+        <hr class="teromac-mobile-only" />
+        <div class="teromac-payment-view-right">
+            <div class="teromac-input-container teromac-billing-country-input-container">
+                <label translate="Billing Address"></label>
+                <div class="teromac-styled-select">
+                    <select>
+                        <option translate="Country"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="teromac-input-container teromac-billing-address-1-input-container">
+                <input type="text" id="teromac-billing-address-1-input" placeholder="Address Line 1" />
+            </div>
+            <div class="teromac-input-container teromac-billing-address-2-input-container">
+                <input type="text" id="teromac-billing-address-2-input" placeholder="Address Line 2" />
+            </div>
+            <div class="teromac-input-container teromac-billing-city-input-container">
+                <input type="text" id="teromac-billing-city-input" placeholder="City" />
+            </div>
+            <div class="teromac-input-container teromac-billing-state-input-container">
+                <div class="teromac-styled-select">
+                    <select>
+                        <option translate="State"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="teromac-input-container teromac-billing-postal-code-input-container">
+                <div class="teromac-styled-select">
+                    <select>
+                        <option translate="Postal Code"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="teromac-payment-view-bottom">
+            <div class="teromac-input-container teromac-billing-phone-number-input-container">
+                <label for="teromac-billing-phone-number-input" translate="Phone Number"></label>
+                <input type="text" id="teromac-billing-phone-number-input" />
+            </div>
+        </div>
+        <div class="teromac-btn-fixed-container-bottom">
+            <a ui-sref="policies" class="teromac-btn teromac-btn-fixed-bottom" translate="Save Payment & Continue"></a>
+        </div>
+    </form>
+</div>

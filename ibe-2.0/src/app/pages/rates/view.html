@@ -1,0 +1,82 @@
+<div id="teromac-rates-view">
+    <h3 translate="Available Rates"></h3>
+    <div class="teromac-room-image-slider-con-outer">
+        <div class="teromac-room-image-slider-con-inner">
+            <div class="teromac-room-image-navigation-container">
+                <div class="teromac-desktop-only teromac-room-image-navigation-arrow teromac-prev"></div>
+                <div class="teromac-desktop-only teromac-room-image-navigation-arrow teromac-next"></div>
+                <div class="teromac-room-image-navigation-dots"></div>
+            </div>
+            <!-- htmlmin:ignore -->
+            <slick class="teromac-room-image-slider" autoplay="true" autoplay-speed="3000" arrows="true" dots="true" draggable="false" infinite="true" slides-to-show="1" slides-to-scroll="1" speed="300" responsive="[{breakpoint: 768, settings: {draggable: true}}]" next-arrow=".teromac-next" prev-arrow=".teromac-prev" append-dots=".teromac-room-image-navigation-dots">
+                <div class="teromac-room-image-slide-outer" ng-repeat="image in vm.room.images">
+                    <div class="teromac-room-image-slide-inner">
+                        <div class="teromac-room-image" style="background-image: url('{{image}}')"></div>
+                    </div>
+                </div>
+            </slick>
+            <!-- htmlmin:ignore -->
+        </div>
+    </div>
+    </div>
+    <div class="teromac-item-detail-header">
+        <div class="teromac-item-detail-header-left">
+            <span class="teromac-item-detail-header-left-label" translate="Max Guests"></span>
+            <span class="teromac-item-detail-header-left-value" ng-bind="vm.room.maxGuests"></span>
+        </div>
+        <h4 class="teromac-item-detail-header-name" ng-bind="vm.room.name"></h4>
+    </div>
+    <div class="teromac-room-details-outer" ng-class="{'teromac-show-full-room-details': showFullDetails}">
+        <div class="teromac-room-details-inner">
+            <p class="teromac-room-description" ng-bind="vm.room.description"></p>
+            <div class="teromac-room-amenities-container" ng-if="vm.room.amenities && vm.room.amenities.length > 0">
+                <hr />
+                <h4 class="teromac-room-amenities-header" translate="Amenities"></h4>
+                <ul class="teromac-room-amenities">
+                    <li class="teromac-room-amenity" ng-repeat="amenity in vm.room.amenities track by $index" ng-bind="amenity"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="teromac-room-details-view-toggle-outer">
+            <div class="teromac-room-details-view-toggle-inner">
+                <span class="teromac-room-details-view-toggle teromac-room-details-view-toggle-more" ng-click="showFullDetails = !showFullDetails">
+                    <div translate="Read More"></div>
+                </span>
+                <span class="teromac-room-details-view-toggle teromac-room-details-view-toggle-less" ng-click="showFullDetails = !showFullDetails">
+                    <div translate="Read Less"></div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="teromac-rates-container">
+        <a ui-sref="compare" class="teromac-desktop-only teromac-btn teromac-compare-btn-desktop" translate="View Comparison"></a>
+        <ul class="teromac-rates">
+            <li class="teromac-rate" ng-repeat="rate in vm.room.rates" ng-class="{'teromac-rate-is-visible': rate.active}">
+                <div class="teromac-rate-toggle" ng-click="vm.toggleRate(rate)">
+                    <span class="teromac-rate-toggle-rate" ng-bind="rate.price | currency:'$':0"></span>
+                    <span class="teromac-rate-toggle-divider">-</span>
+                    <span class="teromac-rate-toggle-name" ng-bind="rate.name"></span>
+                </div>
+                <div class="teromac-rate-details">
+                    <p class="teromac-rate-details-copy" ng-bind="rate.description"></p>
+                    <div class="teromac-rate-controls">
+                        <div class="teromac-rate-controls-left">
+                            <span class="teromac-btn" ng-click="vm.cart.addRoom(rate)" translate="Book"></span>
+                        </div>
+                        <div class="teromac-rate-controls-right">
+                            <span class="teromac-btn teromac-btn-hollow-inverse" translate="Policies"></span>
+                        </div>
+                        <span class="teromac-btn teromac-btn-add-to-compare" ng-if="$index !== 1" translate="ADD TO COMPARE"></span>
+                        <span class="teromac-btn teromac-btn-remove-from-compare" ng-if="$index === 1" translate="REMOVE FROM COMPARE"></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="teromac-mobile-only teromac-compare-btn-container-mobile">
+        <a ui-sref="compare" class="teromac-compare-btn-mobile">
+            <span class="teromac-label" translate="Compare">Compare</span>
+            <span class="teromac-value">4 <span translate="Rooms"></span></span>
+        </a>
+    </div>
+</div>

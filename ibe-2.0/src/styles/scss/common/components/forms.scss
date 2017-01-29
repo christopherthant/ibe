@@ -1,0 +1,146 @@
+.teromac-checkbox {
+    display: $checkbox-display;
+
+    input[type="checkbox"]:not(:checked),
+    input[type="checkbox"]:checked {
+        position: $checkbox-input-position;
+        left: $checkbox-input-left;
+    }
+    input[type="checkbox"]:not(:checked) + label,
+    input[type="checkbox"]:checked + label {
+        position: $checkbox-and-label-position;
+        cursor: $checkbox-and-label-cursor;
+        padding-left: $checkbox-and-label-padding-left;
+        padding-right: $checkbox-and-label-padding-right;
+        @include vertically-align-text($checkbox-and-label-v-align-text);
+
+        &:before,
+        &:after {
+            width: $checkbox-and-label-ends-width;
+            top: $checkbox-and-label-ends-top;
+            left: $checkbox-and-label-ends-left;
+            content: $checkbox-and-label-ends-content;
+            display: $checkbox-and-label-ends-display;
+            position: $checkbox-and-label-ends-position;
+            background-repeat: $checkbox-and-label-ends-bg-repeat;
+            background-position: $checkbox-and-label-ends-bg-position;
+        }
+        &:before {
+            height: $checkbox-and-label-before-height;
+            border: $checkbox-and-label-before-border solid $checkbox-and-label-before-solid;
+            background-color: $checkbox-and-label-before-bg-color;
+            @include border-radius($checkbox-and-label-before-border-radius);
+            @include box-shadow($checkbox-and-label-before-border-shadow);
+        }
+        &:after {
+            text-align: $checkbox-and-label-after-text-align;
+            color: $checkbox-and-label-after-color;
+            @include vertically-align-text($checkbox-and-label-after-v-align-text);
+        }
+    }
+    input[type="checkbox"]:checked + label:after {
+        @include icon($checkedbox-and-label-after-character-code
+            , $checkedbox-and-label-after-font-size);
+    }
+}
+.teromac-styled-select,
+.teromac-styled-select select {
+    width: $styled-select-width;
+}
+.teromac-styled-select {
+    overflow: $styled-select-overflow;
+    position: $styled-select-position;
+    background-color: $styled-select-bg-color;
+    height: $styled-select-height;
+    @include border-radius($styled-select-border-radius);
+
+    &:after {
+        color: $styled-select-after-color;
+        width: $styled-select-after-width;
+        text-align: $styled-select-after-text-align;
+        position: $styled-select-after-position;
+        top: $styled-select-after-top;
+        right: $styled-select-after-right;
+        pointer-events: $styled-select-after-pointer-events;
+        @include icon($styled-select-after-character-set, 
+            $styled-select-after-font-size);
+        @include vertically-align-text($styled-select-after-v-align-text-height
+            , $styled-select-after-v-align-text-top-border
+            , $styled-select-after-v-align-text-bottom-border);
+    }
+    &.teromac-error {
+        border-color: $styled-select-error-border-color;
+    }
+}
+.teromac-styled-select select {
+    background: $styled-selected-bg;
+    height: $styled-selected-height;
+    border: $styled-selected-border;
+    -webkit-appearance: $styled-selected-webkit-appearance;
+    -moz-appearance: $styled-selected-moz-appearance;
+        padding: $styled-selected-padding;
+    @include vertically-align-text($styled-selected-v-align-text-height
+        , $styled-selected-v-align-text-top-border
+        , $styled-selected-v-align-text-bottom-border);
+}
+
+.teromac-input-group {
+    margin-bottom: $input-group-bottom-margin;
+
+    &:after {
+        @extend .teromac-clearfix:after;
+    }
+}
+
+.teromac-input-group-label,
+.teromac-input-group-input {
+    position: $input-group-input-label-position;
+    width: $input-group-input-label-width;
+    float: $input-group-input-label-float;
+    padding: $input-group-input-label-padding;
+    @include vertically-align-text($input-group-input-label-v-align-text-height);
+}
+.teromac-input-group-label {
+    text-align: $input-group-label-text-align;
+    @include font-size($input-group-label-base-font-size
+        , $input-group-label-final-font-size);
+}
+
+.teromac-input-group-number {
+    color: $input-group-number-color;
+}
+
+.teromac-input-group-number .teromac-input-group-input {
+    padding: $input-group-number-input-group-input-padding;
+}
+
+
+.teromac-input-number-value {
+    @include font-size($input-number-value-base-font-size
+        , $input-number-value-final-font-size);
+}
+
+.teromac-price-diff-minus,
+.teromac-price-diff-plus {
+    position: $price-diff-position;
+    bottom: $price-diff-bottom;
+    text-align: $price-diff-text-align;
+    line-height: $price-diff-line-height;
+    width: $price-diff-width;
+    @include font-size($price-diff-base-font-size
+        , $price-diff-final-font-size);
+}
+.teromac-price-diff-minus {
+    left: $price-diff-minus-left;
+}
+.teromac-price-diff-plus {
+    right: $price-diff-plus-right;
+}
+
+.teromac-plan-inputs-con {
+    margin-top: $plan-inputs-con-margin-top;
+}
+.teromac-plan-inputs > div {
+    padding: $plan-inputs-child-divs-padding;
+}
+

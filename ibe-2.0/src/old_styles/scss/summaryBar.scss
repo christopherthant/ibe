@@ -1,0 +1,116 @@
+@import "mixins.scss";
+
+.teromac-summary-bar-placeholder {
+    position: relative;
+
+    &.teromac-sticky-summary-bar-fixed {
+        .teromac-summary-bar-outer {
+            position: fixed;
+            width: 100%;
+        }
+        .teromac-summary-bar-mid {
+            display: table;
+            margin: 0 auto;
+        }
+    }
+}
+.teromac-summary-bar-outer,
+.teromac-summary-bar-mid,
+.teromac-summary-bar-inner {
+    width: 100%;
+}
+.teromac-summary-bar-inner {
+    overflow: hidden;
+}
+.teromac-summary-bar-left {
+    display: block;
+    float: left;
+    text-align: left;
+
+    ul {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+        @include plain-list();
+    }
+}
+.teromac-summary-bar-dates span,
+.teromac-summary-bar-adults,
+.teromac-summary-bar-children,
+.teromac-summary-bar-rooms,
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before,
+.teromac-summary-bar-adults span,
+.teromac-summary-bar-children span,
+.teromac-summary-bar-rooms span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.teromac-summary-bar-dates {
+    display: inline-block;
+    vertical-align: top;
+}
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before {
+    vertical-align: middle;
+}
+.teromac-summary-bar-adults:before {
+    @include icon("T", 22);
+}
+.teromac-summary-bar-children:before {
+    @include icon("P", 22);
+}
+.teromac-summary-bar-rooms:before {
+    @include icon("X", 22);
+}
+.teromac-summary-bar-right {
+    float: right;
+}
+.teromac-summary-bar-total {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    
+    > div {
+        display: inline-block;
+    }
+    &:after,
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:after {
+        @include icon("B", 13);
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-summary-bar-left ul li {
+        &:last-of-type {
+            margin-right: 0;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+    .teromac-summary-bar-adults:before,
+    .teromac-summary-bar-children:before,
+    .teromac-summary-bar-rooms:before {
+        font-size: 11px;
+    }
+    .teromac-summary-bar-total {
+        > div {
+            vertical-align: middle;
+        }
+        span {
+            display: block;
+            height: auto;
+            line-height: normal;
+        }
+        .teromac-value {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "hotelName": "(es)Belmond",
+    "property": {
+        "codeTypes": [
+            {
+                "id": "1",
+                "displayName": "(es)Promo Code"
+            },
+            {
+                "id": "2",
+                "displayName": "(es)Frequent Guest Id"
+            },
+            {
+                "id": "3",
+                "displayName": "(es)Corporate Id"
+            },
+            {
+                "id": "4",
+                "displayName": "(es)AAA Members"
+            },
+            {
+                "id": "5",
+                "displayName": "(es)AARP Members"
+            }]
+    }
+}

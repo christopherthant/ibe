@@ -1,0 +1,45 @@
+<div id="teromac-addons-view" ng-class="{'teromac-is-addon-detail-view': vm.state.current.name === 'addon'}">
+    <div class="teromac-item-view-left">
+        <h3 translate="Available Add-ons"></h3>
+        <ul class="teromac-items-by-item">
+            <li ng-click="selectedAddonIndex = 1" ng-class="{'teromac-active': selectedAddonIndex === 1}">
+                <a ui-sref="addon({id: 1})">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/addons/bus-tour.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <p class="teromac-item-name">Bus Tour</p>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-value">$150</div>
+                    </div>
+                </a>
+            </li>
+            <li ng-click="selectedAddonIndex = 2" ng-class="{'teromac-active': selectedAddonIndex === 2}">
+                <a ui-sref="addon({id: 2})">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/02-deluxe/01-deluxe.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <p class="teromac-item-name">Daily Breakfast</p>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-value">$150</div>
+                    </div>
+                </a>
+            </li>
+            <li ng-click="selectedAddonIndex = 3" ng-class="{'teromac-active': selectedAddonIndex === 3}">
+                <a ui-sref="addon({id: 3})">
+                    <div class="teromac-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/01-standard/01-standard.jpg)"></div>
+                    <div class="teromac-item-overlay"></div>
+                    <div class="teromac-room-type-copy">
+                        <p class="teromac-item-name">Dinner for Two Hotel Breakfast</p>
+                    </div>
+                    <div class="teromac-room-type-rate-container">
+                        <div class="teromac-room-type-rate-value">$150</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="teromac-item-view-right" ui-view>
+    </div>
+</div>

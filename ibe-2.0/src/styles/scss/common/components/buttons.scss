@@ -1,0 +1,235 @@
+.teromac-btn,
+a.teromac-btn {
+    display: $btn-display;
+    text-align: $btn-text-align;
+    cursor: $btn-cursor;
+    background-color: $btn-bg-color;
+    color: $btn-color;
+    border: $btn-border solid $btn-solid;
+    @include vertically-align-text($btn-v-align-text-height
+        , $btn-v-align-text-top-border
+        , $btn-v-align-text-bottom-border);
+    padding: $btn-padding;
+    @include font-size($btn-base-font-size, $btn-final-font-size);
+    @include border-radius($btn-border-radius);
+
+    &.teromac-btn-disabled {
+        cursor: $btn-disabled-cursor;
+        background-color: $btn-disabled-bg-color;
+    }
+    &.teromac-btn-inverse {
+        background-color: $btn-inverse-bg-color;
+        border-color: $btn-inverse-border-color;
+    }
+    &.teromac-btn-hollow {
+        background-color: $btn-hollow-bg-color;
+        color: $btn-hollow-color;
+    }
+    &.teromac-btn-hollow-inverse {
+        background-color: $btn-hollow-inverse-bg-color;
+        color: $btn-hollow-inverse-color;
+        border-color: $btn-hollow-inverse-border-color;
+    }
+
+}
+
+.teromac-input-number-btn-minus,
+.teromac-input-number-btn-plus {
+    position: $input-number-btn-position;
+    cursor: $input-number-btn-cursor;
+    width: $input-number-btn-width;
+    height: $input-number-btn-height;
+    color: $input-number-btn-color;
+
+    &:before,
+    &:after {
+        position: $input-number-btn-ends-position;
+        width: $input-number-btn-ends-width;
+        top: $input-number-btn-ends-top;
+        left: $input-number-btn-ends-left;
+    }
+    &:before {
+        content: $input-number-btn-before-content;
+        height: $input-number-btn-before-height;
+        border: $input-number-btn-before-border solid $input-number-btn-before-solid;
+        @include border-radius($input-number-btn-before-border-radius);
+    }
+    &:after {
+        @include vertically-align-text($input-number-btn-after-v-align-text-height);
+    }
+}
+
+.teromac-menu-close-btn {
+    position: $menu-close-btn-position;
+    cursor: $menu-close-btn-cursor;
+    text-align: $menu-close-btn-text-align;
+    top: $menu-close-btn-top;
+    right: $menu-close-btn-right;
+    width: $menu-close-btn-width;
+    color: $menu-close-btn-color;
+    @include vertically-align-text($menu-close-btn-v-align-text-height);
+
+    &:after {
+        @include icon($menu-close-btn-after-character-set
+            , $menu-close-btn-after-font-size);
+    }
+}
+
+.teromac-input-number-btn-minus {
+    float: $input-number-btn-minuts-float;
+
+    &:after {
+        @include icon($input-number-btn-minuts-after-character-set
+            , $input-number-btn-minuts-after-font-size);
+    }
+}
+.teromac-input-number-btn-plus {
+    float: right;
+
+    &:after {
+        @include icon("R", 12);
+    }
+}
+
+.teromac-btn-fixed-container-bottom,
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+    @include vertically-align-text($btn-fixed-bottom-container-v-align-text-height);
+    @include font-size($btn-fixed-bottom-container-base-font-size
+        , $btn-fixed-bottom-container-final-font-size);
+}
+
+.teromac-btn-fixed-container-bottom {
+    clear: $btn-fixed-container-bottom-clear;
+}
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+    display: $btn-fixed-bottom-display;
+    margin: $btn-fixed-bottom-margin;
+    width: $btn-fixed-bottom-width;
+}
+
+.teromac-top-menu-btn {
+    float: $top-menu-btn-float;
+    cursor: $top-menu-btn-cursor;
+    padding: $top-menu-btn-padding;
+}
+
+.teromac-modal-close-btn {
+    position: $modal-close-btn-position;
+    right: $modal-close-btn-right;
+    text-align: $modal-close-btn-text-align;
+    cursor: $modal-close-btn-cursor;
+    top: $modal-close-btn-top;
+    width: $modal-close-btn-width;
+    height: $modal-close-btn-height;
+    color: $modal-close-btn-color;
+    
+    &:after {
+        display: $modal-close-btn-after-display;
+        line-height: $modal-close-btn-after-line-height;
+        @include icon($modal-close-btn-after-character-set
+            , $modal-close-btn-after-font-size);
+    }
+}
+
+.teromac-menu-back-btn,
+.teromac-hotel-website-link {
+    display: $menu-back-btn-hotel-website-link-display;
+    cursor: $menu-back-btn-hotel-website-link-cursor;
+    padding: $menu-back-btn-hotel-website-link-padding;
+
+    span {
+        @include vertically-align-text($menu-back-btn-hotel-website-link-span-v-align-text-height);
+    }
+}
+.teromac-menu-back-btn-icon {
+    display: $menu-back-btn-icon-display;
+    vertical-align: $menu-back-btn-icon-vertical-align;
+    width: $menu-back-btn-icon-width;
+    height: $menu-back-btn-icon-height;
+    margin-right: $menu-back-btn-icon-margin-right;
+
+    &:after {
+        @include icon($menu-back-btn-icon-after-character-set
+            , $menu-back-btn-icon-after-font-size);
+    }
+}
+
+.teromac-forgot-password-btn {
+    cursor: $forgot-password-btn-cursor;
+    color: $forgot-password-btn-color;
+    margin-top: $forgot-password-btn-margin-top;
+}
+
+.teromac-codes-btn {
+    margin-top: $codes-btn-margin-top;
+}
+
+.teromac-filter-toggle-btn {
+    float: $filter-toggle-btn-float;
+    cursor: $filter-toggle-btn-cursor;
+    border: $filter-toggle-btn-border solid $filter-toggle-btn-solid;
+    padding: $filter-toggle-btn-padding;
+    @include font-size($filter-toggle-btn-base-font-size, $filter-toggle-btn-final-font-size);
+    @include vertically-align-text($filter-toggle-btn-v-align-text-height, $filter-toggle-btn-v-align-text-top-border, $filter-toggle-btn-v-align-text-bottom-border);
+    @include border-radius($filter-toggle-btn-border-radius);
+
+    &:before {
+        vertical-align: $filter-toggle-btn-before-v-align;
+        margin-right: $filter-toggle-btn-before-margin-right;
+        @include icon($filter-toggle-btn-before-character-set
+            , $filter-toggle-btn-before-font-size);
+    }
+}
+
+.teromac-rate-controls-left,
+.teromac-rate-controls-right {
+    .teromac-btn {
+        width: $rate-controls-btn-width;
+    }
+}
+
+.teromac-btn.teromac-btn-add-to-compare,
+.teromac-btn.teromac-btn-remove-from-compare {
+    width: $btn-btn-compare-width;
+    margin-top: $btn-btn-compare-margin-top;
+    background-color: $btn-btn-compare-bg-color;
+    color: $btn-btn-compare-color;
+    @include font-size($btn-btn-compare-base-font-size, $btn-btn-compare-final-font-size);
+
+    &:before {
+        vertical-align: $btn-btn-compare-before-v-align;
+        margin-right: $btn-btn-compare-before-margin-right;
+        @include icon($btn-btn-compare-before-char-code
+            , $btn-btn-compare-before-font-size);
+    }
+}
+
+.teromac-btn.teromac-btn-add-to-compare {
+    border-color: $btn-btn-add-compare-border-color;
+}
+
+.teromac-btn.teromac-btn-remove-from-compare {
+    @include box-shadow($btn-btn-remove-compare-box-shadow);
+
+    &:before {
+        color: $btn-btn-remove-compare-before-color;
+    }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .teromac-btn-fixed-bottom,
+    a.teromac-btn-fixed-bottom {
+        width: $tablet-btn-fixed-bottom-width;
+        margin: $tablet-btn-fixed-bottom-margin;
+        position: $tablet-btn-fixed-bottom-position;
+        bottom: $tablet-btn-fixed-bottom-bottom;
+        left: $tablet-btn-fixed-bottom-left;
+        @include border-radius($tablet-btn-fixed-bottom-border-radius);
+    }
+}

@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-checkout-view {
+  max-width: 1024px; }
+  #teromac-checkout-view h2 {
+    font-weight: normal; }
+  #teromac-checkout-view > div {
+    clear: both; }
+
+.teromac-checkout-header ul {
+  float: left; }
+.teromac-checkout-header .teromac-btn {
+  float: right; }
+
+@media (max-width: 768px) {
+  .teromac-checkout-header ul {
+    float: none; }
+  .teromac-checkout-header .teromac-btn {
+    width: 100%; } }

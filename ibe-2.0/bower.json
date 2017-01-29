@@ -1,0 +1,20 @@
+{
+  "name": "teromac_ibe",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.5",
+    "angular-deferred-bootstrap": "^0.1.9",
+    "angular-local-storage": "~0.2.7",
+    "angular-modal-service": "~0.10.1",
+    "angular-sanitize": "~1.5.5",
+    "angular-slick": "~0.2.1",
+    "angular-translate": "~2.10.0",
+    "angular-translate-loader-static-files": "^2.11.0",
+    "angular-ui-router": "~0.2.18",
+    "ngmap": "~1.17.3"
+  },
+  "resolutions": {
+    "angular": "~1.5.5",
+    "angular-translate": "~2.11.0"
+  }
+}

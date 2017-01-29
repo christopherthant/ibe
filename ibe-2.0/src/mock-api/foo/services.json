@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "services": {
+        "StaticData": "/mock-api/foo/staticData.json",
+        "StaticLanguageData": "/mock-api/foo/languages",
+        "Availability": "",
+        "Reservations": "",
+        "Currency": "",
+        "ExchangeRate": "",
+        "MapImage": ""
+    }
+}

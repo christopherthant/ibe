@@ -1,0 +1,33 @@
+.teromac-modal-overlay {
+  z-index: 9999; }
+
+.teromac-menu-container-outer {
+  z-index: 7; }
+
+.teromac-menu-overlay {
+  z-index: 6; }
+
+.teromac-summary-bar-outer {
+  z-index: 5; }
+
+.teromac-content-mask-outer,
+.teromac-top-menu {
+  z-index: 4; }
+
+.teromac-hotel-logo {
+  z-index: 3; }
+
+.teromac-header {
+  z-index: 2; }
+  .teromac-header .teromac-hotel-name {
+    z-index: 1; }
+
+.teromac-content-outer {
+  z-index: 1; }
+
+/* Minor */
+.teromac-room-image-navigation-arrow,
+.teromac-room-image-navigation-dots,
+.teromac-compare-btn-desktop,
+.teromac-upgrade-items {
+  z-index: 1; }

@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI}  ^/mock-api/(.*)/languages/?$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{HTTP:Accept-Language} ^([^,;]+)
+RewriteRule ^(.*)/$ %{REQUEST_URI}%1.json [R=301,NC,L]
+
+RewriteCond %{REQUEST_URI}  ^/mock-api/?$
+RewriteCond %{QUERY_STRING} ^id=(.*)$
+RewriteRule ^(.*)$ /mock-api/%1/services.json [R=301,NC,L]

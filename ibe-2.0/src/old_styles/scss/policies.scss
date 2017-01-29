@@ -1,0 +1,22 @@
+@import "mixins.scss";
+
+.teromac-policy-view-left,
+.teromac-policy-view-right {
+    float: left;
+    width: 50%;
+}
+.teromac-policy-view-right a {
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    .teromac-policy-view-left,
+    .teromac-policy-view-right {
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .teromac-policy-view-left {
+        border-right: none;
+    }
+}

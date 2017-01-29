@@ -1,0 +1,172 @@
+.teromac-items-by-rate {
+    overflow: $items-by-rate-overflow;
+    border-bottom: $items-by-rate-border-bottom;
+    @include plain-list();
+    @include border-radius($items-by-rate-border-radius);
+
+    li {
+        border-style: $items-by-rate-li-border-style;
+        cursor: $items-by-rate-li-cursor;
+        overflow: $items-by-rate-li-overflow;
+        padding: $items-by-rate-li-padding;
+        border-color: $items-by-rate-li-border-color;
+        border-width: $items-by-rate-li-border-width;
+
+        &:nth-child(odd) {
+            background-color: $items-by-rate-nth-child-odd-bg-color;
+        }
+        &.teromac-active {
+            border-color: $items-by-rate-active-border-color;
+            outline: $items-by-rate-active-outline;
+            outline-offset: $items-by-rate-active-outline-offset;
+        }
+        a {
+            display: $items-by-rate-li-a-display;
+            color: $items-by-rate-li-a-color;
+        }
+    }
+    h2 {
+        margin: $items-by-rate-h2-margin;
+        font-weight: $items-by-rate-h2-font-weight;
+        @include font-size($items-by-rate-h2-base-font-size
+            , $items-by-rate-h2-final-font-size);
+    }
+    .teromac-label,
+    .teromac-value {
+        font-weight: $items-by-rate-label-value-font-weight;
+        @include font-size($items-by-rate-label-value-base-font-size
+            , $items-by-rate-label-value-final-font-size);
+    }
+    .teromac-value {
+        color: $items-by-rate-value-color;
+    }
+    li p {
+        margin-top: $items-by-rate-li-p-margin-top;
+        @include font-size($items-by-rate-li-p-base-font-size
+            , $items-by-rate-li-p-final-font-size);
+    }
+    .teromac-view-rate-btn-mobile {
+        float: $items-by-rate-view-rate-btn-mobile-float;
+        color: $items-by-rate-view-rate-btn-mobile-color;
+        @include font-size($items-by-rate-view-rate-btn-mobile-base-font-size
+            , $items-by-rate-view-rate-btn-mobile-final-font-size);
+
+        &:after {
+            vertical-align: $items-by-rate-view-rate-btn-mobile-after-v-align;
+            margin-left: $items-by-rate-view-rate-btn-mobile-after-margin-left / 2;
+            @include icon($items-by-rate-view-rate-btn-mobile-after-character-set
+                , $items-by-rate-view-rate-btn-mobile-after-font-size);
+        }
+    }
+}
+.teromac-items-by-item {
+    @include plain-list();
+
+    li {
+        position: $items-by-item-li-position;
+        cursor: $items-by-item-li-cursor;
+        margin-bottom: $items-by-item-li-margin-bottom;
+        color: $items-by-item-li-color;
+
+        &.teromac-active {
+            border-color: $items-by-item-li-active-border-color;
+            outline: $items-by-item-li-active-outline;
+            outline-offset: $items-by-item-li-active-outline-offset;
+
+            .teromac-item-overlay,
+            .teromac-room-type-copy,
+            .teromac-room-type-rate-container {
+                display: $items-by-item-li-active-child-display;
+            }
+        }
+
+        a {
+            display: $items-by-item-li-a-display;
+            color: $items-by-item-li-a-color;
+        }
+        .teromac-item-image {
+            background-size: $items-by-item-li-item-image-bg-size;
+            background-repeat: $items-by-item-li-item-image-bg-repeat;
+            background-position: $items-by-item-li-item-image-bg-position;
+            padding-top: $items-by-item-li-item-image-padding-top;
+        }
+        .teromac-item-overlay {
+            position: $items-by-item-li-item-overlay-position;
+            top: $items-by-item-li-item-overlay-top;
+            left: $items-by-item-li-item-overlay-left;
+            bottom: $items-by-item-li-item-overlay-bottom;
+            right: $items-by-item-li-item-overlay-right;
+            background: $items-by-item-li-item-overlay-bg-wlg;
+            background: $items-by-item-li-item-overlay-bg-lg;
+            opacity: $items-by-item-li-item-overlay-opacity;
+        }
+        .teromac-room-type-copy,
+        .teromac-room-type-rate-container {
+            position: $items-by-item-li-room-type-copy-rate-container-position;
+            bottom: $items-by-item-li-room-type-copy-rate-container-bottom;
+            padding: $items-by-item-li-room-type-copy-rate-container-padding;
+        }
+        .teromac-room-type-copy {
+            left: $items-by-item-li-room-type-copy-left;
+            width: $items-by-item-li-room-type-copy-width;
+            padding-right: $items-by-item-li-room-type-copy-padding-right;
+        }
+        .teromac-room-type-rate-container {
+            right: $items-by-item-li-room-type-rate-container-right;
+            text-align: $items-by-item-li-room-type-rate-container-text-align;
+            width: $items-by-item-li-room-type-rate-container-width;
+            background-color: $items-by-item-li-room-type-rate-container-bg-color;
+        }
+        .teromac-item-name,
+        .teromac-room-type-rate-value {
+            @include font-size($items-by-item-li-name-type-rate-value-base-font-size
+                , $items-by-item-li-name-type-rate-value-final-font-size);
+        }
+        .teromac-item-name,
+        .teromac-room-type-special {
+            margin: $items-by-item-li-item-name-room-type-special-margin;
+            @include text-shadow($items-by-item-li-item-name-room-type-special-text-shadow);
+        }
+        .teromac-room-type-rate-label {
+            opacity: $items-by-item-li-room-type-rate-label-opacity;
+        }
+        .teromac-special-badge,
+        .teromac-room-type-special {
+            display: $items-by-item-li-special-badge-room-type-special-display;
+        }
+        .teromac-room-type-max-guests,
+        .teromac-room-type-rate-label {
+            @include font-size($items-by-item-li-type-max-guests-type-rate-lable-base-font-size
+                , $items-by-item-li-type-max-guests-type-rate-lable-final-font-size);
+        }
+        .teromac-special-badge {
+            font-weight: $items-by-item-li-special-badge-font-weight;
+            padding: $items-by-item-li-special-badge-padding;
+            border: $items-by-item-li-special-badge-border;
+            background-color: $items-by-item-li-special-badge-bg-color;
+            margin-bottom: $items-by-item-li-special-badge-margin-bottom;
+            @include font-size($items-by-item-li-special-badge-base-font-size
+                , $items-by-item-li-special-badge-final-font-size);
+            @include border-radius($items-by-item-li-special-badge-border-radius);
+        }
+        .teromac-room-type-special {
+            color: $items-by-item-li-room-type-special-color;
+            @include font-size($items-by-item-li-room-type-special-base-font-size
+                , $items-by-item-li-room-type-special-final-font-size);
+        }
+        &.teromac-special {
+            .teromac-room-type-special {
+                display: $items-by-item-li-special-room-type-special-display;
+            }
+            .teromac-special-badge {
+                display: $items-by-item-li-special-special-badge-display;
+            }
+            .teromac-room-type-max-guests {
+                display: $items-by-item-li-special-room-type-max-guests-display;
+            }
+            .teromac-room-type-rate-value {
+                color: $items-by-item-li-special-room-type-rate-value-color;
+            }
+        }
+    }
+}

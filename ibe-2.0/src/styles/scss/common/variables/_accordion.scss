@@ -1,0 +1,38 @@
+$room-details-view-toggle-pointer-events: none;
+
+$room-details-view-toggle-outer-position: absolute;
+$room-details-view-toggle-outer-bottom: 0;
+$room-details-view-toggle-outer-width: 100%;
+$room-details-view-toggle-outer-height: $default-rates-room-detail-height-closed;
+$room-details-view-toggle-outer-bg-webkit: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, #FFF 75%);
+$room-details-view-toggle-outer-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, #FFF 75%);
+
+$room-details-view-toggle-inner-position: relative;
+$room-details-view-toggle-inner-width: 100%;
+$room-details-view-toggle-inner-height: 100%;
+
+$room-details-view-toggle-pointer-events: auto;
+$room-details-view-toggle-display: inline-block;
+$room-details-view-toggle-position: absolute;
+$room-details-view-toggle-bottom: 0;
+$room-details-view-toggle-left: 50%;
+$room-details-view-toggle-cursor: pointer;
+$room-details-view-toggle-txt-align: center;
+$room-details-view-toggle-width: $default-rates-room-view-toggle-width;
+$room-details-view-toggle-margin-left: -$default-rates-room-view-toggle-width / 2;
+$room-details-view-toggle-border-color: $default-hr-color;
+$room-details-view-toggle-bg-color: $default-hr-color;
+$room-details-view-toggle-color: $default-font-color;
+$room-details-view-toggle-v-align-txt-height: $default-rates-room-view-toggle-height;
+$room-details-view-toggle-border-radius: $default-border-radius;
+
+$room-details-view-toggle-less-display: none;
+
+$room-details-outer-show-full-padding-bottom: $default-rates-room-view-toggle-height;
+$room-details-outer-show-full-inner-height: auto;
+
+$room-details-outer-show-full-view-toggle-outer-bg: none;
+
+$room-details-outer-show-full-view-toggle-more-display: none;
+
+$room-details-outer-show-full-view-toggle-less-display: block;

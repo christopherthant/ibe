@@ -1,0 +1,138 @@
+@import "mixins.scss";
+
+#teromac-dates-view {
+    width: 768px;
+    text-align: center;
+
+    .teromac-btn-fixed-container-bottom {
+        float: right;
+        clear: none;
+    }
+    .teromac-btn-fixed-bottom {
+        margin: 0;
+    }
+}
+.date-range-picker {
+    overflow: hidden;
+}
+.teromac-cal-navigation > div {
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+.teromac-cal-prev {
+    float: left;
+
+    &:after {
+        @include icon("0", 31);
+    }
+}
+.teromac-cal-next {
+    float: right;
+
+    &:after {
+        @include icon("W", 31);
+    }
+}
+.teromac-cals-container {
+    clear: both;
+}
+.teromac-cal-container {
+    text-align: center;
+    width: 50%;
+    float: left;
+
+    table {
+        width: 100%;
+    }
+}
+.teromac-cal-header {
+    margin-top: 0;
+}
+.teromac-cal-header-month {
+    font-weight: bold;
+}
+.teromac-cal-header-year {
+    font-weight: normal;
+}
+.teromac-cal-day {
+    font-weight: normal;
+}
+.teromac-cal-cell {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+.teromac-cal-cell-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.teromac-cal-date .teromac-table-cell {
+    cursor: pointer;
+    background-color: transparent;
+
+    &.teromac-cal-is-past,
+    &.teromac-cal-is-blank {
+        cursor: default;
+        background-color: transparent;
+        border-style: solid;
+    }
+}
+.teromac-dates-controls {
+    overflow: hidden;
+}
+.teromac-dates-legend {
+    @include plain-list();
+    overflow: hidden;
+    float: left;
+
+    li {
+        float: left;
+    }
+}
+.teromac-dates-legend-icon,
+.teromac-dates-legend-label {
+    vertical-align: middle;
+}
+.teromac-dates-legend-icon {
+    display: inline-block;
+}
+.teromac-dates-legend-reset-container {
+    cursor: pointer;
+}
+.teromac-dates-legend-reset {
+    position: relative;
+    @include border-radius(0);
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .teromac-cal-container {
+        width: 100%;
+        float: none;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+    }
+    .teromac-dates-legend {
+        position: fixed;
+        left: 0;
+        width: 100%;
+
+        li {
+            text-align: center;
+            width: 33.33%;
+            margin-right: 0 !important;
+        }
+    }
+}

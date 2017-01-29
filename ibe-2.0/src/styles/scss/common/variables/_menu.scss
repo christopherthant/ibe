@@ -1,0 +1,142 @@
+$menu-overlay-position: fixed;
+$menu-overlay-top: 0;
+$menu-overlay-left: 0;
+$menu-overlay-width: 0;
+$menu-overlay-height: 0;
+$menu-overlay-opacity: 0;
+$menu-overlay-bg-color: $default-modal-overlay-color;
+$menu-overlay-transition: opacity $default-menu-transition-time $default-menu-transition-easing;
+
+$menu-container-outer-position: fixed;
+$menu-container-outer-line-height: normal;
+$menu-container-outer-bg-color: $default-menu-bg-color;
+$menu-container-outer-color: $default-menu-font-color;
+$menu-container-transition: transform $default-menu-transition-time $default-menu-transition-easing;
+
+$menu-container-outer-a-text-decoration: none;
+$menu-container-outer-a-color: $default-menu-font-color;
+
+$menu-container-outer-p-margin: 0;
+
+$menu-container-outer-btn-max-width: $default-menu-button-max-width;
+$menu-container-outer-btn-color: $default-font-color-inverse;
+
+$menu-container-outer-menu-push-slide-top: 0;
+$menu-container-outer-menu-push-slide-height: 100%;
+$menu-container-outer-menu-push-slide-overflow-y: scroll;
+$menu-container-outer-menu-push-slide-width: $default-menu-width-desktop;
+
+$menu-container-outer-menu-push-slide-left-left: 0;
+$menu-container-outer-menu-push-slide-left-transform: translateX(-100%);
+
+$menu-container-outer-menu-push-slide-right-right: 0;
+$menu-container-outer-menu-push-slide-right-transform: translateX(100%);
+
+$menu-container-outer-menu-external-links-padding: 0 ($default-menu-spacing * 4);
+
+$menu-container-inner-position: relative;
+$menu-container-inner-padding: ($default-menu-spacing * 12) 0;
+
+$layout-menu-open-overflow: hidden;
+
+$layout-menu-open-menu-overlay-width: 100%;
+$layout-menu-open-menu-overlay-height: 100%;
+$layout-menu-open-menu-overlay-opacity: 1;
+
+$layout-menu-open-btn-fixed-bottom-display: none;
+
+$layout-menu-open-menu-container-outer-menu-push-slide-transform: translateX(0);
+
+$layout-menu-open-menu-push-left-body-transform: translateX($default-menu-width-desktop);
+
+$layout-menu-open-menu-push-right-body-transform: translateX(-$default-menu-width-desktop);
+
+$body-transition: transform $default-menu-transition-time $default-menu-transition-easing;
+
+$menu-close-btn-position: absolute;
+$menu-close-btn-cursor: pointer;
+$menu-close-btn-text-align: center;
+$menu-close-btn-top: $default-menu-spacing * 4;
+$menu-close-btn-right: $default-menu-spacing * 2;
+$menu-close-btn-width: $default-min-tap-area-size;
+$menu-close-btn-color: $default-accent-color;
+$menu-close-btn-v-align-text-height: $default-min-tap-area-size;
+
+$menu-close-btn-after-character-set: "A";
+$menu-close-btn-after-font-size: 16;
+
+$menu-back-btn-hotel-website-link-display: block;
+$menu-back-btn-hotel-website-link-cursor: pointer;
+$menu-back-btn-hotel-website-link-padding: ($default-menu-spacing * 1.5) ($default-menu-spacing * 4);
+$menu-back-btn-hotel-website-link-span-v-align-text-height: 19px;
+
+$menu-back-btn-icon-display: inline-block;
+$menu-back-btn-icon-vertical-align: middle;
+$menu-back-btn-icon-width: $default-menu-back-button-size;
+$menu-back-btn-icon-height: $default-menu-back-button-size;
+$menu-back-btn-icon-margin-right: $default-menu-spacing * 3;
+
+$menu-back-btn-icon-after-character-set:"0";
+$menu-back-btn-icon-after-font-size: 16;
+
+$submenu-li-padding: ($default-menu-spacing * 3) ($default-menu-spacing * 4) 0;
+
+$menu-btn-display: block;
+
+$menu-half-btn-max-width: none;
+
+$submenu-header-color: $default-accent-color;
+$submenu-header-border-bottom: $default-border-width;
+$submenu-header-solid: $default-menu-divider-color;
+$submenu-header-margin-top: $default-menu-spacing * 2;
+$submenu-header-padding: ($default-menu-spacing * 3) ($default-menu-spacing * 4);
+$submenu-header-base-font-size: $default-font-size;
+$submenu-header-final-font-size: 20;
+
+$p-submenu-header-font-weight: bold;
+
+$submenu-form-toggle-tab-display: inline-block;
+$submenu-form-toggle-tab-cursor: pointer;
+
+$submenu-form-tab-active-font-weight: bold;
+
+$submenu-form-toggle-tabs-tab-divider-cursor: default;
+
+$submenu-form-display: none;
+$submenu-form-padding-bottom: $default-menu-spacing * 2;
+
+$submenu-form-is-visible-bg-color: $default-content-bg-color;
+$submenu-form-is-visible-margin-top: $default-menu-spacing * 2;
+
+$submenu-form-is-visible-first-of-type-margin-top: 0;
+
+$submenu-form-is-visible-submenu-form-display: block;
+
+$submenu-form-is-visible-submenu-form-toggle-padding-bottom: $default-menu-spacing * 2;
+
+$submenu-form-is-visible-submenu-form-toggle-not-toggle-tabs-font-weight: bold;
+
+$submenu-authenticated-half-container-padding: $default-spacing-unit 0 ($default-spacing-unit * 4);
+
+$forgot-password-btn-cursor: pointer;
+$forgot-password-btn-color: $default-accent-color;
+$forgot-password-btn-margin-top: $default-menu-spacing * 4;
+
+$menu-contact-padding: ($default-menu-spacing * 3) ($default-menu-spacing * 4);
+
+$menu-contact-header-font-weight: bold;
+$menu-contact-header-padding: ($default-menu-spacing * 3) 0;
+$menu-contact-header-base-font-size: $default-font-size;
+$menu-contact-header-final-font-size: 18;
+
+$menu-external-links-li-float: left;
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+   
+$tablet-menu-container-outer-menu-push-slide-width: $default-menu-width-mobile;
+
+$tablet-layout-menu-open-menu-push-left-body-transform: translateX($default-menu-width-mobile);
+
+$tablet-layout-menu-open-menu-push-right-body-transform: translateX(-$default-menu-width-mobile);

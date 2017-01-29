@@ -1,0 +1,52 @@
+.teromac-room-details-view-toggle-outer,
+.teromac-room-details-view-toggle-inner {
+    pointer-events: $room-details-view-toggle-pointer-events;
+}
+.teromac-room-details-view-toggle-outer {
+    position: $room-details-view-toggle-outer-position;
+    bottom: $room-details-view-toggle-outer-bottom;
+    width: $room-details-view-toggle-outer-width;
+    height: $default-rates-room-detail-height-closed;
+    background: $room-details-view-toggle-outer-bg-webkit;
+    background: $room-details-view-toggle-outer-bg;
+}
+.teromac-room-details-view-toggle-inner {
+    position: $room-details-view-toggle-inner-position;
+    width: $room-details-view-toggle-inner-width;
+    height: $room-details-view-toggle-inner-height;
+}
+.teromac-room-details-view-toggle {
+    pointer-events: $room-details-view-toggle-pointer-events;
+    display: $room-details-view-toggle-display;
+    position: $room-details-view-toggle-position;
+    bottom: $room-details-view-toggle-bottom;
+    left: $room-details-view-toggle-left;
+    cursor: $room-details-view-toggle-cursor;
+    text-align: $room-details-view-toggle-txt-align;
+    width: $room-details-view-toggle-width;
+    margin-left: $room-details-view-toggle-margin-left;
+    border-color: $room-details-view-toggle-border-color;
+    background-color: $room-details-view-toggle-color;
+    color: $default-font-color;
+    @include vertically-align-text($room-details-view-toggle-v-align-txt-height);
+    @include border-radius($room-details-view-toggle-border-radius);
+}
+.teromac-room-details-view-toggle-less {
+    display: $room-details-view-toggle-less-display;
+}
+.teromac-room-details-outer.teromac-show-full-room-details {
+    padding-bottom: $room-details-outer-show-full-padding-bottom;
+    
+    .teromac-room-details-inner {
+        height: $room-details-outer-show-full-inner-height;
+    }
+    .teromac-room-details-view-toggle-outer {
+        background: $room-details-outer-show-full-view-toggle-outer-bg;
+    }
+    .teromac-room-details-view-toggle-more {
+        display: $room-details-outer-show-full-view-toggle-more-display;
+    }
+    .teromac-room-details-view-toggle-less {
+        display: $room-details-outer-show-full-view-toggle-less-display;
+    }
+}

@@ -1,0 +1,2205 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+html,
+#teromac-container {
+  background-color: #EDEDE9;
+  color: #595356; }
+
+.teromac-layout,
+.teromac-modal-overlay {
+  font-size: 16px; }
+  .teromac-layout .teromac-clearfix:after, .teromac-layout .teromac-input-group:after, .teromac-layout .teromac-half-container:after, .teromac-layout .teromac-half-mobile:after, .teromac-layout .teromac-thirds:after, .teromac-layout .teromac-quarters:after, .teromac-layout #teromac-checkout-view:after, .teromac-layout #teromac-account-view:after, .teromac-layout .teromac-payment-methods:after, .teromac-layout #teromac-review-view:after,
+  .teromac-layout #teromac-cart-view:after, .teromac-layout .teromac-line-item:after,
+  .teromac-modal-overlay .teromac-clearfix:after,
+  .teromac-modal-overlay .teromac-input-group:after,
+  .teromac-modal-overlay .teromac-half-container:after,
+  .teromac-modal-overlay .teromac-half-mobile:after,
+  .teromac-modal-overlay .teromac-thirds:after,
+  .teromac-modal-overlay .teromac-quarters:after,
+  .teromac-modal-overlay #teromac-checkout-view:after,
+  .teromac-modal-overlay #teromac-account-view:after,
+  .teromac-modal-overlay .teromac-payment-methods:after,
+  .teromac-modal-overlay #teromac-review-view:after,
+  .teromac-modal-overlay #teromac-cart-view:after,
+  .teromac-modal-overlay .teromac-line-item:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .teromac-layout hr,
+  .teromac-modal-overlay hr {
+    height: 1px;
+    margin: 10px 0;
+    color: #EDEDE9;
+    background-color: #EDEDE9; }
+  .teromac-layout label,
+  .teromac-modal-overlay label {
+    font-size: 0.8125em; }
+  .teromac-layout input,
+  .teromac-layout textarea,
+  .teromac-layout select,
+  .teromac-modal-overlay input,
+  .teromac-modal-overlay textarea,
+  .teromac-modal-overlay select {
+    font-size: 1em;
+    border-radius: 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-layout textarea,
+  .teromac-layout input[type="text"],
+  .teromac-layout input[type="email"],
+  .teromac-layout input[type="password"],
+  .teromac-layout .teromac-styled-select,
+  .teromac-modal-overlay textarea,
+  .teromac-modal-overlay input[type="text"],
+  .teromac-modal-overlay input[type="email"],
+  .teromac-modal-overlay input[type="password"],
+  .teromac-modal-overlay .teromac-styled-select {
+    border: 1px solid #908D91;
+    margin-bottom: 10px; }
+  .teromac-layout textarea,
+  .teromac-modal-overlay textarea {
+    resize: none;
+    padding: 10px; }
+  .teromac-layout input[type="text"],
+  .teromac-layout input[type="email"],
+  .teromac-layout input[type="password"],
+  .teromac-modal-overlay input[type="text"],
+  .teromac-modal-overlay input[type="email"],
+  .teromac-modal-overlay input[type="password"] {
+    height: 44px;
+    padding: 0 10px; }
+
+.teromac-checkbox input[type="checkbox"]:not(:checked) + label,
+.teromac-checkbox input[type="checkbox"]:checked + label {
+  padding-left: 44px;
+  padding-right: 10px;
+  height: 44px;
+  line-height: 44px; }
+  .teromac-checkbox input[type="checkbox"]:not(:checked) + label:before, .teromac-checkbox input[type="checkbox"]:not(:checked) + label:after,
+  .teromac-checkbox input[type="checkbox"]:checked + label:before,
+  .teromac-checkbox input[type="checkbox"]:checked + label:after {
+    width: 24px;
+    top: 10px;
+    left: 10px; }
+  .teromac-checkbox input[type="checkbox"]:not(:checked) + label:before,
+  .teromac-checkbox input[type="checkbox"]:checked + label:before {
+    height: 24px;
+    border: 1px solid #908D91;
+    background-color: #FFF;
+    border-radius: 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+    -webkit-box-shadow: 1px 2px 3px 0 rgba(162, 162, 162, 0.5);
+    /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+    box-shadow: 1px 2px 3px 0 rgba(162, 162, 162, 0.5);
+    /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */ }
+  .teromac-checkbox input[type="checkbox"]:not(:checked) + label:after,
+  .teromac-checkbox input[type="checkbox"]:checked + label:after {
+    color: #F05800;
+    height: 24px;
+    line-height: 24px; }
+.teromac-checkbox input[type="checkbox"]:checked + label:before {
+  border-color: #F05800; }
+.teromac-checkbox label {
+  color: #595356; }
+
+.teromac-styled-select {
+  position: relative;
+  background-color: #FFF;
+  height: 44px;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-styled-select:after {
+    color: #908D91;
+    width: 35px;
+    height: 44px;
+    line-height: 42px; }
+  .teromac-styled-select.teromac-error {
+    border-color: #FF0000; }
+
+.teromac-styled-select select {
+  padding: 0 35px 0 10px;
+  height: 44px;
+  line-height: 42px; }
+
+.teromac-btn,
+a.teromac-btn {
+  background-color: #F05800;
+  color: #FFF;
+  border: 1px solid #F05800;
+  height: 44px;
+  line-height: 42px;
+  padding: 0 10px;
+  font-size: 1em;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-btn.teromac-btn-disabled,
+  a.teromac-btn.teromac-btn-disabled {
+    background-color: #908D91; }
+  .teromac-btn.teromac-btn-inverse,
+  a.teromac-btn.teromac-btn-inverse {
+    background-color: #B8B8B5;
+    border-color: #B8B8B5; }
+  .teromac-btn.teromac-btn-hollow,
+  a.teromac-btn.teromac-btn-hollow {
+    background-color: #FFF;
+    color: #F05800; }
+  .teromac-btn.teromac-btn-hollow-inverse,
+  a.teromac-btn.teromac-btn-hollow-inverse {
+    background-color: #FFF;
+    color: #908D91;
+    border-color: #908D91; }
+
+.teromac-input-group {
+  margin-bottom: 5px; }
+
+.teromac-input-group-label,
+.teromac-input-group-input {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px; }
+
+.teromac-input-group-label {
+  font-size: 0.875em; }
+
+.teromac-input-group-number {
+  color: inherit; }
+
+.teromac-input-number-btn-minus,
+.teromac-input-number-btn-plus {
+  width: 44px;
+  height: 44px;
+  color: #F05800; }
+  .teromac-input-number-btn-minus:before, .teromac-input-number-btn-minus:after,
+  .teromac-input-number-btn-plus:before,
+  .teromac-input-number-btn-plus:after {
+    width: 24px;
+    top: 10px;
+    left: 10px; }
+  .teromac-input-number-btn-minus:before,
+  .teromac-input-number-btn-plus:before {
+    height: 24px;
+    border: 1px solid #F05800;
+    border-radius: 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-input-number-btn-minus:after,
+  .teromac-input-number-btn-plus:after {
+    height: 24px;
+    line-height: 24px; }
+
+.teromac-input-number-value {
+  font-size: 1.5em; }
+
+.teromac-price-diff-minus,
+.teromac-price-diff-plus {
+  width: 44px;
+  font-size: 0.75em; }
+
+.teromac-btn-fixed-container-bottom,
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.125em; }
+
+.teromac-btn-fixed-bottom,
+a.teromac-btn-fixed-bottom {
+  margin: 20px auto;
+  width: 360px; }
+
+.teromac-half.teromac-push-left {
+  padding-right: 5px; }
+.teromac-half.teromac-push-right {
+  padding-left: 5px; }
+
+.teromac-half-mobile {
+  display: inline-block; }
+
+.teromac-thirds > div {
+  width: 33.3333%;
+  float: left; }
+.teromac-thirds .teromac-thirds-left {
+  padding-right: 6.66667px; }
+.teromac-thirds .teromac-thirds-mid {
+  padding: 0 3.33333px; }
+.teromac-thirds .teromac-thirds-right {
+  padding-left: 6.66667px; }
+
+.teromac-quarters .teromac-quarter {
+  float: left;
+  width: 25%;
+  padding-right: 10px; }
+
+.teromac-success-check {
+  font-size: 1.1875em; }
+  .teromac-success-check:before {
+    color: #908D91;
+    border: 3px solid #908D91;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    margin: 10px auto; }
+
+.teromac-tabbed-header-navigation {
+  padding: 0 30px; }
+  .teromac-tabbed-header-navigation ul {
+    margin: 0 0 40px -10px; }
+  .teromac-tabbed-header-navigation li.teromac-active a {
+    color: #F05800;
+    border-bottom: 2px solid #F05800; }
+  .teromac-tabbed-header-navigation a {
+    color: #595356;
+    padding: 0 10px 5px;
+    height: 44px;
+    line-height: 44px; }
+
+.teromac-top-menu {
+  color: #FFF;
+  height: 44px;
+  line-height: 44px; }
+
+.teromac-top-menu-btn {
+  padding: 0 10px; }
+
+.teromac-menu-toggle:before {
+  margin-left: 10px; }
+
+.teromac-background-image,
+.teromac-header {
+  background-color: rgba(0, 0, 0, 0.5); }
+  .teromac-background-image:after,
+  .teromac-header:after {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: opacity 0.3s ease-out;
+    /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+    transition: opacity 0.3s ease-out;
+    /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.teromac-background-image,
+.teromac-sticky-header.teromac-scrolled .teromac-header {
+  background-image: url("/assets/images/hotels/belmond/background.jpg"); }
+
+.teromac-hotel-name {
+  top: -44px;
+  letter-spacing: -0.15px;
+  color: #FFF;
+  height: 44px;
+  line-height: 44px;
+  font-size: 1.25em;
+  -webkit-transition: top 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: top 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.teromac-hotel-logo {
+  padding: 84px 0 40px;
+  -webkit-transition: top 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: top 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+  .teromac-hotel-logo:after {
+    background-image: url("/assets/images/hotels/belmond/logo.png");
+    height: 65px; }
+
+.teromac-sticky-header.teromac-scrolled .teromac-hotel-logo {
+  top: -85px; }
+
+.teromac-content-mask-outer {
+  top: 44px; }
+
+.teromac-content-mask-inner {
+  background-color: #FFF;
+  border-radius: 0 0 0 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+.teromac-content > div {
+  background-color: #FFF;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+  padding: 20px 0;
+  margin: 0 auto 20px; }
+
+/* Modal */
+.teromac-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.teromac-modal-content-outer {
+  margin: 20px; }
+
+.teromac-modal-content > div {
+  background-color: #FFF; }
+
+.teromac-modal-close-btn {
+  top: -44px;
+  width: 44px;
+  height: 44px;
+  color: #FFF; }
+  .teromac-modal-close-btn:after {
+    line-height: 44px; }
+
+@media (max-width: 768px) {
+  .teromac-half-mobile {
+    width: 50%; }
+
+  .teromac-half-mobile-push-left,
+  .teromac-half-mobile-push-right {
+    float: left; }
+
+  .teromac-half-mobile-push-left {
+    padding-right: 5px; }
+
+  .teromac-half-mobile-push-right {
+    padding-left: 5px; }
+
+  .teromac-tabbed-header-navigation {
+    padding: 0 20px; }
+    .teromac-tabbed-header-navigation ul {
+      margin-bottom: 15px; }
+    .teromac-tabbed-header-navigation li {
+      font-size: 16px; }
+    .teromac-tabbed-header-navigation .teromac-btn {
+      margin-bottom: 20px; }
+
+  .teromac-sticky-header {
+    height: 44px; }
+
+  .teromac-sticky-header-mobile .teromac-hotel-name {
+    top: -44px; }
+
+  .teromac-background-image,
+  .teromac-header {
+    background-image: url("/assets/images/hotels/belmond/background.jpg"); }
+
+  .teromac-background-image,
+  .teromac-background-image:after {
+    padding-top: 102.94118%; }
+
+  .teromac-hotel-logo {
+    padding: 100px 0; }
+
+  .teromac-content {
+    padding: 0 10px 10px; } }
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+.teromac-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: opacity 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: opacity 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.teromac-menu-container-outer {
+  background-color: #EDEDE9;
+  color: #595356;
+  -webkit-transition: transform 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: transform 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+  .teromac-menu-container-outer a {
+    color: #595356; }
+  .teromac-menu-container-outer .teromac-btn,
+  .teromac-menu-container-outer a.teromac-btn {
+    max-width: 160px;
+    color: #FFF; }
+  .teromac-menu-container-outer.teromac-menu-push-left, .teromac-menu-container-outer.teromac-menu-push-right, .teromac-menu-container-outer.teromac-menu-slide-left, .teromac-menu-container-outer.teromac-menu-slide-right {
+    width: 400px; }
+  .teromac-menu-container-outer.teromac-menu-push-left, .teromac-menu-container-outer.teromac-menu-slide-left {
+    -webkit-transform: translateX(-100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);
+    /* IE 9 */
+    transform: translateX(-100%);
+    /* Firefox 16+, IE 10+, Opera */ }
+  .teromac-menu-container-outer.teromac-menu-slide-right, .teromac-menu-container-outer.teromac-menu-push-right {
+    -webkit-transform: translateX(100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);
+    /* IE 9 */
+    transform: translateX(100%);
+    /* Firefox 16+, IE 10+, Opera */ }
+  .teromac-menu-container-outer .teromac-menu-external-links {
+    padding: 0 24px; }
+
+.teromac-menu-container-inner {
+  padding: 72px 0; }
+
+.teromac-layout.teromac-menu-open .teromac-menu-container-outer.teromac-menu-push-left,
+.teromac-layout.teromac-menu-open .teromac-menu-container-outer.teromac-menu-slide-left,
+.teromac-layout.teromac-menu-open .teromac-menu-container-outer.teromac-menu-push-right,
+.teromac-layout.teromac-menu-open .teromac-menu-container-outer.teromac-menu-slide-right {
+  -webkit-transform: translateX(0);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(0);
+  /* IE 9 */
+  transform: translateX(0);
+  /* Firefox 16+, IE 10+, Opera */ }
+.teromac-layout.teromac-menu-open .teromac-menu-push-left + .teromac-body {
+  -webkit-transform: translateX(400px);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(400px);
+  /* IE 9 */
+  transform: translateX(400px);
+  /* Firefox 16+, IE 10+, Opera */ }
+.teromac-layout.teromac-menu-open .teromac-menu-push-right + .teromac-body {
+  -webkit-transform: translateX(-400px);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-400px);
+  /* IE 9 */
+  transform: translateX(-400px);
+  /* Firefox 16+, IE 10+, Opera */ }
+
+.teromac-body {
+  -webkit-transition: transform 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: transform 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.teromac-menu-close-btn {
+  top: 24px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  color: #F05800; }
+
+.teromac-menu-back-btn,
+.teromac-hotel-website-link {
+  padding: 9px 24px; }
+  .teromac-menu-back-btn span,
+  .teromac-hotel-website-link span {
+    height: 19px;
+    line-height: 19px; }
+
+.teromac-menu-back-btn-icon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-right: 18px; }
+
+.teromac-submenu li {
+  padding: 18px 24px 0; }
+
+.teromac-submenu-header {
+  color: #F05800;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.41);
+  margin-top: 12px;
+  padding: 18px 24px;
+  font-size: 1.25em; }
+
+.teromac-submenu-form {
+  padding-bottom: 12px; }
+
+.teromac-submenu-form-is-visible {
+  background-color: #FFF;
+  margin-top: 12px; }
+  .teromac-submenu-form-is-visible .teromac-submenu-form-toggle {
+    padding-bottom: 12px; }
+
+.teromac-submenu-authenticated .teromac-half-container {
+  padding: 10px 0 40px; }
+
+.teromac-forgot-password-btn {
+  color: #F05800;
+  margin-top: 24px; }
+
+.teromac-menu-contact {
+  padding: 18px 24px; }
+
+.teromac-menu-contact-header {
+  padding: 18px 0;
+  font-size: 1.125em; }
+
+.teromac-menu-external-links {
+  padding: 9px 24px; }
+  .teromac-menu-external-links li {
+    margin-right: 30px; }
+    .teromac-menu-external-links li a {
+      font-size: 30px; }
+
+@media (max-width: 768px) {
+  .teromac-menu-container-outer.teromac-menu-push-left,
+  .teromac-menu-container-outer.teromac-menu-push-right,
+  .teromac-menu-container-outer.teromac-menu-slide-left,
+  .teromac-menu-container-outer.teromac-menu-slide-right {
+    width: 100%; }
+
+  .teromac-layout.teromac-menu-open .teromac-menu-push-left + .teromac-body {
+    -webkit-transform: translateX(100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);
+    /* IE 9 */
+    transform: translateX(100%);
+    /* Firefox 16+, IE 10+, Opera */ }
+  .teromac-layout.teromac-menu-open .teromac-menu-push-right + .teromac-body {
+    -webkit-transform: translateX(-100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);
+    /* IE 9 */
+    transform: translateX(-100%);
+    /* Firefox 16+, IE 10+, Opera */ } }
+/* ==========================================================================
+   Plan View
+   ========================================================================== */
+.teromac-plan-dates-container {
+  color: #595356;
+  margin: 20px 0;
+  padding: 0 10px; }
+
+.teromac-plan-dates-divider {
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  color: #908D91; }
+
+.teromac-plan-date-checkin {
+  padding-right: 20px; }
+
+.teromac-plan-date-checkout {
+  padding-left: 20px; }
+
+.teromac-plan-date-label {
+  font-size: 0.875em; }
+
+.teromac-plan-date-date {
+  font-size: 1.75em;
+  color: #F05800; }
+
+.teromac-plan-year {
+  font-size: 1em; }
+
+.teromac-plan-inputs-con {
+  margin-top: 10px; }
+
+.teromac-plan-inputs > div {
+  padding: 0 20px; }
+
+.teromac-codes-btn {
+  margin-top: 20px; }
+
+/* ==========================================================================
+   Dates View
+   ========================================================================== */
+.teromac-cal-navigation {
+  padding: 0 20px; }
+  .teromac-cal-navigation > div {
+    width: 44px;
+    height: 44px; }
+
+.teromac-cal-prev,
+.teromac-cal-next {
+  color: #908D91; }
+
+.teromac-cal-container table {
+  max-width: 294px;
+  margin: 20px auto 30px; }
+
+.teromac-cal-header {
+  font-size: 1.25em;
+  color: #363636; }
+
+.teromac-cal-day {
+  color: #7D7C7C;
+  font-size: 0.8125em; }
+
+.teromac-cal-date .teromac-table-cell {
+  color: #5C5B5B;
+  font-size: 1em; }
+  .teromac-cal-date .teromac-table-cell:hover, .teromac-cal-date .teromac-table-cell.teromac-cal-is-start-date, .teromac-cal-date .teromac-table-cell.teromac-cal-is-in-range, .teromac-cal-date .teromac-table-cell.teromac-cal-is-end-date, .teromac-cal-date .teromac-table-cell.teromac-cal-is-temp-end-date {
+    color: #FFF;
+    border-width: 1px; }
+  .teromac-cal-date .teromac-table-cell.teromac-cal-is-in-range {
+    background-color: #FF9442;
+    border-color: #FF9442; }
+  .teromac-cal-date .teromac-table-cell:hover, .teromac-cal-date .teromac-table-cell.teromac-cal-is-start-date, .teromac-cal-date .teromac-table-cell.teromac-cal-is-end-date, .teromac-cal-date .teromac-table-cell.teromac-cal-is-temp-end-date {
+    background-color: #F05800;
+    border-color: #F05800; }
+  .teromac-cal-date .teromac-table-cell.teromac-cal-is-start-date {
+    border-radius: 0 0 0 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-cal-date .teromac-table-cell.teromac-cal-is-end-date, .teromac-cal-date .teromac-table-cell.teromac-cal-is-temp-end-date {
+    border-radius: 0 0 0 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-cal-date .teromac-table-cell.teromac-cal-is-past, .teromac-cal-date .teromac-table-cell.teromac-cal-is-blank {
+    color: #A3A3A3;
+    border-color: transparent;
+    background-color: transparent; }
+
+.teromac-dates-controls {
+  padding: 0 20px; }
+
+.teromac-dates-legend {
+  height: 60px;
+  line-height: 60px; }
+  .teromac-dates-legend li {
+    margin-right: 10px; }
+
+.teromac-dates-legend-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+.teromac-dates-legend-label {
+  height: 18px;
+  line-height: 18px;
+  color: #595356; }
+
+.teromac-dates-legend-reset {
+  color: #908D91; }
+  .teromac-dates-legend-reset:after {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    content: "4";
+    font-family: "teromac Icons";
+    font-size: 18px; }
+
+.teromac-dates-legend-icon-sold-out {
+  background-color: #E5E5E5; }
+
+.teromac-dates-legend-icon-min-stay {
+  background-color: #FF9442; }
+
+@media (max-width: 768px) {
+  .teromac-cal-container {
+    border-bottom: 1px solid #EDEDE9;
+    margin-bottom: 20px; }
+
+  .teromac-dates-controls {
+    height: 140px; }
+
+  .teromac-dates-legend {
+    bottom: 60px;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 2px 13px 0 rgba(87, 87, 87, 0.5);
+    /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+    box-shadow: 0 2px 13px 0 rgba(87, 87, 87, 0.5);
+    /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */ } }
+/* ==========================================================================
+   Codes View
+   ========================================================================== */
+#teromac-codes-view h2 {
+  font-size: 1.125em;
+  padding: 10px 15px;
+  margin: 0 0 15px; }
+
+.teromac-code {
+  padding: 10px 15px;
+  border-top: 1px solid #EDEDE9; }
+  .teromac-code h3 {
+    font-size: 0.9375em; }
+
+.teromac-code-value {
+  line-height: 50px;
+  margin-left: 65px; }
+  .teromac-code-value div {
+    color: #F05800; }
+
+.teromac-code-active .teromac-code-value {
+  padding: 14px 43px 14px 0; }
+  .teromac-code-active .teromac-code-value h3 {
+    font-size: 0.8125em; }
+  .teromac-code-active .teromac-code-value div {
+    font-size: 0.9375em; }
+
+.teromac-code-focused.teromac-code-active .teromac-code-value h3,
+.teromac-code-focused .teromac-code-value h3 {
+  line-height: 50px;
+  font-size: 0.9375em; }
+
+.teromac-code-icon {
+  width: 50px;
+  height: 50px;
+  color: #908D91; }
+
+.teromac-code-promoCode .teromac-code-icon:after {
+  content: "!";
+  font-family: "teromac Icons";
+  font-size: 50px; }
+
+.teromac-code-frequentGuestId .teromac-code-icon:after {
+  content: "5";
+  font-family: "teromac Icons";
+  font-size: 50px; }
+
+.teromac-code-corporateId .teromac-code-icon:after {
+  content: "N";
+  font-family: "teromac Icons";
+  font-size: 50px; }
+
+.teromac-code-aaa .teromac-code-icon:after {
+  content: "Y";
+  font-family: "teromac Icons";
+  font-size: 50px; }
+
+.teromac-code-aarp .teromac-code-icon:after {
+  content: "Y";
+  font-family: "teromac Icons";
+  font-size: 50px; }
+
+.teromac-code-active .teromac-code-icon,
+.teromac-code-focused .teromac-code-icon {
+  color: #F05800; }
+
+.teromac-clear-code-btn {
+  margin-top: -14px;
+  width: 28px;
+  height: 28px;
+  right: 15px;
+  color: #908D91; }
+
+.teromac-code-error {
+  color: #FF0000;
+  font-size: 0.9375em;
+  margin-bottom: 10px; }
+
+.teromac-code-input {
+  margin-bottom: 6px; }
+  .teromac-code-input.teromac-error input[type="text"] {
+    border-color: #FF0000;
+    margin-bottom: 5px; }
+
+.teromac-code-input-controls > div {
+  padding: 0 5px; }
+
+/* ==========================================================================
+   Rooms View
+   ========================================================================== */
+.teromac-mobile-rooms-view-header {
+  padding: 0 20px; }
+  .teromac-mobile-rooms-view-header p {
+    font-size: 1.125em;
+    height: 22px;
+    line-height: 22px; }
+
+.teromac-filter-toggle-btn {
+  font-size: 0.8125em;
+  height: 22px;
+  line-height: 20px;
+  border: 1px solid #908D91;
+  padding: 0 10px;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-filter-toggle-btn:before {
+    margin-right: 2.5px; }
+
+.teromac-room-filters-container ul {
+  padding: 0 10px; }
+.teromac-room-filters-container li {
+  margin: 0 2.5px;
+  padding: 0 10px;
+  border: 1px solid #908D91;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+  height: 30px;
+  line-height: 28px; }
+
+.teromac-item-view-left,
+.teromac-item-view-right {
+  margin: 25px 0 0; }
+
+.teromac-item-view-left {
+  padding: 0 10px 0 20px; }
+
+.teromac-item-view-right {
+  padding: 0 20px 0 10px; }
+
+.teromac-room-sort {
+  margin-bottom: 15px; }
+  .teromac-room-sort li {
+    border: 1px solid #908D91;
+    height: 33px;
+    line-height: 31px; }
+    .teromac-room-sort li:first-of-type {
+      border-right-color: #F05800;
+      border-radius: 0 0 0 0;
+      /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+      /* useful if you don't want a bg color from leaking outside the border: */
+      /* background-clip: padding-box; */
+      /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+    .teromac-room-sort li:last-of-type {
+      border-radius: 0 0 0 0;
+      /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+      /* useful if you don't want a bg color from leaking outside the border: */
+      /* background-clip: padding-box; */
+      /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+    .teromac-room-sort li.teromac-active {
+      border-color: #F05800;
+      color: #F05800; }
+
+.teromac-items-by-rate {
+  border-bottom: 1px solid #E6E6E6;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-items-by-rate li {
+    padding: 15px;
+    border-color: #E6E6E6;
+    border-width: 1px 1px 0; }
+    .teromac-items-by-rate li:nth-child(odd) {
+      background-color: #F3F3F3; }
+    .teromac-items-by-rate li.teromac-active {
+      border-color: #F05800;
+      outline: 5px solid #F05800;
+      outline-offset: -4px; }
+    .teromac-items-by-rate li a {
+      color: #595356; }
+  .teromac-items-by-rate h2 {
+    font-size: 1.25em; }
+  .teromac-items-by-rate .teromac-label,
+  .teromac-items-by-rate .teromac-value {
+    font-size: 1.125em; }
+  .teromac-items-by-rate .teromac-value {
+    color: #F05800; }
+  .teromac-items-by-rate li p {
+    margin-top: 10px;
+    font-size: 0.875em; }
+  .teromac-items-by-rate .teromac-view-rate-btn-mobile {
+    font-size: 0.875em;
+    color: #908D91; }
+    .teromac-items-by-rate .teromac-view-rate-btn-mobile:after {
+      margin-left: 5px; }
+
+.teromac-items-by-item li {
+  margin-bottom: 1px;
+  color: #FFF; }
+  .teromac-items-by-item li.teromac-active {
+    border-color: #F05800;
+    outline: 5px solid #F05800;
+    outline-offset: -5px; }
+  .teromac-items-by-item li a {
+    color: #FFF; }
+  .teromac-items-by-item li .teromac-item-image {
+    padding-top: 60.76923%; }
+  .teromac-items-by-item li .teromac-room-type-copy,
+  .teromac-items-by-item li .teromac-room-type-rate-container {
+    padding: 10px; }
+  .teromac-items-by-item li .teromac-room-type-copy {
+    padding-right: 100px; }
+  .teromac-items-by-item li .teromac-room-type-rate-container {
+    width: 90px;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .teromac-items-by-item li .teromac-item-name,
+  .teromac-items-by-item li .teromac-room-type-rate-value {
+    font-size: 1.375em; }
+  .teromac-items-by-item li .teromac-item-name,
+  .teromac-items-by-item li .teromac-room-type-special {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Chrome, Firefox 3.5+, IE 10+, Opera 9+, Safari 1+ */ }
+  .teromac-items-by-item li .teromac-room-type-max-guests,
+  .teromac-items-by-item li .teromac-room-type-rate-label {
+    font-size: 0.8125em; }
+  .teromac-items-by-item li .teromac-special-badge {
+    font-size: 0.625em;
+    padding: 5px 10px;
+    border: 2px solid #FFF;
+    border-radius: 0;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px; }
+  .teromac-items-by-item li .teromac-room-type-special {
+    color: #6CFFC9;
+    font-size: 0.875em; }
+  .teromac-items-by-item li.teromac-special .teromac-room-type-rate-value {
+    color: #6CFFC9; }
+
+.teromac-item-view-right h3 {
+  font-size: 1.125em;
+  height: 33px;
+  line-height: 33px;
+  margin-bottom: 15px; }
+
+@media (max-width: 768px) {
+  .teromac-room-sort li {
+    border: none; }
+    .teromac-room-sort li.teromac-active:after {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: #F05800;
+      margin: 0 auto;
+      max-width: 120px; }
+
+  .teromac-item-view-left,
+  .teromac-item-view-right {
+    padding: 0 20px; } }
+/* ==========================================================================
+   Rates View
+   ========================================================================== */
+.teromac-room-image-slider-con-outer,
+.teromac-room-image-slide-inner {
+  padding-top: 66.66667%; }
+
+.teromac-item-detail-header {
+  margin: 30px 0 20px; }
+
+.teromac-item-detail-header-name,
+.teromac-item-detail-header-left {
+  height: 27px;
+  line-height: 27px; }
+
+.teromac-item-detail-header-name {
+  font-size: 1.375em; }
+
+.teromac-item-detail-header-left {
+  font-size: 0.9375em; }
+
+.teromac-item-detail-header-left-label {
+  margin-right: 5px; }
+
+.teromac-room-details-outer {
+  margin-bottom: 30px; }
+
+.teromac-room-details-inner {
+  height: 75px; }
+
+.teromac-room-details-view-toggle-outer {
+  height: 75px;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, #FFF 75%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, #FFF 75%); }
+
+.teromac-room-details-view-toggle {
+  width: 116px;
+  margin-left: -58px;
+  border-color: #EDEDE9;
+  background-color: #EDEDE9;
+  color: #595356;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+.teromac-room-details-outer.teromac-show-full-room-details {
+  padding-bottom: 30px; }
+
+.teromac-room-description,
+.teromac-room-amenities {
+  font-size: 0.8125em;
+  margin-bottom: 20px; }
+
+.teromac-room-amenities-header {
+  margin: 10px 0; }
+
+.teromac-room-amenities-subheader {
+  font-size: 0.875em;
+  margin: 10px 0 20px; }
+
+.teromac-rate-toggle {
+  background-color: #908D91;
+  color: #FFF;
+  padding: 0 44px 0 10px;
+  font-size: 1.125em;
+  height: 44px;
+  line-height: 44px; }
+  .teromac-rate-toggle:after {
+    width: 44px;
+    height: 44px; }
+
+.teromac-rate-details {
+  padding: 20px; }
+
+.teromac-rate {
+  margin-bottom: 1px; }
+  .teromac-rate.teromac-rate-is-visible .teromac-rate-toggle {
+    background-color: #F05800; }
+
+.teromac-rate-details-copy {
+  font-size: 0.875em; }
+
+.teromac-rate-controls {
+  margin: 30px auto 0;
+  max-width: 260px;
+  overflow: hidden; }
+
+.teromac-rate-controls-left {
+  width: 65%;
+  padding-right: 5px; }
+
+.teromac-rate-controls-right {
+  width: 35%;
+  padding-left: 5px; }
+
+.teromac-btn.teromac-btn-add-to-compare,
+.teromac-btn.teromac-btn-remove-from-compare {
+  margin-top: 10px;
+  background-color: #EDEDE9;
+  color: #595356;
+  font-size: 0.75em; }
+  .teromac-btn.teromac-btn-add-to-compare:before,
+  .teromac-btn.teromac-btn-remove-from-compare:before {
+    margin-right: 15px; }
+
+.teromac-btn.teromac-btn-add-to-compare {
+  border-color: #EDEDE9; }
+
+.teromac-btn.teromac-btn-remove-from-compare {
+  -webkit-box-shadow: 1px 3px 4px rgba(163, 163, 163, 0.5);
+  /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 1px 3px 4px rgba(163, 163, 163, 0.5);
+  /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */ }
+  .teromac-btn.teromac-btn-remove-from-compare:before {
+    color: #F05800; }
+
+.teromac-room-image-navigation-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  cursor: pointer;
+  color: #FFF; }
+  .teromac-room-image-navigation-arrow.teromac-prev {
+    left: 0; }
+    .teromac-room-image-navigation-arrow.teromac-prev:after {
+      content: "w";
+      font-family: "teromac Icons";
+      font-size: 44px; }
+  .teromac-room-image-navigation-arrow.teromac-next {
+    right: 0; }
+    .teromac-room-image-navigation-arrow.teromac-next:after {
+      content: "v";
+      font-family: "teromac Icons";
+      font-size: 44px; }
+  .teromac-room-image-navigation-arrow.teromac-prev:after, .teromac-room-image-navigation-arrow.teromac-next:after {
+    display: block;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    /* Chrome, Firefox 3.5+, IE 10+, Opera 9+, Safari 1+ */
+    width: 44px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px; }
+
+.teromac-room-image-navigation-dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .teromac-room-image-navigation-dots ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center; }
+  .teromac-room-image-navigation-dots li {
+    display: inline-block; }
+  .teromac-room-image-navigation-dots button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent; }
+    .teromac-room-image-navigation-dots button:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: black;
+      border-radius: 50%;
+      /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+      /* useful if you don't want a bg color from leaking outside the border: */
+      /* background-clip: padding-box; */
+      /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+/* ==========================================================================
+   Checkout View
+   ========================================================================== */
+#teromac-checkout-view h2 {
+  font-size: 1.125em;
+  margin: 0 0 20px;
+  padding: 0 30px; }
+
+.teromac-checkout-header .teromac-btn {
+  width: 280px; }
+
+@media (max-width: 768px) {
+  #teromac-checkout-view h2 {
+    padding: 0 20px; } }
+/* ==========================================================================
+   Checkout Guest View
+   ========================================================================== */
+#teromac-guest-view form {
+  padding: 0 25px; }
+
+.teromac-input-container {
+  padding: 0 5px; }
+
+.teromac-create-account-input-container {
+  clear: both;
+  margin: 0 0 10px -10px; }
+  .teromac-create-account-input-container .teromac-checkbox input[type="checkbox"] + label,
+  .teromac-create-account-input-container span {
+    font-size: 1.125em; }
+  .teromac-create-account-input-container .teromac-checkbox input[type="checkbox"] + label {
+    padding-right: 0; }
+  .teromac-create-account-input-container span {
+    color: #F05800;
+    cursor: pointer; }
+
+.teromac-special-requests-input-container {
+  padding-top: 40px; }
+
+@media (max-width: 768px) {
+  #teromac-guest-view form {
+    padding: 0 15px; } }
+/* ==========================================================================
+   Checkout Payment View
+   ========================================================================== */
+#teromac-payment-view form {
+  padding: 0 25px; }
+  #teromac-payment-view form hr {
+    margin: 30px 0; }
+
+.teromac-payment-view-left,
+.teromac-payment-view-bottom {
+  padding-right: 35px; }
+
+.teromac-payment-view-right {
+  padding-left: 35px; }
+
+.teromac-payment-view-bottom {
+  margin-bottom: 80px; }
+
+@media (max-width: 768px) {
+  #teromac-payment-view form {
+    padding: 0 15px; } }
+/* ==========================================================================
+   Checkout Policies View
+   ========================================================================== */
+#teromac-policies-view form {
+  padding: 0 30px; }
+  #teromac-policies-view form hr {
+    margin: 30px 0; }
+
+.teromac-policy-view-left,
+.teromac-policy-view-right {
+  margin-bottom: 50px; }
+  .teromac-policy-view-left p,
+  .teromac-policy-view-right p {
+    font-size: 0.875em; }
+
+.teromac-policy-view-left {
+  padding-right: 40px;
+  border-right: 1px solid #EDEDE9; }
+
+.teromac-policy-view-right {
+  padding-left: 40px; }
+  .teromac-policy-view-right p {
+    padding-left: 10px; }
+  .teromac-policy-view-right a {
+    color: #595356; }
+
+@media (max-width: 768px) {
+  #teromac-policies-view form {
+    padding: 0 20px; } }
+/* ==========================================================================
+   Customize View
+   ========================================================================== */
+/* ==========================================================================
+   Summary Bar
+   ========================================================================== */
+.teromac-summary-bar-placeholder {
+  top: -20px;
+  height: 44px; }
+  .teromac-summary-bar-placeholder.teromac-sticky-summary-bar-fixed .teromac-summary-bar-outer {
+    top: 44px; }
+
+.teromac-summary-bar-inner {
+  background-color: #F05800;
+  color: #FFF;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 0 0 0 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+
+.teromac-summary-bar-left {
+  width: 72%;
+  padding: 0 30px;
+  color: #FFF;
+  font-size: 1.125em; }
+  .teromac-summary-bar-left li {
+    margin-right: 20px; }
+
+.teromac-summary-bar-dates span,
+.teromac-summary-bar-adults,
+.teromac-summary-bar-children,
+.teromac-summary-bar-rooms,
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before,
+.teromac-summary-bar-adults span,
+.teromac-summary-bar-children span,
+.teromac-summary-bar-rooms span {
+  height: 44px;
+  line-height: 44px; }
+
+.teromac-summary-bar-dates {
+  margin-right: 40px; }
+
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before {
+  margin-right: 10px;
+  height: 44px;
+  line-height: 44px; }
+
+.teromac-summary-bar-right {
+  width: 28%; }
+
+.teromac-summary-bar-total {
+  background-color: #3A1500;
+  padding: 0 20px;
+  color: #FFF; }
+  .teromac-summary-bar-total:after,
+  .teromac-summary-bar-total span {
+    height: 44px;
+    line-height: 44px; }
+  .teromac-summary-bar-total:after,
+  .teromac-summary-bar-total .teromac-label {
+    opacity: 0.7; }
+  .teromac-summary-bar-total .teromac-value {
+    font-size: 1.625em;
+    margin: 0 10px 0 20px; }
+
+@media (max-width: 768px) {
+  .teromac-summary-bar-left {
+    padding: 0 10px;
+    font-size: 0.8125em; }
+    .teromac-summary-bar-left ul li {
+      margin-right: 5px; }
+      .teromac-summary-bar-left ul li span {
+        font-size: 0.75em; }
+
+  .teromac-summary-bar-dates {
+    margin-right: 10px; }
+
+  .teromac-summary-bar-adults:before,
+  .teromac-summary-bar-children:before,
+  .teromac-summary-bar-rooms:before {
+    margin-right: 2px; }
+
+  .teromac-summary-bar-total {
+    padding: 0 10px; }
+    .teromac-summary-bar-total > div {
+      height: 44px;
+      margin-right: 5px;
+      padding: 5px 0; }
+    .teromac-summary-bar-total .teromac-label {
+      font-size: 0.625em; }
+    .teromac-summary-bar-total .teromac-value {
+      font-size: 1.125em; } }
+/* ==========================================================================
+   Compare View
+   ========================================================================== */
+#teromac-compare-view h2 {
+  margin: 30px 0;
+  font-size: 1.375em;
+  padding: 0 20px; }
+
+.teromac-compare-items-container-outer {
+  height: 800px; }
+
+.teromac-compare-items-slider,
+.teromac-compare-navigation-outer {
+  padding: 0 20px; }
+
+.teromac-compare-items-slider .slick-track {
+  border: 1px solid #EDEDE9; }
+
+.teromac-compare-nagivation-container {
+  top: 96px; }
+
+.teromac-compare-navigation-mid {
+  width: 33.3%;
+  border: 1px solid transparent; }
+
+.teromac-compare-navigation-inner {
+  padding-top: 66.66667%; }
+
+.teromac-compare-navigation {
+  width: 35px;
+  background-color: #818181;
+  color: #FFF; }
+
+.teromac-compare-item {
+  border: 1px solid #EDEDE9;
+  padding: 50px 0 40px; }
+  .teromac-compare-item h3,
+  .teromac-compare-item .teromac-compare-item-body {
+    padding: 0 20px; }
+  .teromac-compare-item h3 {
+    font-size: 1.375em;
+    height: 30px;
+    line-height: 30px; }
+  .teromac-compare-item .teromac-compare-image {
+    margin: 15px 0;
+    padding-top: 66.66667%; }
+  .teromac-compare-item .teromac-compare-price {
+    margin: 20px 0 30px; }
+    .teromac-compare-item .teromac-compare-price .teromac-value {
+      font-size: 1.625em; }
+  .teromac-compare-item .teromac-btn {
+    margin-bottom: 10px; }
+
+.teromac-compare-item-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #908D91;
+  cursor: pointer; }
+  .teromac-compare-item-remove-btn:after {
+    content: "A";
+    font-family: "teromac Icons";
+    font-size: 22px; }
+
+/* Compare button on rates view */
+a.teromac-compare-btn-desktop {
+  top: -34px;
+  right: -20px;
+  background-color: #FFF;
+  border-color: #595356;
+  color: #595356; }
+
+.teromac-compare-btn-container-mobile {
+  height: 57px; }
+
+a.teromac-compare-btn-mobile {
+  background-color: #FFF;
+  color: #595356;
+  height: 57px;
+  line-height: 57px;
+  -webkit-box-shadow: 0 2px 13px 0 rgba(87, 87, 87, 0.5);
+  /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 0 2px 13px 0 rgba(87, 87, 87, 0.5);
+  /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */ }
+  a.teromac-compare-btn-mobile .teromac-value {
+    color: #F05800; }
+
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+/* Add room modal */
+#teromac-add-room-modal-view {
+  width: 400px;
+  padding: 40px 50px;
+  text-align: center; }
+  #teromac-add-room-modal-view p {
+    margin: 30px 0 40px; }
+  #teromac-add-room-modal-view .teromac-btn {
+    display: block; }
+
+/* Share modal */
+#teromac-share-modal-view {
+  width: 400px;
+  padding: 60px 70px 40px;
+  text-align: center; }
+  #teromac-share-modal-view h2 {
+    font-size: 1.1875em;
+    font-weight: normal; }
+  #teromac-share-modal-view a {
+    color: #595356; }
+  #teromac-share-modal-view .teromac-email-share-btn {
+    display: block; }
+    #teromac-share-modal-view .teromac-email-share-btn:before,
+    #teromac-share-modal-view .teromac-email-share-btn span {
+      display: block; }
+    #teromac-share-modal-view .teromac-email-share-btn span {
+      font-size: 1.1875em; }
+    #teromac-share-modal-view .teromac-email-share-btn:before {
+      content: "d";
+      font-family: "teromac Icons";
+      font-size: 80px; }
+  #teromac-share-modal-view .teromac-share-link-container {
+    margin: 20px 0; }
+  #teromac-share-modal-view .teromac-share-link {
+    display: block;
+    font-size: 0.875em;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -pre-wrap;
+    /* Opera <7 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */ }
+  #teromac-share-modal-view .teromac-btn-container {
+    text-align: center; }
+  #teromac-share-modal-view .teromac-btn {
+    min-width: 145px; }
+
+/* Add to calendar modal */
+#teromac-add-to-calendar-modal-view {
+  width: 430px; }
+  #teromac-add-to-calendar-modal-view h2 {
+    font-size: 1.1875em;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 30px;
+    text-align: center; }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-downloads {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    padding: 20px 0; }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-download {
+    font-size: 1.0625em;
+    height: 94px;
+    line-height: 94px;
+    padding: 0 30px;
+    border-bottom: 1px solid #EDEDE9;
+    cursor: pointer; }
+    #teromac-add-to-calendar-modal-view .teromac-calendar-download:last-of-type {
+      border-bottom: none; }
+    #teromac-add-to-calendar-modal-view .teromac-calendar-download:before {
+      content: "";
+      display: inline-block;
+      width: 74px;
+      height: 74px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 20px;
+      vertical-align: middle; }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-download-outlook:before {
+    background-image: url("/assets/images/ui/calendar-icons/outlook.png"); }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-download-ical:before {
+    background-image: url("/assets/images/ui/calendar-icons/ical.png"); }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-download-google:before {
+    background-image: url("/assets/images/ui/calendar-icons/google.png"); }
+  #teromac-add-to-calendar-modal-view .teromac-calendar-download-yahoo:before {
+    background-image: url("/assets/images/ui/calendar-icons/yahoo.png"); }
+
+@media (max-width: 768px) {
+  /* Add room modal */
+  #teromac-add-room-modal-view {
+    width: 300px; }
+
+  /* Share modal */
+  #teromac-share-modal-view {
+    width: 300px;
+    padding: 30px 0 20px; }
+    #teromac-share-modal-view .teromac-share-link {
+      margin: 0 20px; }
+
+  /* Add to calendar modal */
+  #teromac-add-to-calendar-modal-view {
+    width: 300px; } }
+/* ==========================================================================
+   Upgrade View
+   ========================================================================== */
+#teromac-upgrade-view {
+  max-width: 400px; }
+  #teromac-upgrade-view h2,
+  #teromac-upgrade-view .teromac-item-detail-header,
+  #teromac-upgrade-view .teromac-room-amenities-container,
+  #teromac-upgrade-view .teromac-half-container {
+    padding: 0 20px; }
+  #teromac-upgrade-view h2 {
+    font-size: 1.125em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0; }
+  #teromac-upgrade-view .teromac-room-amenities-container {
+    margin-top: 20px; }
+  #teromac-upgrade-view .teromac-item-detail-header-left {
+    color: #908D91; }
+  #teromac-upgrade-view .teromac-half-container {
+    max-width: 300px;
+    margin: 30px auto; }
+    #teromac-upgrade-view .teromac-half-container .teromac-btn {
+      display: block; }
+
+.teromac-upgrade-image {
+  position: relative;
+  margin-top: -10px;
+  padding-top: 60.76923%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.teromac-upgrade-items {
+  position: relative;
+  display: block;
+  list-style-type: none;
+  white-space: nowrap;
+  font-size: 0;
+  overflow: auto;
+  text-align: center;
+  padding: 0 10px 10px;
+  margin-top: 20px; }
+
+.teromac-upgrade-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 30px;
+  border: 1px solid #EDEDE9; }
+  .teromac-upgrade-item.teromac-active {
+    background-color: #F05800;
+    border-color: #F05800;
+    color: #FFF; }
+    .teromac-upgrade-item.teromac-active:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #F05800;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      margin-left: -10px; }
+  .teromac-upgrade-item .teromac-value {
+    font-size: 1.375em; }
+  .teromac-upgrade-item .teromac-label {
+    font-size: 0.875em; }
+
+@media (max-width: 768px) {
+  #teromac-upgrade-view h2 {
+    text-align: left; } }
+/* ==========================================================================
+   Account View
+   ========================================================================== */
+#teromac-account-view h2 {
+  font-size: 1.125em;
+  margin: 0 0 20px;
+  padding: 0 30px; }
+
+.teromac-account-padding {
+  padding: 0 30px; }
+
+/* ==========================================================================
+   Account Profile View
+   ========================================================================== */
+#teromac-profile-view .teromac-btn {
+  margin-top: 30px;
+  min-width: 170px; }
+#teromac-profile-view h3 {
+  font-weight: normal;
+  font-size: 1.125em;
+  margin: 0 0 20px; }
+
+.teromac-profile-view-left {
+  padding-right: 40px;
+  border-right: 1px solid #EDEDE9; }
+  .teromac-profile-view-left .teromac-label {
+    font-size: 0.8125em; }
+  .teromac-profile-view-left .teromac-value {
+    font-weight: bold;
+    margin-bottom: 20px; }
+
+.teromac-profile-view-right {
+  padding-left: 40px; }
+
+@media (max-width: 768px) {
+  #teromac-profile-view h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EDEDE9; }
+  #teromac-profile-view .teromac-btn-container {
+    text-align: center;
+    margin-bottom: 30px; } }
+/* ==========================================================================
+   Account Reservations View
+   ========================================================================== */
+#teromac-reservations-view .teromac-account-padding > .teromac-btn {
+  display: block;
+  width: 400px;
+  margin: 0 auto; }
+
+.teromac-order-confirmation-success-message {
+  text-align: center;
+  background-color: #EDEDE9;
+  margin-bottom: 20px; }
+
+.teromac-success-check-left {
+  position: relative;
+  display: inline-block;
+  padding: 30px 10px; }
+  .teromac-success-check-left:before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -22px;
+    color: #908D91;
+    border: 3px solid #908D91;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    margin-right: 10px;
+    content: "7";
+    font-family: "teromac Icons";
+    font-size: 27px;
+    border-radius: 50%;
+    /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    /* background-clip: padding-box; */
+    /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-success-check-left div {
+    font-size: 1.25em;
+    font-weight: bold; }
+
+.teromac-upcoming-reservations {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.teromac-upcoming-reservation {
+  -webkit-box-shadow: 0 2px 4px 0 rgba(193, 187, 187, 0.5);
+  /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 0 2px 4px 0 rgba(193, 187, 187, 0.5);
+  /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+  margin-bottom: 30px; }
+
+.teromac-upcoming-reservation-header {
+  background-color: #F05800;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 0 0 0 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-upcoming-reservation-header:before {
+    content: "9";
+    font-family: "teromac Icons";
+    font-size: 22px;
+    vertical-align: bottom;
+    margin-right: 10px; }
+
+.teromac-upcoming-reservation-body {
+  padding: 30px;
+  overflow: hidden; }
+  .teromac-upcoming-reservation-body .teromac-label {
+    font-size: 0.9375em; }
+  .teromac-upcoming-reservation-body .teromac-value {
+    font-weight: bold;
+    font-size: 1.125em;
+    margin-bottom: 20px; }
+
+.teromac-upcoming-reservation-left,
+.teromac-upcoming-reservation-right {
+  width: 50%;
+  float: left; }
+
+.teromac-upcoming-reservation-left {
+  padding-right: 20px; }
+
+.teromac-upcoming-reservation-right {
+  padding-left: 20px; }
+  .teromac-upcoming-reservation-right .teromac-half-container {
+    margin-bottom: 10px; }
+  .teromac-upcoming-reservation-right .teromac-btn-inverse {
+    color: #595356;
+    background-color: #EDEDE9;
+    border-color: #EDEDE9; }
+  .teromac-upcoming-reservation-right .teromac-btn {
+    display: block;
+    margin-bottom: 10px; }
+
+.teromac-btn-view-details-icon:before,
+.teromac-btn-modify-icon:before,
+.teromac-btn-cancel-icon:before {
+  vertical-align: middle;
+  margin-right: 10px; }
+
+.teromac-btn-view-details-icon:before {
+  content: "2";
+  font-family: "teromac Icons";
+  font-size: 18px; }
+
+.teromac-btn-modify-icon:before {
+  content: "Y";
+  font-family: "teromac Icons";
+  font-size: 18px; }
+
+.teromac-btn-cancel-icon:before {
+  content: "A";
+  font-family: "teromac Icons";
+  font-size: 18px; }
+
+@media (max-width: 768px) {
+  #teromac-reservations-view .teromac-account-padding > .teromac-btn {
+    width: 100%; }
+
+  .teromac-upcoming-reservation-header {
+    padding: 10px 20px; }
+
+  .teromac-upcoming-reservation-body {
+    padding: 10px; }
+
+  .teromac-upcoming-reservation-left,
+  .teromac-upcoming-reservation-right {
+    float: none;
+    width: 100%;
+    padding: 0; } }
+/* ==========================================================================
+   Account Payment Methods View
+   ========================================================================== */
+#teromac-payment-methods-view .teromac-btn.teromac-desktop-only {
+  display: block;
+  width: 280px;
+  margin: 0 auto; }
+#teromac-payment-methods-view .teromac-btn.teromac-mobile-only {
+  width: 100%;
+  margin-bottom: 20px; }
+
+.teromac-payment-methods {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.teromac-payment-method-outer {
+  float: left;
+  width: 50%;
+  padding-bottom: 64px; }
+
+.teromac-payment-method-outer:nth-child(odd) {
+  padding-right: 15px;
+  clear: left; }
+
+.teromac-payment-method-outer:nth-child(even) {
+  padding-left: 15px; }
+
+.teromac-payment-method-inner {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #EDEDE9;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(193, 187, 187, 0.5);
+  /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 0 2px 4px 0 rgba(193, 187, 187, 0.5);
+  /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+  border-radius: 0;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  /* background-clip: padding-box; */
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */ }
+  .teromac-payment-method-inner .teromac-label {
+    margin-top: 30px;
+    font-size: 0.8125em; }
+  .teromac-payment-method-inner .teromac-value {
+    margin-bottom: 30px;
+    font-weight: bold; }
+  .teromac-payment-method-inner .teromac-btn {
+    display: block; }
+  .teromac-payment-method-inner .teromac-checkbox {
+    position: absolute;
+    top: 100%;
+    left: 0; }
+
+.teromac-cc-default-label {
+  display: none;
+  color: #F05800;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 0.75em; }
+
+.teromac-default-payment-method .teromac-payment-method-inner {
+  border-color: #F05800; }
+.teromac-default-payment-method .teromac-checkbox {
+  display: none; }
+.teromac-default-payment-method .teromac-cc-default-label {
+  display: block; }
+
+.teromac-cc-last-four {
+  font-weight: bold;
+  font-size: 1.125em;
+  height: 37px;
+  line-height: 37px; }
+
+.teromac-cc-icon {
+  float: right;
+  width: 59px;
+  height: 37px;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.teromac-cc-icon-visa {
+  background-image: url("/assets/images/ui/credit-card-icons/visa.png"); }
+
+.teromac-cc-icon-mastercard {
+  background-image: url("/assets/images/ui/credit-card-icons/mastercard.png"); }
+
+@media (max-width: 768px) {
+  #teromac-payment-methods-view .teromac-btn.teromac-desktop-only {
+    display: none; }
+
+  .teromac-payment-method-outer {
+    float: none;
+    width: 100%; }
+
+  .teromac-payment-method-outer:nth-child(odd) {
+    padding-right: 0; }
+
+  .teromac-payment-method-outer:nth-child(even) {
+    padding-left: 0; }
+
+  .teromac-default-payment-method {
+    padding-bottom: 20px; } }
+/* ==========================================================================
+   Cart View / Review View
+   ========================================================================== */
+#teromac-review-view,
+#teromac-cart-view {
+  display: table;
+  height: 100%;
+  max-width: 1024px; }
+  #teromac-review-view h2,
+  #teromac-cart-view h2 {
+    font-weight: normal;
+    font-size: 1.375em;
+    margin: 0 0 30px; }
+    #teromac-review-view h2 .teromac-value,
+    #teromac-cart-view h2 .teromac-value {
+      color: #F05800; }
+  #teromac-review-view .teromac-item-detail-header,
+  #teromac-cart-view .teromac-item-detail-header {
+    margin-bottom: 10px; }
+  #teromac-review-view .teromac-thirds .teromac-btn,
+  #teromac-cart-view .teromac-thirds .teromac-btn {
+    display: block; }
+
+#teromac-review-view .teromac-review-view-right h2 {
+  padding: 0; }
+
+.teromac-review-view-left,
+.teromac-cart-view-left {
+  float: left;
+  width: 60%; }
+  .teromac-review-view-left h2,
+  .teromac-cart-view-left h2 {
+    padding: 20px 60px 0 50px; }
+  .teromac-review-view-left .teromac-line-item,
+  .teromac-cart-view-left .teromac-line-item {
+    font-size: 0.9375em; }
+  .teromac-review-view-left .teromac-btn-add-room,
+  .teromac-cart-view-left .teromac-btn-add-room {
+    display: block;
+    width: 205px;
+    margin: 20px auto; }
+
+.teromac-review-view-right,
+.teromac-cart-view-right {
+  float: right;
+  width: 40%;
+  padding: 20px 10px 20px 10px; }
+  .teromac-review-view-right .teromac-line-item,
+  .teromac-cart-view-right .teromac-line-item {
+    font-size: 0.875em; }
+  .teromac-review-view-right .teromac-btn-codes,
+  .teromac-review-view-right .teromac-btn-checkout,
+  .teromac-cart-view-right .teromac-btn-codes,
+  .teromac-cart-view-right .teromac-btn-checkout {
+    display: block; }
+  .teromac-review-view-right .teromac-btn-codes,
+  .teromac-cart-view-right .teromac-btn-codes {
+    width: 180px;
+    margin: 0 auto 10px; }
+  .teromac-review-view-right .teromac-btn-checkout,
+  .teromac-cart-view-right .teromac-btn-checkout {
+    margin: 20px 10px 0; }
+  .teromac-review-view-right p,
+  .teromac-cart-view-right p {
+    color: #908D91; }
+
+.teromac-cart-item {
+  padding: 30px 60px 20px 50px; }
+  .teromac-cart-item:first-of-type {
+    padding-top: 0; }
+  .teromac-cart-item .teromac-item-detail-header {
+    padding: 0 20px; }
+  .teromac-cart-item .teromac-item-detail-header-left {
+    font-size: 1.375em; }
+  .teromac-cart-item .teromac-thirds {
+    margin-top: 30px; }
+
+.teromac-line-item-group {
+  padding: 10px 20px; }
+
+.teromac-cart-item-image {
+  padding-top: 60.76923%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.teromac-line-item-group-inverse {
+  background-color: #EDEDE9; }
+
+.teromac-line-items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.teromac-line-item {
+  margin-bottom: 5px; }
+  .teromac-line-item .teromac-label,
+  .teromac-line-item .teromac-value {
+    width: 50%;
+    float: left; }
+  .teromac-line-item .teromac-value {
+    text-align: right; }
+
+.teromac-line-item-total {
+  font-weight: bold; }
+  .teromac-line-item-total .teromac-label {
+    font-size: 1.07143em; }
+  .teromac-line-item-total .teromac-value {
+    font-size: 1.42857em; }
+
+@media (max-width: 768px) {
+  .teromac-review-view-left,
+  .teromac-cart-view-left,
+  .teromac-review-view-right,
+  .teromac-cart-view-right {
+    width: 100%;
+    padding: 0 20px; }
+
+  .teromac-review-view-right,
+  .teromac-cart-view-right {
+    margin-bottom: 30px; }
+
+  .teromac-cart-item {
+    padding: 0 0 20px; } }
+/* ==========================================================================
+   Confirmation View
+   ========================================================================== */
+#teromac-confirmation-view {
+  max-width: 1024px; }
+  #teromac-confirmation-view h2 {
+    font-size: 1.375em;
+    font-weight: normal;
+    margin: 20px 0 0;
+    text-align: center; }
+  #teromac-confirmation-view .teromac-order-confirmation-success-message {
+    margin-top: -20px; }
+  #teromac-confirmation-view .teromac-upcoming-reservation {
+    margin: 20px 0; }
+  #teromac-confirmation-view .teromac-quarters .teromac-value {
+    margin-bottom: 20px; }
+
+.teromac-confirmation-view-padding {
+  padding: 0 40px; }
+
+.teromac-order-email-confirmation-message {
+  text-align: center;
+  font-size: 1.125em;
+  padding: 20px 0; }
+  .teromac-order-email-confirmation-message p {
+    margin: 0; }
+  .teromac-order-email-confirmation-message a {
+    font-weight: bold;
+    color: #595356; }
+
+.teromac-upcoming-reservation-controls,
+.teromac-confirmation-message-controls {
+  text-align: center;
+  padding-top: 40px; }
+
+.teromac-confirmation-message,
+.teromac-confirmation-hotel-information {
+  padding: 20px; }
+  .teromac-confirmation-message h3,
+  .teromac-confirmation-hotel-information h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0 0 10px; }
+  .teromac-confirmation-message p,
+  .teromac-confirmation-hotel-information p {
+    font-size: 1.125em;
+    margin: 0; }
+
+.teromac-confirmation-hotel-information {
+  overflow: hidden; }
+  .teromac-confirmation-hotel-information img {
+    display: block; }
+
+.teromac-confirmation-hotel-address {
+  font-size: 0.75em;
+  margin-top: 50px; }
+  .teromac-confirmation-hotel-address h4,
+  .teromac-confirmation-hotel-address p {
+    margin: 0; }
+  .teromac-confirmation-hotel-address h4 {
+    font-weight: bold; }
+
+.teromac-confirmation-billing {
+  background-color: #EDEDE9;
+  padding: 60px 60px 40px; }
+  .teromac-confirmation-billing .teromac-confirmation-billing-header {
+    margin-bottom: 60px; }
+  .teromac-confirmation-billing .teromac-confirmation-billing-number,
+  .teromac-confirmation-billing .teromac-value {
+    font-weight: bold; }
+  .teromac-confirmation-billing .teromac-confirmation-billing-number {
+    font-size: 1.0625em; }
+  .teromac-confirmation-billing .teromac-confirmation-billing-date,
+  .teromac-confirmation-billing .teromac-label {
+    font-size: 0.9375em; }
+  .teromac-confirmation-billing .teromac-value {
+    font-size: 1.125em; }
+
+@media (max-width: 768px) {
+  #teromac-confirmation-view .teromac-quarters .teromac-quarter {
+    width: 100%;
+    padding: 0; }
+    #teromac-confirmation-view .teromac-quarters .teromac-quarter.teromac-quarter-first, #teromac-confirmation-view .teromac-quarters .teromac-quarter.teromac-quarter-second {
+      float: left;
+      width: 50%; }
+    #teromac-confirmation-view .teromac-quarters .teromac-quarter.teromac-quarter-first {
+      padding-right: 5px; }
+    #teromac-confirmation-view .teromac-quarters .teromac-quarter.teromac-quarter-second {
+      padding-left: 5px; }
+
+  .teromac-confirmation-view-padding {
+    padding: 0 10px; }
+
+  .teromac-half-mobile .teromac-btn {
+    display: block; }
+
+  .teromac-upcoming-reservation-controls,
+  .teromac-confirmation-message-controls {
+    padding-top: 0; }
+    .teromac-upcoming-reservation-controls .teromac-btn,
+    .teromac-confirmation-message-controls .teromac-btn {
+      display: block; }
+
+  .teromac-upcoming-reservation .teromac-thirds-left,
+  .teromac-upcoming-reservation .teromac-thirds-right {
+    width: 50%;
+    padding: 0; }
+  .teromac-upcoming-reservation .teromac-thirds-left {
+    padding-right: 5px; }
+  .teromac-upcoming-reservation .teromac-thirds-mid {
+    padding-left: 5px; }
+  .teromac-upcoming-reservation .teromac-thirds-right {
+    width: 100%;
+    padding: 0; }
+
+  .teromac-confirmation-billing {
+    padding: 20px 30px; }
+    .teromac-confirmation-billing .teromac-confirmation-billing-header {
+      margin-bottom: 20px; }
+      .teromac-confirmation-billing .teromac-confirmation-billing-header span {
+        display: block; }
+      .teromac-confirmation-billing .teromac-confirmation-billing-header .teromac-confirmation-billing-number {
+        color: #F05800; }
+
+  .teromac-confirmation-cancellation-message .teromac-confirmation-message-controls {
+    padding-top: 20px;
+    overflow: hidden; } }
+/* ==========================================================================
+   Addons View
+   ========================================================================== */
+#teromac-addons-view {
+  max-width: 1024px;
+  overflow: hidden; }
+  #teromac-addons-view h3 {
+    font-weight: normal;
+    margin: 0 0 15px;
+    font-size: 1.375em;
+    height: 33px;
+    line-height: 33px; }
+  #teromac-addons-view .teromac-item-view-left,
+  #teromac-addons-view .teromac-item-view-right {
+    margin-top: 0; }
+
+@media (max-width: 768px) {
+  #teromac-addons-view .teromac-item-view-right {
+    display: none; }
+  #teromac-addons-view.teromac-is-addon-detail-view .teromac-item-view-left {
+    display: none; }
+  #teromac-addons-view.teromac-is-addon-detail-view .teromac-item-view-right {
+    display: block; } }
+/* ==========================================================================
+   Addon View
+   ========================================================================== */
+#teromac-addon-view .teromac-item-detail-header-left {
+  font-size: 1.5em; }
+
+.teromac-addon-description-container hr {
+  margin: 20px 0; }
+
+.teromac-addon-description {
+  font-size: 0.875em; }
+
+@media (max-width: 768px) {
+  #teromac-addon-view .teromac-half.teromac-push-left,
+  #teromac-addon-view .teromac-half.teromac-push-right {
+    float: none;
+    width: 100%;
+    padding: 0; } }
+/* ==========================================================================
+   Dialogs
+   ========================================================================== */
+#teromac-dialog-alert,
+#teromac-dialog-confirm {
+  width: 400px;
+  background-color: #FFF;
+  padding: 20px;
+  text-align: center; }
+
+@media (max-width: 768px) {
+  #teromac-dialog-alert,
+  #teromac-dialog-confirm {
+    width: 300px; } }

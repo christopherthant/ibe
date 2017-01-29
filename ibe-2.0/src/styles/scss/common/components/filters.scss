@@ -1,0 +1,85 @@
+
+.teromac-room-filters-container {
+    position: $room-filters-container-position;
+
+    ul {
+        display: $room-filters-container-ul-display;
+        list-style-type: $room-filters-container-ul-list-style-type;
+        white-space: $room-filters-container-ul-white-space;
+        font-size: $room-filters-container-ul-font-size;
+        overflow: $room-filters-container-ul-overflow;
+        text-align: $room-filters-container-ul-text-align;
+        padding: $room-filters-container-ul-padding;
+
+        &::-webkit-scrollbar { 
+            display: $room-filters-container-ul-webkit-scrollbar-display; 
+        } 
+    }
+    li {
+        display: $room-filters-container-li-display;
+        cursor: $room-filters-container-li-cursor;
+        font-size: $room-filters-container-li-font-size;
+        margin: $room-filters-container-li-margin;
+        padding: $room-filters-container-li-padding;
+        border: $room-filters-container-li-border;
+        @include border-radius($room-filters-container-li-border-radius);
+        @include vertically-align-text($room-filters-container-li-v-align-text-height, $room-filters-container-li-v-align-text-top-border, $room-filters-container-li-v-align-text-bottom-border);
+
+        &:first-of-type {
+            border: $room-filters-container-li-first-of-type-border;
+            text-decoration: $room-filters-container-li-first-of-type-text-decoration;
+        }
+    }
+}
+
+.teromac-room-sort {
+    margin-top: $room-sort-margin-top;
+    padding: $room-sort-padding;
+    list-style-type: $room-sort-list-style-type;
+    overflow: $room-sort-overflow;
+    margin-bottom: $room-sort-margin-bottom;
+
+    li {
+        position: $room-sort-overflow-li-position;
+        width: $room-sort-overflow-li-width;
+        float: $room-sort-overflow-li-float;
+        text-align: $room-sort-overflow-li-text-align;
+        cursor: $room-sort-overflow-li-cursor;
+        border: $default-border-width solid $default-input-border-color;
+        @include vertically-align-text($room-sort-overflow-li-v-align-text-height
+            , $room-sort-overflow-li-v-align-text-top-border
+            , $room-sort-overflow-li-v-align-text-bottom-border);
+
+        &:first-of-type {
+            border-right-color: $room-sort-overflow-li-first-of-type-border-right-color;
+            @include border-radius($room-sort-overflow-li-first-of-type-border-radius);
+        }
+        &:last-of-type {
+            border-left-width: $room-sort-overflow-li-last-of-type-border-left-width;
+            @include border-radius(0 $default-border-radius $default-border-radius 0);
+        }
+        &.teromac-active {
+            border-color: $room-sort-overflow-li-active-border-color;
+            color: $room-sort-overflow-li-active-color;
+        }
+    }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: $default-tablet-width) {
+    .teromac-room-sort li {
+        border: none;
+
+        &.teromac-active:after {
+            content: $tablet-room-sort-li-active-after-content;
+            display: $tablet-room-sort-li-active-after-display;
+            height: $tablet-room-sort-li-active-after-height;
+            background-color: $tablet-room-sort-li-active-after-bg-color;
+            margin: $tablet-room-sort-li-active-after-margin;
+            max-width: $tablet-room-sort-li-active-after-max-width;
+        }
+    }
+}

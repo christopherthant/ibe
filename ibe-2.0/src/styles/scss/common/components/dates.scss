@@ -1,0 +1,26 @@
+.teromac-plan-date {
+    width: $plan-date-width;
+    float: $plan-date-float;
+}
+.teromac-plan-date-label {
+    font-weight: $plan-date-label-font-weight;
+    @include font-size($plan-date-label-base-font-size
+    	, $plan-date-label-final-font-size);
+}
+
+.teromac-plan-date-checkin {
+    padding-right: $plan-date-checkin-padding-right;
+}
+.teromac-plan-date-checkout {
+    padding-left: $plan-date-checkin-padding-left;
+}
+
+.teromac-plan-date-date {
+    @include font-size($plan-date-date-base-font-size
+    	, $plan-date-date-final-font-size);
+    color: $plan-date-date-color;
+}
+.teromac-plan-year {
+    @include font-size($plan-year-base-font-size
+    	, $plan-year-final-font-size);
+}

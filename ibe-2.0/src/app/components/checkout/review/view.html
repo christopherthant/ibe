@@ -1,0 +1,149 @@
+<div id="teromac-review-view">
+    <div class="teromac-review-view-right">
+        <h2 translate="Summary"></h2>
+        <div class="teromac-line-item-group">
+            <ul class="teromac-line-items">
+                <li class="teromac-line-item">
+                    <div class="teromac-label" translate="Room Subtotal"></div>
+                    <div class="teromac-value">$250.00</div>
+                </li>
+                <li class="teromac-line-item">
+                    <div class="teromac-label" translate="Room Taxes"></div>
+                    <div class="teromac-value">$20.00</div>
+                </li>
+                <li class="teromac-line-item">
+                    <div class="teromac-label" translate="Add-ons Subtotal"></div>
+                    <div class="teromac-value">$100.00</div>
+                </li>
+                <li class="teromac-line-item">
+                    <div class="teromac-label" translate="Add-ons Taxes"></div>
+                    <div class="teromac-value">$10.00</div>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div class="teromac-line-item-group teromac-line-item-total">
+            <ul class="teromac-line-items">
+                <li class="teromac-line-item">
+                    <div class="teromac-label" translate="Order Total"></div>
+                    <div class="teromac-value">$380</div>
+                </li>
+            </ul>
+        </div>
+        <a ui-sref="codes" class="teromac-btn teromac-btn-hollow-inverse teromac-btn-codes" translate="Rate Code"></a>
+        <hr />
+        <a ui-sref="confirmation" class="teromac-btn teromac-btn-checkout" translate="Checkout"></a>
+        <p>Payment must be made at time of reservation blablaPayment must be made at time of reservation blablaPayment must be made at time of Payment Payment must be made at time of reservation blablaPayment must be made at time of</p>
+    </div>
+    <div class="teromac-review-view-left">
+        <div class="teromac-cart-item">
+            <div class="teromac-cart-item-image" style="background-image: url(/assets/images/hotels/belmond/rooms/01-standard/01-standard.jpg)"></div>
+            <div class="teromac-item-detail-header">
+                <div class="teromac-item-detail-header-left">$250</div>
+                <h4 class="teromac-item-detail-header-name">Classic King</h4>
+            </div>
+            <hr />
+            <div class="teromac-line-item-group">
+                <ul class="teromac-line-items">
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">Check-in</div>
+                        <div class="teromac-value">APR 19</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">Check-out</div>
+                        <div class="teromac-value">APR 24</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">Ave.rate / night</div>
+                        <div class="teromac-value">$125.00</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">Rate package</div>
+                        <div class="teromac-value">Best available rate</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="teromac-line-item-group teromac-line-item-group-inverse">
+                <div class="teromac-line-item teromac-line-item-toggle" ng-click="vm.isToggle = !vm.isToggle" ng-class="{'visible': vm.isToggle}">
+                    <div class="teromac-label" translate="Nightly Breakdown"></div>
+                    <div class="teromac-value"></div>
+                </div>
+                <ul class="teromac-line-items" ng-show="vm.isToggle">
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">APR 19</div>
+                        <div class="teromac-value">$120</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label">APR 20</div>
+                        <div class="teromac-value">$130</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="teromac-line-item-group">
+                <ul class="teromac-line-items">
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Adults"></div>
+                        <div class="teromac-value">2</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Children"></div>
+                        <div class="teromac-value">1</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="teromac-thirds">
+                <div class="teromac-thirds-left">
+                    <div class="teromac-btn teromac-btn-hollow-inverse" translate="Edit Dates"></div>
+                </div>
+                <div class="teromac-thirds-mid">
+                    <div class="teromac-btn teromac-btn-hollow-inverse" translate="Edit Guest"></div>
+                </div>
+                <div class="teromac-thirds-right">
+                    <div class="teromac-btn teromac-btn-hollow-inverse" translate="Remove"></div>
+                </div>
+            </div>
+        </div>
+        <hr />
+            <div class="teromac-btn teromac-btn-add-room">+ Add another room</div>
+        <hr />
+        <div class="teromac-cart-item">
+            <div class="teromac-cart-item-image" style="background-image: url(/assets/images/hotels/belmond/addons/bus-tour.jpg)"></div>
+            <div class="teromac-item-detail-header">
+                <div class="teromac-item-detail-header-left">$50</div>
+                <h4 class="teromac-item-detail-header-name">Classic King</h4>
+            </div>
+            <hr />
+            <div class="teromac-line-item-group">
+                <ul class="teromac-line-items">
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Date"></div>
+                        <div class="teromac-value">APR 19</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Time"></div>
+                        <div class="teromac-value">10:00 AM</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Unit Price"></div>
+                        <div class="teromac-value">$50.00</div>
+                    </li>
+                    <li class="teromac-line-item">
+                        <div class="teromac-label" translate="Quantity"></div>
+                        <div class="teromac-value">1</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="teromac-thirds">
+                <div class="teromac-thirds-left">
+                    <div class="teromac-btn teromac-btn-hollow-inverse">Edit date/time</div>
+                </div>
+                <div class="teromac-thirds-mid">
+                    <div class="teromac-btn teromac-btn-hollow-inverse">Edit quantity</div>
+                </div>
+                <div class="teromac-thirds-right">
+                    <div class="teromac-btn teromac-btn-hollow-inverse" translate="Remove"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

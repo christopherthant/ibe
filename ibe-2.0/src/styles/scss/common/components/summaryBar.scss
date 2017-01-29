@@ -1,0 +1,195 @@
+.teromac-summary-bar-placeholder {
+    position: $summary-bar-placeholder-position;
+    top: $summary-bar-placeholder-top;
+    height: $summary-bar-placeholder-height;
+
+    &.teromac-sticky-summary-bar-fixed {
+        .teromac-summary-bar-outer {
+            position: $summary-bar-placeholder-sticky-fixed-outer-position;
+            width: $summary-bar-placeholder-sticky-fixed-outer-width;
+        }
+        .teromac-summary-bar-mid {
+            display: $summary-bar-placeholder-sticky-fixed-mid-display;
+            margin: $summary-bar-placeholder-sticky-fixed-mid-margin;
+        }
+        .teromac-summary-bar-outer {
+            top: $default-header-height;
+        }
+    }
+}
+.teromac-summary-bar-outer,
+.teromac-summary-bar-mid,
+.teromac-summary-bar-inner {
+    width: $summary-bar-width;
+}
+.teromac-summary-bar-inner {
+    overflow: hidden;
+    background-color: $summary-bar-inner-bg-color;
+    color: $summary-bar-inner-color;
+    @include vertically-align-text($summary-bar-inner-v-align-txt-height);
+    @include border-radius($summary-bar-inner-border-radius);
+}
+.teromac-summary-bar-left {
+    display: $summary-bar-left-display;
+    float: $summary-bar-left-float;
+    text-align: $summary-bar-left-txt-align;
+    width: $summary-bar-left-width;
+    padding: $summary-bar-left-padding;
+    color: $summary-bar-left-color;
+    @include font-size($summary-bar-left-base-font-size, $summary-bar-left-final-font-size);
+
+    ul {
+        display: $summary-bar-left-ul-display;
+        overflow: $summary-bar-left-ul-overflow;
+        vertical-align: $summary-bar-left-ul-v-align;
+        @include plain-list();
+    }
+
+    li {
+        margin-right: $summary-bar-left-li-margin-right;
+    }
+
+}
+.teromac-summary-bar-dates span,
+.teromac-summary-bar-adults,
+.teromac-summary-bar-children,
+.teromac-summary-bar-rooms,
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before,
+.teromac-summary-bar-adults span,
+.teromac-summary-bar-children span,
+.teromac-summary-bar-rooms span {
+    display: $summary-bar-items-display;
+    vertical-align: $summary-bar-items-v-align;
+    @include vertically-align-text($summary-bar-items-v-align-txt);
+}
+
+.teromac-summary-bar-dates {
+    display: $summary-bar-dates-display;
+    vertical-align: $summary-bar-dates-v-align;
+    margin-right: $summary-bar-dates-margin-right;
+}
+
+.teromac-summary-bar-adults:before,
+.teromac-summary-bar-children:before,
+.teromac-summary-bar-rooms:before {
+    vertical-align: $summary-bar-items-before-v-align;
+    margin-right: $summary-bar-items-before-margin-right;
+    @include vertically-align-text($summary-bar-items-before-v-align-txt);
+}
+
+.teromac-summary-bar-adults:before {
+    @include icon($summary-bar-adults-before-char-code, $summary-bar-adults-before-font-size);
+}
+
+.teromac-summary-bar-children:before {
+    @include icon($summary-bar-children-before-char-code, $summary-bar-children-before-font-size);
+}
+
+.teromac-summary-bar-rooms:before {
+    @include icon($summary-bar-rooms-before-char-code, $summary-bar-rooms-before-font-size);
+}
+
+.teromac-summary-bar-right {
+    float: $summary-bar-right-float;
+    width: $summary-bar-right-width;
+}
+
+.teromac-summary-bar-total {
+    display: $summary-bar-total-display;
+    text-align: $summary-bar-total-txt-align;
+    cursor: $summary-bar-total-cursor;
+    background-color: $summary-bar-total-bg-color;
+    padding: $summary-bar-total-padding;
+    color: $summary-bar-total-color;
+    
+    > div {
+        display: $summary-bar-total-child-divs-display;
+    }
+
+    &:after,
+    span {
+        display: $summary-bar-total-after-span-display;
+        vertical-align: $summary-bar-total-after-span-v-align;
+        @include vertically-align-text($summary-bar-total-after-span-v-align-txt-height);
+    }
+
+    &:after,
+    .teromac-label {
+        opacity: $summary-bar-total-after-label-opacity;
+    }
+
+    &:after {
+        @include icon($summary-bar-total-after-char-code, $summary-bar-total-after-font-size);
+    }
+
+    .teromac-value {
+        @include font-size($summary-bar-total-value-base-font-size, $summary-bar-total-value-final-font-size);
+        margin: $summary-bar-total-value-margin;
+    }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+   
+@media (max-width: $default-tablet-width) {
+    .teromac-summary-bar-left {
+        padding: $tablet-summary-bar-left-padding;
+        @include font-size($tablet-summary-bar-left-base-font-size
+            , $tablet-summary-bar-left-final-font-size);
+
+        ul li {
+            margin-right: $tablet-summary-bar-left-list-margin-right;
+
+            &:last-of-type {
+                margin-right: $tablet-summary-bar-left-list-last-of-margin-right;
+            }
+            span {
+                font-weight: $tablet-summary-bar-left-list-span-font-weight;
+                @include font-size($tablet-summary-bar-left-list-span-base-font-size
+                    , $tablet-summary-bar-left-list-span-final-font-size);
+            }
+        }
+    }
+
+    .teromac-summary-bar-dates {
+        margin-right: $tablet-summary-bar-dates-margin-right;
+    }
+
+    .teromac-summary-bar-adults:before,
+    .teromac-summary-bar-children:before,
+    .teromac-summary-bar-rooms:before {
+        font-size: $tablet-summary-bar-items-before-font-size;
+        margin-right: $tablet-summary-bar-items-before-margin-right;
+    }
+
+    .teromac-summary-bar-total {
+        padding: $tablet-summary-bar-total-padding;
+
+        > div {
+            vertical-align: $tablet-summary-bar-total-child-divs-v-align;
+            height: $tablet-summary-bar-total-child-divs-height;
+            margin-right: $tablet-summary-bar-total-child-divs-margin-right;
+            padding: $tablet-summary-bar-total-child-divs-padding;
+        }
+
+        span {
+            display: $tablet-summary-bar-total-span-display;
+            height: $tablet-summary-bar-total-span-height;
+            line-height: $tablet-summary-bar-total-span-line-height;
+        }
+
+        .teromac-label {
+            @include font-size($tablet-summary-bar-total-label-base-font-size
+                , $tablet-summary-bar-total-label-final-font-size);
+        }
+
+        .teromac-value {
+            margin: $tablet-summary-bar-total-value-margin;
+            @include font-size($tablet-summary-bar-total-value-base-font-size
+                , $tablet-summary-bar-total-value-final-font-size);
+        }
+    }
+}

@@ -1,0 +1,119 @@
+$summary-bar-placeholder-position: relative;
+$summary-bar-placeholder-top: -$default-spacing-unit * 2;
+$summary-bar-placeholder-height: $default-summary-bar-height;
+
+$summary-bar-placeholder-sticky-fixed-outer-position: fixed;
+$summary-bar-placeholder-sticky-fixed-outer-width: 100%;
+
+$summary-bar-placeholder-sticky-fixed-mid-display: table;
+$summary-bar-placeholder-sticky-fixed-mid-margin: 0 auto;
+
+$summary-bar-placeholder-sticky-fixed-outer-top: $default-header-height;
+
+$summary-bar-width: 100%;
+
+$summary-bar-inner-overflow: hidden;
+$summary-bar-inner-bg-color: $default-accent-color;
+$summary-bar-inner-color: $default-font-color-inverse;
+$summary-bar-inner-v-align-txt-height: $default-summary-bar-height;
+$summary-bar-inner-border-radius: $default-border-radius $default-border-radius 0 0;
+
+$summary-bar-left-display: block;
+$summary-bar-left-float: left;
+$summary-bar-left-txt-align: left;
+$summary-bar-left-width: 72%;
+$summary-bar-left-padding: 0 ($default-spacing-unit * 3);
+$summary-bar-left-color: $default-font-color-inverse;
+$summary-bar-left-base-font-size: $default-font-size;
+$summary-bar-left-final-font-size: 18;
+
+$summary-bar-left-ul-display: inline-block;
+$summary-bar-left-ul-overflow: hidden;
+$summary-bar-left-ul-v-align: middle;
+
+$summary-bar-left-li-margin-right: $default-spacing-unit * 2;
+
+$summary-bar-items-display: inline-block;
+$summary-bar-items-v-align: middle;
+$summary-bar-items-v-align-txt: $default-summary-bar-height;
+
+$summary-bar-dates-display: inline-block;
+$summary-bar-dates-v-align: top;
+$summary-bar-dates-margin-right: $default-spacing-unit * 4;
+
+$summary-bar-items-before-v-align: middle;
+$summary-bar-items-before-margin-right: $default-spacing-unit;
+$summary-bar-items-before-v-align-txt: $default-summary-bar-height;
+
+$summary-bar-adults-before-char-code: "T";
+$summary-bar-adults-before-font-size: 22;
+
+$summary-bar-children-before-char-code: "P";
+$summary-bar-children-before-font-size: 22;
+
+$summary-bar-rooms-before-char-code: "X";
+$summary-bar-rooms-before-font-size: 22;
+
+$summary-bar-right-float: right;
+$summary-bar-right-width: 28%;
+
+$summary-bar-total-display: block;
+$summary-bar-total-txt-align: center;
+$summary-bar-total-cursor: pointer;
+$summary-bar-total-bg-color: #3A1500;
+$summary-bar-total-padding: 0 ($default-spacing-unit * 2);
+$summary-bar-total-color: $default-font-color-inverse;
+
+$summary-bar-total-child-divs-display: inline-block;
+
+$summary-bar-total-after-span-display: inline-block;
+$summary-bar-total-after-span-v-align: middle;
+$summary-bar-total-after-span-v-align-txt-height: $default-summary-bar-height;
+
+$summary-bar-total-after-label-opacity: 0.7;
+
+$summary-bar-total-value-base-font-size: $default-font-size;
+$summary-bar-total-value-final-font-size: 26;
+$summary-bar-total-value-margin: 0 $default-spacing-unit 0 ($default-spacing-unit * 2);
+
+$summary-bar-total-after-char-code: "B";
+$summary-bar-total-after-font-size: 13;
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+$tablet-summary-bar-left-padding: 0 $default-spacing-unit;
+$tablet-summary-bar-left-base-font-size: $default-font-size;
+$tablet-summary-bar-left-final-font-size: 13;
+
+$tablet-summary-bar-left-list-margin-right: $default-spacing-unit / 2;
+
+$tablet-summary-bar-left-list-last-of-margin-right: 0;
+
+$tablet-summary-bar-left-list-span-font-weight: bold;
+$tablet-summary-bar-left-list-span-base-font-size: $default-font-size;
+$tablet-summary-bar-left-list-span-final-font-size: 12;
+
+$tablet-summary-bar-dates-margin-right: $default-spacing-unit;
+
+$tablet-summary-bar-items-before-font-size: 11px;
+$tablet-summary-bar-items-before-margin-right: $default-spacing-unit / 5;
+
+$tablet-summary-bar-total-padding: 0 $default-spacing-unit;
+
+$tablet-summary-bar-total-child-divs-v-align: middle;
+$tablet-summary-bar-total-child-divs-height: $default-summary-bar-height;
+$tablet-summary-bar-total-child-divs-margin-right: $default-spacing-unit / 2;
+$tablet-summary-bar-total-child-divs-padding: ($default-spacing-unit / 2) 0;
+
+$tablet-summary-bar-total-span-display: block;
+$tablet-summary-bar-total-span-height: auto;
+$tablet-summary-bar-total-span-line-height: normal;
+
+$tablet-summary-bar-total-label-base-font-size: $default-font-size;
+$tablet-summary-bar-total-label-final-font-size: 10;
+
+$tablet-summary-bar-total-value-margin: 0;
+$tablet-summary-bar-total-value-base-font-size: $default-font-size;
+$tablet-summary-bar-total-value-final-font-size: 18;

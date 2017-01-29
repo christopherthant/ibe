@@ -1,0 +1,19 @@
+@import "mixins.scss";
+
+.teromac-profile-view-left,
+.teromac-profile-view-right {
+    float: left;
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .teromac-profile-view-left,
+    .teromac-profile-view-right {
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .teromac-profile-view-left {
+        border-right: none;
+    }
+}

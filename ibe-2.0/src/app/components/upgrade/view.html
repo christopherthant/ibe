@@ -1,0 +1,56 @@
+<div id="teromac-upgrade-view">
+    <h2 translate="Upgrade Your Room"></h2>
+    <ul class="teromac-upgrade-items" ng-init="upgradeItemIndex = 1">
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 1}" ng-click="upgradeItemIndex = 1">
+            <div class="teromac-value">+$20</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 2}" ng-click="upgradeItemIndex = 2">
+            <div class="teromac-value">+$55</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 3}" ng-click="upgradeItemIndex = 3">
+            <div class="teromac-value">+$89</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 4}" ng-click="upgradeItemIndex = 4">
+            <div class="teromac-value">+$125</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 5}" ng-click="upgradeItemIndex = 5">
+            <div class="teromac-value">+$160</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+        <li class="teromac-upgrade-item" ng-class="{'teromac-active': upgradeItemIndex === 6}" ng-click="upgradeItemIndex = 6">
+            <div class="teromac-value">+$195</div>
+            <div class="teromac-label" translate="/ night"></div>
+        </li>
+    </ul>
+    <div class="teromac-upgrade-image" style="background-image: url(/assets/images/hotels/belmond/rooms/01-standard/01-standard.jpg)"></div>
+    <div class="teromac-item-detail-header">
+        <div class="teromac-item-detail-header-left">
+            <span class="teromac-item-detail-header-left-label" translate="Max Guests"></span>
+            <span class="teromac-item-detail-header-left-value">4</span>
+        </div>
+        <h4 class="teromac-item-detail-header-name">Classic King</h4>
+    </div>
+    <div class="teromac-half-container">
+        <div class="teromac-half teromac-push-left">
+            <div class="teromac-btn" ng-click="vm.checkout()" translate="Upgrade"></div>
+        </div>
+        <div class="teromac-half teromac-push-right">
+            <div class="teromac-btn teromac-btn-hollow-inverse" ng-click="vm.checkout()" translate="No thanks"></div>
+        </div>
+    </div>
+    <hr />
+    <div class="teromac-room-amenities-container">
+        <h4 class="teromac-room-amenities-header" translate="Upgrade Features"></h4>
+        <p class="teromac-room-amenities-subheader">Lorem ipsum sunday brunch and waffle flowers seed orchid Lorem ipsum sunday brunch and waffle flowers seed</p>
+        <ul class="teromac-room-amenities">
+            <li class="teromac-room-amenity">1 king bed</li>
+            <li class="teromac-room-amenity">1 sofa bed</li>
+            <li class="teromac-room-amenity">1 bath</li>
+            <li class="teromac-room-amenity">2 sinks</li>
+        </ul>
+    </div>
+</div>

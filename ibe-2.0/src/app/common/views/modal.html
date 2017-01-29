@@ -1,0 +1,14 @@
+<div class="teromac-modal-overlay" ng-click="vm.closeModal()">
+    <div class="teromac-table">
+        <div class="teromac-table-cell">
+            <div class="teromac-modal-content-outer">
+                <div class="teromac-modal-content-inner">
+                    <div class="teromac-modal-content" ng-click="$event.stopPropagation()">
+                        <div ng-include="vm.template" include-replace></div>
+                    </div>
+                    <div class="teromac-modal-close-btn" ng-if="!vm.hideModalCloseBtn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

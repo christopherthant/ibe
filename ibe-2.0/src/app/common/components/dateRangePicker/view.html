@@ -1,0 +1,50 @@
+<div class="teromac-cal-navigation teromac-desktop-only">
+    <div class="teromac-cal-next" ng-click="nextDesktopViewIndex()"></div>
+    <div class="teromac-cal-prev" ng-click="prevDesktopViewIndex()"></div>
+</div>
+<div class="teromac-cals-container">
+    <div class="teromac-cal-container" ng-repeat="month in currentMonths" ng-class="{'teromac-mobile-only': $index !== desktopViewIndex && $index !== desktopViewIndex + 1}">
+        <h2 class="teromac-state-header teromac-cal-header">
+            <span class="teromac-cal-header-month" ng-bind="month.month"></span>
+            <span class="teromac-cal-header-year" ng-bind="month.year"></span>
+        </h2>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr class="teromac-cal-days">
+                <th class="teromac-cal-day" ng-repeat="dayOfWeek in daysOfWeek">
+                    <div class="teromac-cal-cell">
+                        <div class="teromac-cal-cell-inner">
+                            <div class="teromac-table">
+                                <div class="teromac-table-cell" ng-bind="dayOfWeek"></div>
+                            </div>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr class="teromac-cal-week" ng-repeat="week in month.monthDates">
+                <td class="teromac-cal-date" ng-repeat="day in week track by $index">
+                    <div class="teromac-cal-cell">
+                        <div class="teromac-cal-cell-inner">
+                            <div class="teromac-table">
+                                <div class="teromac-table-cell"
+                                    ng-bind="day ? day.getDate() : null"
+                                    ng-class="{
+                                        'teromac-cal-is-blank': !day,
+                                        'teromac-cal-is-start-date': day && day.getTime() === startDate.getTime(),
+                                        'teromac-cal-is-end-date': day && day.getTime() === endDate.getTime(),
+                                        'teromac-cal-is-temp-end-date': day && startDate && !endDate && day > startDate && day.getTime() === tempEndDate.getTime(),
+                                        'teromac-cal-is-in-range': day && startDate ? endDate ? (day >= startDate && day <= endDate) : tempEndDate ? (day >= startDate &&  day <= tempEndDate) : false : false,
+                                        'teromac-cal-is-past': day && day < today,
+                                        'teromac-cal-is-present': day && day.getTime() === today.getTime(),
+                                        'teromac-cal-is-future': day && day > today
+                                    }"
+                                    ng-click="setDate(day)"
+                                    ng-mouseover="setTempEndDate(day)"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

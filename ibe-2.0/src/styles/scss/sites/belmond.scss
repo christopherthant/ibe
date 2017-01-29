@@ -1,0 +1,103 @@
+$default-min-tap-area-size: 44px;
+$default-bg-color: #EDEDE9;
+$default-content-bg-color: #FFF;
+$default-modal-overlay-color: rgba(0, 0, 0, 0.5);
+$default-accent-color: #F05800;
+$default-accent-color-inverse: #F3F3F3;
+$default-font-color: #595356;
+$default-font-color-inverse: #FFF;
+$default-font-size: 16;
+$default-transition-time: 0.3s;
+$default-transition-easing: ease-out;
+$default-spacing-unit: 10px;
+$default-border-width: 1px;
+$default-border-radius: 0;
+$default-input-border-color: #908D91;
+$default-input-fill-color-inverse: #B8B8B5;
+$default-input-height: $default-min-tap-area-size;
+$default-hr-color: $default-bg-color;
+$default-error-color: #FF0000;
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+$sticky-header-transition-time: $default-transition-time;
+$sticky-header-transition-easing: $default-transition-easing;
+$header-height: $default-min-tap-area-size;
+$hotel-name-kerning: -0.15px;
+
+$layout-margin: $default-spacing-unit;
+$layout-padding: $default-spacing-unit * 2;
+
+$bg-image-url-desktop: "/assets/images/hotels/belmond/background.jpg";
+$bg-image-url-mobile: "/assets/images/hotels/belmond/background.jpg";
+$bg-width-mobile: 680px;
+$bg-height-mobile: 700px;
+$bg-image-overlay-color: $default-modal-overlay-color;
+
+$logo-image-url: "/assets/images/hotels/belmond/logo.png";
+$logo-height: 65px;
+$logo-spacing-vertical-desktop: 40px;
+$logo-spacing-vertical-mobile: 100px;
+
+$default-checkbox-input-size: 24px;
+$default-checkbox-bg-color: $default-content-bg-color;
+$default-checkbox-border-color: $default-input-border-color;
+$default-select-carret-width: 35px;
+$default-fixed-bottom-button-width-desktop: 360px;
+$default-fixed-bottom-button-height: 60px;
+
+$default-input-number-btn-color: $default-accent-color;
+$default-input-group-number-color: inherit;
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+$default-menu-transition-time: $default-transition-time;
+$default-menu-transition-easing: $default-transition-easing;
+$default-menu-width-desktop: 400px;
+$default-menu-width-mobile: 100%;
+$default-menu-spacing: 6px;
+$default-menu-bg-color: $default-bg-color;
+$default-menu-font-color: $default-font-color;
+$default-menu-divider-color: rgba(151, 151, 151, .41);
+$default-menu-button-max-width: 160px;
+$default-menu-back-button-size: 19px;
+$default-menu-external-link-icon-size: 30px;
+
+/* ==========================================================================
+   Plan View
+   ========================================================================== */
+$default-plan-dates-divider-size: 32px;
+$default-plan-date-date-color: $default-accent-color;
+
+/* ==========================================================================
+   Rooms View
+   ========================================================================== */
+$default-room-mobile-header-height: 22px;
+$default-room-filter-height: 30px;
+$default-room-sort-height: 33px;
+$default-rooms-by-rate-border-color: #E6E6E6;
+$default-rooms-by-rate-border-width-active: 5px;
+$default-room-image-width: 260px;
+$default-room-image-height: 158px;
+$default-room-type-rate-container-width: 90px;
+$default-room-special-color: #6CFFC9;
+
+/* ==========================================================================
+   Rates View
+   ========================================================================== */
+$default-rates-room-image-width: 300px;
+$default-rates-room-image-height: 200px;
+$default-rates-room-detail-header-height: 27px;
+$default-rates-room-detail-height-closed: 75px;
+$default-rates-room-view-toggle-width: 116px;
+$default-rates-room-view-toggle-height: 30px;
+$default-rate-controls-width: 260px;
+
+/* ==========================================================================
+   Summary Bar
+   ========================================================================== */
+$default-summary-bar-height: $default-min-tap-area-size;
+
+@import "../common/imports.scss";

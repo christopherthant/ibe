@@ -1,0 +1,75 @@
+{
+    "id": "belmond",
+    "css": "/styles/belmond.css",
+    "ETag": "",
+    "Last-Modified": "",
+    "property": {
+    	"id": "belmond",
+    	"logo": "/assets/images/hotels/belmond/logo.png",
+    	"title": "Belmond",
+    	"mailingAddress": "",
+    	"phoneNumber": "",
+    	"defaultLanguage": "",
+    	"defaultLocale": "",
+    	"nativeCurrency": "",
+    	"allowGuestAccounts": "",
+    	"allowMultiRoom": true,
+    	"showFlexibleDates": false,
+    	"enablePriceRangeFilter": "",
+    	"enableOccupancyRangeFilter": "",
+    	"allowCompareRooms": "",
+    	"allowAddonItems": "",
+    	"allowRoomUpgrade": "",
+    	"allowBookingForGuest": "",
+    	"allowSpecialRequest": "",
+    	"currencies": [{}],
+    	"languages": [{}],
+    	"locales": [{}],
+    	"appGuestTypes": [{
+    		"id": 1,
+    		"label": "",
+    		"icon": "",
+    		"parameters": [],
+    		"guestTypeMap": [{}]
+    	}],
+    	"guestTypes": [{
+    		"id": 1 
+    	}],
+        "codeTypes": [
+            {
+                "id": "1",
+                "label": "Promo Code",
+                "icon": "/assets/images/hotels/belmond/codes/promocode.png"
+            },
+            {
+                "id": "2",
+                "label": "Frequent Guest Id",
+                "icon": "/assets/images/hotels/belmond/codes/frequentguest.png"
+            },
+            {
+                "id": "3",
+                "label": "Corporate Id",
+                "icon": "/assets/images/hotels/belmond/codes/corporate.png"
+            },
+            {
+                "id": "4",
+                "label": "AAA Members",
+                "icon": "/assets/images/hotels/belmond/codes/aaa.png"
+            },
+            {
+                "id": "5",
+                "label": "AARP Members",
+                "icon": "/assets/images/hotels/belmond/codes/aarp.png"
+            }
+        ],
+    	"roomXs": [{}],
+    	"rateXs": [{}],
+    	"chargeTypes": [{}],
+    	"roomFeatures": [{}],
+    	"addOnCategories": [{}],
+    	"addOns": [{}],
+    	"policyTypes": [{}],
+    	"policies": [{}],
+    	"externalLinks": [{}]
+    }
+}

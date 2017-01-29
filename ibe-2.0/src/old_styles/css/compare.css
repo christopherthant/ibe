@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+#teromac-compare-view {
+  width: 100%;
+  max-width: 1024px; }
+  #teromac-compare-view h2 {
+    font-weight: normal;
+    text-align: center; }
+
+.teromac-compare-items-container-outer {
+  position: relative; }
+
+.teromac-compare-items-container-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.teromac-compare-items-slider {
+  position: relative; }
+
+.teromac-compare-nagivation-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; }
+
+.teromac-compare-navigation-outer {
+  position: relative; }
+
+.teromac-compare-navigation-mid {
+  margin: 0 auto; }
+
+.teromac-compare-navigation {
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  top: 0;
+  pointer-events: auto; }
+  .teromac-compare-navigation.teromac-prev {
+    left: 0; }
+    .teromac-compare-navigation.teromac-prev .teromac-table-cell:before {
+      content: "w";
+      font-family: "teromac Icons";
+      font-size: 22px; }
+  .teromac-compare-navigation.teromac-next {
+    right: 0; }
+    .teromac-compare-navigation.teromac-next .teromac-table-cell:before {
+      content: "v";
+      font-family: "teromac Icons";
+      font-size: 22px; }
+  .teromac-compare-navigation.slick-disabled {
+    opacity: 0.5; }
+
+.teromac-compare-item {
+  position: relative;
+  float: left; }
+  .teromac-compare-item h3 {
+    font-weight: normal;
+    margin: 0; }
+  .teromac-compare-item .teromac-compare-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .teromac-compare-item h4 {
+    font-weight: normal;
+    margin: 0; }
+  .teromac-compare-item .teromac-btn {
+    width: 100%; }
+
+/* Compare button on rates view */
+a.teromac-compare-btn-desktop {
+  position: absolute; }
+
+a.teromac-compare-btn-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer; }
+  a.teromac-compare-btn-mobile:after {
+    content: "W";
+    font-family: "teromac Icons";
+    font-size: 13px; }
+
+@media (max-width: 768px) {
+  #teromac-compare-view h2 {
+    text-align: left; }
+
+  .teromac-compare-navigation-mid {
+    width: 100%; } }

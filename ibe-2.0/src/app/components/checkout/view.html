@@ -1,0 +1,12 @@
+<div id="teromac-checkout-view">
+    <div class="teromac-tabbed-header-navigation teromac-checkout-header">
+        <ul>
+            <li ui-sref-active="teromac-active"><a ui-sref="guest" translate="Guest Details"></a></li>
+            <li ui-sref-active="teromac-active"><a ui-sref="payment" translate="Payment"></a></li>
+            <li ui-sref-active="teromac-active"><a ui-sref="policies" translate="Policies"></a></li>
+            <li ui-sref-active="teromac-active"><a ui-sref="review" translate="Review"></a></li>
+        </ul>
+        <span class="teromac-btn teromac-btn-hollow-inverse" ng-if="vm.isGuestDetailsView()" translate="Log in to book faster"></span>
+    </div>
+    <div class="teromac-checkout-body" ui-view></div>
+</div>
